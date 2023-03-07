@@ -28,7 +28,7 @@ function DockbarGroup({showStart, onStartClick}){
                 >
                     <div>
                         <img src={start} alt="start"/>
-                        <b>Start</b>
+                        <b>시작</b>
                     </div>
                 </Button>
             </StyledGroup>

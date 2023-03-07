@@ -19,7 +19,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const Vertical = styled.div`
-  background: rgba(0, 0, 0, 0.3);
+  
+  background: linear-gradient(#000184 60%, #0f80cd);
   color: rgba(255, 255, 255);
   font-size: 20px;
   width: 35px;
