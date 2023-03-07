@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {connect} from 'react-redux'
 
 import Docktime from './Docktime';
+import Start from './Start';
+import DockbarGroup from './DockbarGroup';
 
 const StyledDockbar = styled.div`
     width: 100vw;
@@ -13,13 +16,20 @@ const StyledDockbar = styled.div`
     box-shadow: 0 0 0 2px rgba(255, 255, 255);
 `;
 
-const Dockbar = () => {
+function Dockbar({showStart}) {
     return (
         <StyledDockbar>
-            styledDockbar
+            <DockbarGroup/>
+            {showStart ? <Start /> : null}
             <Docktime/>
         </StyledDockbar>
     );
 };
 
-export default Dockbar;
+const mapStateToProps = (state) => {
+    return {
+      showStart: state.showStart
+    }
+  }
+
+export default connect(mapStateToProps)(Dockbar);
