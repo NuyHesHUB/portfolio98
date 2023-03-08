@@ -4,15 +4,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Bios from './components/Bios/Bios';
 import Windows from './components/Windows/Windows'
 import './styles/total_style.css'
+import {Provider} from 'react-redux'
+import { createStore } from 'redux';
+import reducer from './store/reducers/reducer'
 
 function App() {
-
+  
+  const store = createStore(reducer);
   return (
       <BrowserRouter>
+      <Provider store={store}>
         <Routes>
             <Route path={"/"} element={<Bios />}></Route>
             <Route path={"/Windows"} element={<Windows />}></Route>
         </Routes>
+        </Provider>
       </BrowserRouter> 
   );
 }

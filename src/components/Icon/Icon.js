@@ -47,12 +47,12 @@ const StyledIconWithLabel = styled.div`
   `}
 `;
 
-function Icon({hadleClick, label, img, clicked, doubleclicked}){
+function Icon({handleClick, label, img, clicked, doubleClicked}){
     return (
         <StyledIconWithLabel
-            onMouseDown={()=>hadleClick(label)}
+            onMouseDown={()=> handleClick(label)}
             clicked={clicked}
-            onDoubleClick={()=>doubleclicked}
+            onDoubleClick={() => doubleClicked(label)}
         >
             <StyledIcon background={img}/>
             <span>{label}</span>

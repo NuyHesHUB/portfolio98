@@ -63,18 +63,24 @@ function Icons({onOpenNotepad}) {
         if(label === '메모장'){
             onOpenNotepad();
         }
+        else if (label === '휴지통') {
+            window.open('https://github.com/Arish-Shah/win95');
+        }
+        else{
+            console.log('haha');
+        }
+        
     }
 
     return (
         <StyledIcons id="Icons">
             {icons.map(({label, img, clicked}, index)=>
-                <Icon 
-                    key={index}
+                <Icon key={index}
                     label={label}
                     img={img}
                     clicked={clicked}
                     handleClick={handleClick}
-                    doubleclicked={doubleClicked}
+                    doubleClicked={doubleClicked}
                 />
             )}
         </StyledIcons>
