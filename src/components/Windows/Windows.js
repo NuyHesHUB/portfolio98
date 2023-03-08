@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Dockbar from '../Dockbar/Dockbar';
+import Icons from '../Icon/Icons'
 
 const StyledWindows=styled.div`
     width: 100vw;
@@ -14,6 +15,7 @@ const Windows = () => {
     return (
         <StyledWindows>
             <h2>Windows페이지</h2>
+            <Icons/>
             <Dockbar/>
         </StyledWindows>
     );
