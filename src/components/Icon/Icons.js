@@ -57,7 +57,6 @@ function Icons({onOpenNotepad}) {
         updatedIcon.map(icon => icon.clicked =false);
         setIcons(updatedIcon);
     }
-
     function doubleClicked(label){
         reset();
         if(label === '메모장'){
@@ -69,7 +68,7 @@ function Icons({onOpenNotepad}) {
         else{
             console.log('haha');
         }
-        
+        console.log(label);   
     }
 
     return (
@@ -86,11 +85,10 @@ function Icons({onOpenNotepad}) {
         </StyledIcons>
     );
 };
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        onOpenNotepad: () => dispatch(openNotepad())
+const mapDispatchToProps = (dispatch) => {
+    return {
+      onOpenNotepad: () => dispatch(openNotepad()),
     }
-    
-}
+  }
 
 export default connect(null, mapDispatchToProps)(Icons);

@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 import start from '../../assets/dockbar-icon/start.png'
 import Button from '../Button'
 
-import { startButtonClicked, openAbout, openNotepad } from '../../store/actions/actions';
+import { startButtonClicked, openNotepad } from '../../store/actions/actions';
 
+import notepadImg from '../../assets/dockbar-icon/Note.png'
 const StyledDockbarGroup=styled.div`
     height: 100%;
     display: inline-block;
@@ -18,7 +19,18 @@ const StyledGroup = styled.div`
 
 
 
-function DockbarGroup({showStart, onStartClick}){
+function DockbarGroup({showStart, onStartClick, onNotepadClick, notepad}){
+    const notepadButton = notepad.show?
+    <Button
+        id="notepad-button"
+        pressed={!notepad.minimized && !notepad.blurred}
+        clicked={()=> onNotepadClick()}
+    >
+        <div>
+            <img src={notepadImg} alt="notepad" style={{width:'20px', height:'20px'}}   />
+            <span>Untitled - 메모장</span>
+        </div>
+    </Button> : null;
     return (
         <StyledDockbarGroup>
             <StyledGroup>
@@ -29,10 +41,14 @@ function DockbarGroup({showStart, onStartClick}){
                     pad="0"
                 >
                     <div>
-                        <img src={start} alt="start"/>
+                        <img 
+                            src={start} 
+                            alt="start"
+                        />
                         <b>시작</b>
                     </div>
                 </Button>
+                {notepadButton}
             </StyledGroup>
         </StyledDockbarGroup>
     );
@@ -41,7 +57,6 @@ function DockbarGroup({showStart, onStartClick}){
 const mapStateToProps = (state) => {
     return {
       showStart: state.showStart,
-      about: state.about,
       notepad: state.notepad,
       showModal: state.showModal
     }
@@ -50,7 +65,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       onStartClick: () => dispatch(startButtonClicked()),
-      onAboutClick: () => dispatch(openAbout()),
       onNotepadClick: () => dispatch(openNotepad())
     }
   }

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import {StyledFrame, TitleBar, ButtonGroup, StyledMenu} from './StyledFrame'
 
 import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximizeDisabled from '../../../assets/titlebar-icons/maximize-disabled.png';
 import close from '../../../assets/titlebar-icons/close.png';
 
-function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, onExit, isMinimized}){
+function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, onMaximize, onExit, isMinimized}){
     const [coordinates, setCoordinates]=useState({x: random() +100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
 
@@ -33,10 +34,44 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
     function random(){
         return Math.round(Math.random()*100);
     }
+
+    const menu = showMenu ?
+    <StyledMenu >
+        <span><u>F</u>ile</span>
+        <span><u>E</u>dit</span>
+        <span><u>S</u>earch</span>
+        <span><u>H</u>elp</span>
+    </StyledMenu> : null;
+
     return (
-        <div>
-            
-        </div>
+        <StyledFrame
+            left={coordinates.x}
+            top={coordinates.y}
+            id={id}
+            width={width}
+            isMinimized={isMinimized}
+            blurred={blurred}
+        >
+            <TitleBar blurred={blurred}>
+                <img src={img} draggable='false' alt='MiniIcon'/>
+                <span className='title'>{title}</span>
+                <ButtonGroup>
+                    <button className='clickable' onClick={()=> onMinimize()}>
+                        <img src={minimize} draggable='false' alt='minimize'/>
+                    </button>
+                    <button className='clickable'/*  onClick={()=> onMaximize()} */>
+                        <img src={maximizeDisabled} draggable='false' alt='minimize'/>
+                    </button>
+                    <button className='clickable' onClick={()=> onExit()}>
+                        <img src={close} draggable='false' alt='close'/>
+                    </button>
+                </ButtonGroup>
+            </TitleBar>
+            {menu}
+
+            {children}
+
+        </StyledFrame>
     );
 };
 
