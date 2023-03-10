@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux'
+
 import styled from 'styled-components';
 
-
-import Dockbar from '../Dockbar/Dockbar';
 import Icons from '../Icon/Icons'
-
+import Dockbar from '../Dockbar/Dockbar';
 import Notepad from './Notepad'
+
+
 
 
 import startup from '../../assets/sounds/startup.mp3'
@@ -53,6 +54,7 @@ function Windows({notepadVisible}){
 const mapStateToProps=(state)=>{
     return{
         shutDown: state.shutDown,
+        notepadVisible: state.notepad.show
     }
 }
 

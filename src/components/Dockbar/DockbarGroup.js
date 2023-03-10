@@ -7,7 +7,7 @@ import Button from '../Button'
 
 import { startButtonClicked, openNotepad } from '../../store/actions/actions';
 
-import notepadImg from '../../assets/dockbar-icon/Note.png'
+import notepadImg from '../../assets/dockbar-icon/notepad.png'
 const StyledDockbarGroup=styled.div`
     height: 100%;
     display: inline-block;

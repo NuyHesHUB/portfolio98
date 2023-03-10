@@ -47,17 +47,13 @@ const StyledIconWithLabel = styled.div`
   `}
 `;
 
-function Icon({handleClick, label, img, clicked, doubleClicked}){
-    return (
-        <StyledIconWithLabel
-            onMouseDown={()=> handleClick(label)}
-            clicked={clicked}
-            onDoubleClick={() => doubleClicked(label)}
-        >
-            <StyledIcon background={img}/>
-            <span>{label}</span>
-        </StyledIconWithLabel>
-    );
-};
+function Icon({ handleClick, label, img, clicked, doubleClicked }) {
+  return (
+    <StyledIconWithLabel onMouseDown={() => handleClick(label)} clicked={clicked} onDoubleClick={() => doubleClicked(label)}>
+      <StyledIcon background={img} />
+      <span>{label}</span>
+    </StyledIconWithLabel>
+  );
+}
 
 export default Icon;
