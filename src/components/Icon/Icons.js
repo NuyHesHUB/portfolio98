@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux'
-import { openNotepad } from '../../store/actions/actions';
+import { openNotepad, openResume} from '../../store/actions/actions';
 
 import Icon from './Icon';
 
@@ -12,6 +12,9 @@ import Myportfolio from '../../assets/desktop-icon/Myportfolio.png'
 import Note from '../../assets/desktop-icon/Note.png'
 import Paint from '../../assets/desktop-icon/Paint.png'
 
+/* 추가 아이콘 */
+import Myresume from '../../assets/desktop-icon/Myresume.png'
+
 const StyledIcons = styled.div`
     display: flex;
     flex-direction: column;
@@ -19,7 +22,7 @@ const StyledIcons = styled.div`
     padding: 8px;
 `
 
-function Icons({onOpenNotepad}) {
+function Icons({onOpenNotepad, onOpenResum}) {
     const [icons, setIcons] = useState([
         {label: '내컴퓨터', img: Mycomputer, clicked: false},
         {label: '내문서', img: Mydocument, clicked: false},
@@ -27,6 +30,7 @@ function Icons({onOpenNotepad}) {
         {label: '내포트폴리오', img: Myportfolio, clicked: false},
         {label: '메모장', img: Note, clicked: false},
         {label: '그림판', img: Paint, clicked: false},
+        {label: '자기소개서', img: Myresume, clicked: false},
     ]);
 
     useEffect(()=>{
@@ -65,6 +69,9 @@ function Icons({onOpenNotepad}) {
         else if (label === '휴지통') {
             window.open('https://github.com/Arish-Shah/win95');
         }
+        else if (label === '자기소개서') {
+            onOpenResum();
+        }
         else{
             console.log('haha');
         }
@@ -88,6 +95,7 @@ function Icons({onOpenNotepad}) {
 const mapDispatchToProps = (dispatch) => {
     return {
       onOpenNotepad: () => dispatch(openNotepad()),
+      onOpenResum: () => dispatch(openResume()),
     }
   }
 

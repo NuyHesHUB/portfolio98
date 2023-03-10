@@ -1,0 +1,9 @@
+piot-test-win98 액션 메모
+
+**추가하면 추가해야할 파일 actions.js / actionTypes.js / reducer.js / Icons.js / DockbarGroup.js / 
+
+*자기소개서
+ㄴ아이콘 title : 자기소개서
+ㄴ이미지 , 태그이름 : Myresume
+ㄴ액션이름 : RESUME
+ㄴ

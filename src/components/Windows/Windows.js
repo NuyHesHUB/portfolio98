@@ -5,8 +5,9 @@ import styled from 'styled-components';
 
 import Icons from '../Icon/Icons'
 import Dockbar from '../Dockbar/Dockbar';
-import Notepad from './Notepad'
 
+import Notepad from './Notepad'
+import Resume from './Resume';
 
 
 
@@ -24,7 +25,7 @@ const StyledWindows=styled.div`
 `
 
 
-function Windows({notepadVisible}){
+function Windows({notepadVisible, resumeVisible}){
     const [audio] = useState(new Audio(startup));
 
     useEffect(() => {
@@ -39,7 +40,9 @@ function Windows({notepadVisible}){
     function contextDisable(e){
         e.preventDefault();
     }
+
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
+    const resumeDisplay = resumeVisible ? <Resume/> : null;
 
     return (
         
@@ -47,6 +50,7 @@ function Windows({notepadVisible}){
             <h2>Windows페이지</h2>
             <Icons/>
             {notepadDisplay}
+            {resumeDisplay}
             <Dockbar/>
         </StyledWindows>
     );
@@ -54,7 +58,8 @@ function Windows({notepadVisible}){
 const mapStateToProps=(state)=>{
     return{
         shutDown: state.shutDown,
-        notepadVisible: state.notepad.show
+        notepadVisible: state.notepad.show,
+        resumeVisible: state.resume.show
     }
 }
 

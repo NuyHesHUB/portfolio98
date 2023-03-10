@@ -13,6 +13,11 @@ const initialState = {
     blurred: false,
     minimized: false
   },
+  resume: {
+    show: false,
+    blurred: false,
+    minimized: false
+  },
   shutDown: false
 }
 
@@ -27,8 +32,15 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
+        resume:{
+          ...state.resume
+        },
         shutDown: true
       }
+
+    /*----------------------------------------*\
+                actionTypes START
+    \*----------------------------------------*/
 
     case actionTypes.START_BUTTON_CLICKED:
       return {
@@ -39,6 +51,10 @@ const reducer = (state = initialState, action) => {
         },
         notepad: {
           ...state.notepad,
+          blurred: true
+        },
+        resume: {
+          ...state.resume,
           blurred: true
         },
         showStart: !state.showStart
@@ -53,8 +69,15 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
+        resume: {
+          ...state.resume
+        },
         showStart: false
       }
+
+    /*----------------------------------------*\
+                actionTypes OPEN
+    \*----------------------------------------*/
 
     case actionTypes.OPEN_MODAL:
       return {
@@ -66,7 +89,11 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
-        showModal: true
+        showModal: true,
+        resume: {
+          ...state.resume,
+          blurred: true
+        }
       }
 
     case actionTypes.OPEN_NOTEPAD:
@@ -80,6 +107,10 @@ const reducer = (state = initialState, action) => {
           show: true,
           blurred: false,
           minimized: false
+        },
+        resume: {
+          ...state.resume,
+          blurred: true
         }
       }
 
@@ -94,8 +125,34 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad,
           blurred: true
+        },
+        resume: {
+          ...state.resume,
+          blurred: true
         }
       }
+
+      case actionTypes.OPEN_RESUME:
+        return {
+          ...state,
+          about: {
+            ...state.about,
+            blurred: true,
+          },
+          notepad: {
+            ...state.notepad,
+            blurred: true
+          },
+          resume: {
+            show: true,
+            blurred: false,
+            minimized: false
+          }
+        }
+
+    /*----------------------------------------*\
+                actionTypes FOCUS
+    \*----------------------------------------*/
 
     case actionTypes.FOCUS_NOTEPAD:
       return {
@@ -106,6 +163,9 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad,
           blurred: false
+        },
+        resume: {
+          ...state.resume
         }
       }
 
@@ -118,9 +178,32 @@ const reducer = (state = initialState, action) => {
         },
         notepad: {
           ...state.notepad
+        },
+        resume: {
+          ...state.resume
         }
       }
     }
+
+    case actionTypes.FOCUS_RESUME: {
+      return {
+        ...state,
+        about: {
+          ...state.about,
+        },
+        notepad: {
+          ...state.notepad
+        },
+        resume: {
+          ...state.resume,
+          blurred: false
+        }
+      }
+    }
+
+    /*----------------------------------------*\
+                actionTypes BLUR
+    \*----------------------------------------*/
 
     case actionTypes.BLUR_NOTEPAD:
       return {
@@ -131,6 +214,9 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad,
           blurred: true,
+        },
+        resume: {
+          ...state.resume
         }
       }
 
@@ -143,8 +229,30 @@ const reducer = (state = initialState, action) => {
         },
         notepad: {
           ...state.notepad
+        },
+        resume: {
+          ...state.resume
         }
       }
+
+      case actionTypes.BLUR_RESUME:
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        resume: {
+          ...state.resume,
+          blurred: true
+        }
+      }
+
+    /*----------------------------------------*\
+                actionTypes MINIMIZE
+    \*----------------------------------------*/
 
     case actionTypes.MINIMIZE_NOTEPAD:
       return {
@@ -155,6 +263,9 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad,
           minimized: true
+        },
+        resume: {
+          ...state.resume
         }
       }
 
@@ -167,8 +278,30 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about,
           minimized: true
+        },
+        resume: {
+          ...state.resume
         }
       }
+
+    case actionTypes.MINIMIZE_RESUME:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume,
+          minimized: true
+        }
+      }
+
+    /*----------------------------------------*\
+                actionTypes MAXIMIZE
+    \*----------------------------------------*/
 
     case actionTypes.MAXIMIZE_NOTEPAD:
       return {
@@ -180,6 +313,9 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           blurred: false,
           minimized: false
+        },
+        resuem: {
+          ...state.resume
         }
       }
 
@@ -193,8 +329,31 @@ const reducer = (state = initialState, action) => {
           ...state.about,
           minimized: false,
           blurred: false
+        },
+        resuem: {
+          ...state.resume
         }
       }
+
+    case actionTypes.MAXIMIZE_RESUME:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      resuem: {
+        ...state.resume,
+        minimized: false,
+        blurred: false
+      }
+    }
+
+    /*----------------------------------------*\
+                actionTypes EXIT
+    \*----------------------------------------*/
 
     case actionTypes.EXIT_NOTEPAD:
       return {
@@ -206,6 +365,9 @@ const reducer = (state = initialState, action) => {
           show: false,
           minimized: false,
           blurred: false
+        },
+        resume: {
+          ...state.resume
         }
       }
 
@@ -219,6 +381,9 @@ const reducer = (state = initialState, action) => {
           show: false,
           blurred: false,
           minimized: false
+        },
+        resume: {
+          ...state.resume
         }
       }
 
@@ -231,7 +396,26 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
-        showModal: false
+        showModal: false,
+        resume: {
+          ...state.resume
+        }
+      }
+    
+    case actionTypes.EXIT_RESUME:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          show: false,
+          blurred: false,
+          minimized: false
+        }
       }
 
     default: return state;

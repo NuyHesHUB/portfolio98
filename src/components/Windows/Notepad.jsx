@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 import WindowsFrame from './WindowsFrame/WindowsFrame'
 import {focusNotepad, blurNotepad, minimizeNotepad, exitNotepad} from '../../store/actions/actions'

@@ -12,18 +12,55 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     z-index: ${props=>props.blurred? `1` : `8`};
     padding: 3px 4px 4px 4px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
-
+    margin: 8px;
     div.Notepad {
     height: 300px;
     background-color: rgb(255, 255, 255);
-    overflow: auto;
+    overflow-y: auto;
     box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
     border-right: 2px solid rgb(240, 240, 240); 
     border-bottom: 2px solid rgb(240, 240, 240); 
     box-sizing: border-box;
     padding: 3px 0 0 4px;
     font-size: 13px;
-  }
+    /* &::-webkit-scrollbar {
+    width: 20px;
+    background: green;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: red;
+    } */
+    }
+    div.Resume {
+    height: 800px;
+    overflow-y: auto;
+    /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
+    box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
+    /* border-right: 2px solid rgb(240, 240, 240); 
+    border-bottom: 2px solid rgb(240, 240, 240);  */
+    box-sizing: border-box;
+    padding: 3px 0 0 4px;
+    font-size: 13px;
+        h2{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .profile{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .project01{
+            width: 250px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+    }
 `;
 
 export const TitleBar = styled.div`
@@ -75,8 +112,9 @@ flex-direction: row;
 width: 25%;
 justify-content: space-between;
 span {
-  padding: 2px 8px;
+  padding: 1px 8px;
   margin: 1px;
+  font-size: 12px;
 }
 span:hover {
   background-color: rgb(0, 0, 127);

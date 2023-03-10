@@ -34,7 +34,6 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
     function random(){
         return Math.round(Math.random()*100);
     }
-
     const menu = showMenu ?
     <StyledMenu >
         <span><u>F</u>ile</span>
