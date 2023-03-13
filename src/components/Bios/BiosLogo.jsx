@@ -23,12 +23,12 @@ const BiosLogoStyled=styled.div`
       transform: scale(0.8, 0.8) translate3d(0, -100%, 0);
       opacity: 1;
     }
-    15% {
+    35% {
       transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
       filter: brightness(4);
       opacity: 0;
     }
-    20% {
+    60% {
       transform: scale(1.1, 1.1) translate3d(0, 0, 0);
       filter: contrast(0) brightness(0);
       opacity: 0;
@@ -50,7 +50,7 @@ const BiosLogo = () => {
                 &nbsp;____ /   //  //  //  //  //____   //  _____//   _   //_    _ //  _____//  //  //  /|   /<br/> 
                 &nbsp;/  //   //  //  //  //  //_____/ //  /____ /  / /  /  /   /  /  /____ /  //  //  / /  /<br/> 
                 /_______//______//______//_______//_______//__/ /__/  /___/  /_______//______//__/ /__/<br/>
-                &nbsp;                                                                              v. 0.10.11
+                &nbsp;                                                                              v. 0.01.11
             </pre>
         </BiosLogoStyled>
     );

@@ -32,9 +32,10 @@ function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResume
         resume.show ?
             <WindowsFrame
                 id="Resume"
-                x="1000"
-                y="1000"
+                x="100"
+                y="100"
                 width="700"
+                height="200"
                 img={resumeImage}
                 title="Front-end - 자기소개서"
                 blurred={resume.blurred}

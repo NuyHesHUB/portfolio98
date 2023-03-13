@@ -32,7 +32,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     } */
     }
     div.Resume {
-    height: 800px;
+    height: 700px;
     overflow-y: auto;
     /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
     box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;

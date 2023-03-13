@@ -10,17 +10,20 @@ const initialState = {
   about: {
     show: false,
     blurred: false,
-    minimized: false
+    minimized: false,
+    maximized:false,
   },
   notepad: {
     show: false,
     blurred: false,
-    minimized: false
+    minimized: false,
+    maximized:false,
   },
   resume: {
-    show: false,
+    show: true,
     blurred: false,
-    minimized: false
+    minimized: false,
+    maximized:false,
   },
   shutDown: false
 }
@@ -332,7 +335,8 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad,
           blurred: false,
-          minimized: false
+          minimized: false,
+          maximized: true
         },
         resuem: {
           ...state.resume
@@ -348,7 +352,8 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about,
           minimized: false,
-          blurred: false
+          blurred: false,
+          maximized: true,
         },
         resuem: {
           ...state.resume
@@ -367,7 +372,8 @@ const reducer = (state = initialState, action) => {
       resuem: {
         ...state.resume,
         minimized: false,
-        blurred: false
+        blurred: false,
+        maximized: true
       }
     }
 

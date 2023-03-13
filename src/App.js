@@ -2,6 +2,7 @@ import React/* , { useState, useEffect }  */from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Bios from './components/Bios/Bios';
+import Loading from './components/Loading/Loading';
 import Windows from './components/Windows/Windows'
 import './styles/total_style.css'
 import {Provider} from 'react-redux'
@@ -16,6 +17,7 @@ function App() {
       <Provider store={store}>
         <Routes>
             <Route path={"/"} element={<Bios />}></Route>
+            <Route path={"/Loading"} element={<Loading />}></Route>
             <Route path={"/Windows"} element={<Windows />}></Route>
         </Routes>
         </Provider>

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+/* import { useDispatch, useSelector } from 'react-redux';
 import { ChangeBiosLoadingStatus } from '../store/actions/actions';
 export function useBiosLoading() {
     const { isBiosLoaded } = useSelector();
@@ -9,4 +9,4 @@ export function useBiosLoading() {
             return dispatch(ChangeBiosLoadingStatus(isBiosLoaded));
         },
     };
-}
+} */

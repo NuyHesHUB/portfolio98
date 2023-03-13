@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React/* , {useCallback, useEffect, useState} */ from 'react';
 import styled from 'styled-components';
 
 import { BiosInfoEntry } from './BiosInfoEntry';
@@ -6,7 +6,7 @@ import { BiosInfoSection, BiosInfoSectionStyled} from './BiosInfoSection';
 
 import BiosLogo from './BiosLogo';
 
-import { useBiosLoading } from '../../hooks/useBiosLoading';
+/* import { useBiosLoading } from '../../hooks/useBiosLoading'; */
 import { useBrowserInfo } from '../../hooks/useBrowserInfo';
 import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
 
@@ -72,7 +72,7 @@ const LOAD_WITHOUT_SOUND_KEY = 'm'
 const Bios = () => {
     /* const { projectUrl } = getEnvConfig(); */
     const browserInfo = useBrowserInfo();
-    const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState();
+    /* const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState(); */
     
     /* useEffect(() => {
         

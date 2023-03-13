@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 import WindowsFrame from './WindowsFrame/WindowsFrame'
-import {focusNotepad, blurNotepad, minimizeNotepad, exitNotepad} from '../../store/actions/actions'
+import {focusNotepad, blurNotepad, minimizeNotepad, maximizeNotepad, exitNotepad} from '../../store/actions/actions'
 import notepadImage from '../../assets/dockbar-icon/notepad.png'
 
-function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, onNotepadExit }) {
+function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, onNotepadMaximize ,onNotepadExit }) {
     const inputRef = React.createRef();
   
     useEffect(() => {
@@ -36,8 +36,10 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, on
           blurred={notepad.blurred}
           showMenu={true}
           onMinimize={onNotepadMinimize}
+          onMaximize={onNotepadMaximize}
           onExit={onNotepadExit}
-          isMinimized={notepad.minimized}>
+          isMinimized={notepad.minimized}
+          isMaximized={notepad.maximized}>
           <div
             className="Notepad"
             contentEditable="true"
@@ -59,6 +61,7 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, on
       onNotepadBlur: () => dispatch(blurNotepad()),
       onNotepadFocus: () => dispatch(focusNotepad()),
       onNotepadMinimize: () => dispatch(minimizeNotepad()),
+      onNotepadMaximize: () => dispatch(maximizeNotepad()),
       onNotepadExit: () => dispatch(exitNotepad()),
     }
   }

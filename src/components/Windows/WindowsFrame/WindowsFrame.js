@@ -5,7 +5,7 @@ import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximizeDisabled from '../../../assets/titlebar-icons/maximize-disabled.png';
 import close from '../../../assets/titlebar-icons/close.png';
 
-function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, onMaximize, onExit, isMinimized}){
+function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, onMaximize, onExit, isMinimized, isMaximized}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
 
@@ -32,7 +32,7 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
         window.onmouseup = null;
       }
     function random(){
-        return Math.round(Math.random()*100);
+        return Math.round(Math.random()*30);
     }
     const menu = showMenu ?
     <StyledMenu >
@@ -49,6 +49,7 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
             id={id}
             width={width}
             isMinimized={isMinimized}
+            isMaximized={isMaximized}
             blurred={blurred}
         >
             <TitleBar blurred={blurred}>
@@ -58,8 +59,8 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
                     <button className='clickable' onClick={()=> onMinimize()}>
                         <img src={minimize} draggable='false' alt='minimize'/>
                     </button>
-                    <button className='clickable'/*  onClick={()=> onMaximize()} */>
-                        <img src={maximizeDisabled} draggable='false' alt='minimize'/>
+                    <button className='clickable' onClick={()=> onMaximize()}>
+                        <img src={maximizeDisabled} draggable='false' alt='maximize'/>
                     </button>
                     <button className='clickable' onClick={()=> onExit()}>
                         <img src={close} draggable='false' alt='close'/>
