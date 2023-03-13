@@ -1,6 +1,10 @@
 import * as actionTypes from '../actions/actionTypes';
+import { getEnvConfig } from '../../components/utiles/getEnvConfig';
 
 const initialState = {
+  isBiosLoaded : getEnvConfig().isDevelopment,
+  isWindowsLoaded : getEnvConfig().isDevelopment,
+  systemLoading: false,
   showStart: false,
   showModal: false,
   about: {
@@ -23,6 +27,22 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    /*----------------------------------------*\
+                actionTypes BIOS
+    \*----------------------------------------*/
+    case actionTypes.CHANGE_BIOS_LOADING_STATUS:
+      return {
+        ...state,
+        isBiosLoaded: action.loadingStatus
+      }
+      case actionTypes.CHANGE_WINDOWS_LOADING_STATUS:
+        return {
+          ...state,
+          isWindowsLoaded: action.loadingStatus
+      }
+    /*----------------------------------------*\
+                actionTypes SHUT_DOWN
+    \*----------------------------------------*/
     case actionTypes.SHUT_DOWN:
       return {
         ...state,

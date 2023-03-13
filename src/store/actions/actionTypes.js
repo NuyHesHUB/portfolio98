@@ -1,8 +1,14 @@
 /*----------------------------------------*\
+                    BIOS
+\*----------------------------------------*/
+export const CHANGE_BIOS_LOADING_STATUS = 'CHANGE_BIOS_LOADING_STATUS'
+
+export const CHANGE_WINDOWS_LOADING_STATUS = 'CHANGE_WINDOWS_LOADING_STATUS'
+
+/*----------------------------------------*\
                 SHUT_DOWN
 \*----------------------------------------*/
 export const SHUT_DOWN = 'SHUT_DOWN';
-
 
 /*----------------------------------------*\
                   START

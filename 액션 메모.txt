@@ -6,4 +6,6 @@ piot-test-win98 액션 메모
 ㄴ아이콘 title : 자기소개서
 ㄴ이미지 , 태그이름 : Myresume
 ㄴ액션이름 : RESUME
-ㄴ
+ㄴ버튼클래스명 resume-button , 
+
+252 183

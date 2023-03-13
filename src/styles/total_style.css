@@ -1,11 +1,15 @@
 /* background-color: #008080; */
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 *{
     box-sizing: border-box;
     outline: none;
     margin: 0;
     padding: 0;
 }
+/* i{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+} */
 html, body, .App{
     margin: 0;
     overflow: hidden;

@@ -1,4 +1,22 @@
 import * as actionTypes from './actionTypes';
+
+/*----------------------------------------*\
+                    BIOS
+\*----------------------------------------*/
+export function ChangeBiosLoadingStatus() {
+  return {
+    type: actionTypes.CHANGE_BIOS_LOADING_STATUS,
+    loadingStatus: Boolean
+  }
+}
+
+export function ChangeWindowsLoadingStatus() {
+  return {
+    type: actionTypes.CHANGE_WINDOWS_LOADING_STATUS,
+    loadingStatus: Boolean
+  }
+}
+
 /*----------------------------------------*\
                 SHUT_DOWN
 \*----------------------------------------*/
