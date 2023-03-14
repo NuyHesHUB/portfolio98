@@ -8,7 +8,7 @@ const BiosLogoStyled=styled.div`
     white-space: pre-line;
     font-family: monospace;
     margin-top: 20px;
-    animation: 1000ms linear 1ms normal forwards 1 running on;
+    animation: 2500ms linear 1ms normal forwards 1 running on;
     animation-iteration-count : 1;
     @keyframes on {
     0% {

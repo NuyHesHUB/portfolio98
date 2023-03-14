@@ -5,7 +5,6 @@ const BiosInfoEntryStyled = styled.tr`
     > td{
         vertical-align: top;
     }
-
 `
 export const BiosInfoEntry = ({label, value}) => {
     return (

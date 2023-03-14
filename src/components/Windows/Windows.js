@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect/* , useRef */} from 'react';
 import {connect} from 'react-redux'
 
 import styled from 'styled-components';
@@ -13,7 +13,8 @@ import Resume from './Resume';
 
 import startup from '../../assets/sounds/startup.mp3'
 
-
+/* hook */
+/* import { useFullscreen } from '../../hooks/useFullscreen'; */
 
 
 const StyledWindows=styled.div`
@@ -27,7 +28,6 @@ const StyledWindows=styled.div`
 
 function Windows({notepadVisible, resumeVisible}){
     const [audio] = useState(new Audio(startup));
-
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
       audio.play();
@@ -43,14 +43,34 @@ function Windows({notepadVisible, resumeVisible}){
 
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
     const resumeDisplay = resumeVisible ? <Resume/> : null;
+    
+/*     const Fullscreen = useFullscreen();
+    const { element, triggerFull, exitFull } = Fullscreen; */
+
+    /* window.addEventListener('load',function(){
+        console.log('load');
+        console.log(triggerFull);
+        return {triggerFull}
+    }) */
+    /* window.addEventListener('load',triggerFull) */
+/* ------------------------------------------------------------------- */
+    
+    /* const Fullscreen = useFullscreen();
+    const { element, triggerFull, exitFull } = Fullscreen; *//* (onChange); */
+    
 
     return (
         
-        <StyledWindows className='App'>
+        <StyledWindows className='App'/*  ref={element} */ /* onClick={triggerFull} */>
             <h2>Windows페이지</h2>
             <Icons/>
             {notepadDisplay}
             {resumeDisplay}
+            {/* <div ref={element}> */}
+                <h1>Hello</h1>
+                <button /* onClick={triggerFull} */>Make this Fullscreen</button>
+                <button /* onClick={exitFull} */>Exit Fullscreen</button>
+            {/* </div> */}
             <Dockbar/>
         </StyledWindows>
     );

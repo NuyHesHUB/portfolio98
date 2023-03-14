@@ -21,12 +21,13 @@ import reducer from './store/reducers/reducer'
 
 import './styles/index.css'
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = createStore(reducer);
 
 root.render(
   <Provider store={store}>
-    <App />
+    <App/>
   </Provider>
 );
 reportWebVitals();

@@ -1,4 +1,4 @@
-import React/* , {useCallback, useEffect, useState} */ from 'react';
+import React, {/* useCallback, useEffect, useState */} from 'react';
 import styled from 'styled-components';
 
 import { BiosInfoEntry } from './BiosInfoEntry';
@@ -9,6 +9,8 @@ import BiosLogo from './BiosLogo';
 /* import { useBiosLoading } from '../../hooks/useBiosLoading'; */
 import { useBrowserInfo } from '../../hooks/useBrowserInfo';
 import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
+
+/* import { useFullscreen } from '../../hooks/useFullscreen'; */
 
 /* import { getEnvConfig } from '../utiles/getEnvConfig'; */
 
@@ -23,6 +25,37 @@ const StyledBios=styled.div`
     padding: 0 200px;
     display: flex;
     background-color: #000;
+    animation: 500ms linear 200ms normal forwards 1 running on;
+    animation-iteration-count : 1;
+    @keyframes on {
+    0% {
+      transform: scale(1, 1) translate3d(0, 0, 0);
+      filter: brightness(4);
+      opacity: 1;
+    }
+    5% {
+      transform: scale(0.8, 0.8) translate3d(0, 100%, 0);
+    }
+    10% {
+      transform: scale(0.8, 0.8) translate3d(0, -100%, 0);
+      opacity: 1;
+    }
+    35% {
+      transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
+      filter: brightness(4);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+      filter: contrast(0) brightness(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1, 1) translate3d(0, 0, 0);
+      filter: contrast(1) brightness(1.2) saturate(1.3);
+      opacity: 1;
+    }
+  }
 `;
 
 const BiosInfoSections=styled.div`
@@ -49,6 +82,7 @@ const BiosInfoSections=styled.div`
 const Energylogo =styled.img`
     margin-left: auto;
 `
+
 /* const FALLBACK_LABEL = 'Unknown'; */
 
 /* const getStorageUsage = ({ usage, quota }) => {
@@ -65,14 +99,33 @@ const Energylogo =styled.img`
 }; */
 
 
-const LOAD_WITH_SOUND_KEY = 'Enter'
-const LOAD_WITHOUT_SOUND_KEY = 'm'
+/* const LOAD_WITH_SOUND_KEY = 'Enter' */
+/* const LOAD_WITH_SOUND_KEY = 'F11'
+const LOAD_WITHOUT_SOUND_KEY = 'm' */
+
+const LOAD_WITH_FULLSCREEN_KEY = 'F11'
+const LOAD_WITHOUT_FULLSCREEN_KEY = 'm'
 
 
 const Bios = () => {
     /* const { projectUrl } = getEnvConfig(); */
     const browserInfo = useBrowserInfo();
     /* const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState(); */
+
+    /* const Fullscreen = useFullscreen();
+    const { element, triggerFull, exitFull } = Fullscreen; */
+
+    /* const onKeyPressed=(e)=>{
+        e.preventDefault();
+        console.log(e.key);
+      }; */
+
+
+      /* function onKeyPressed(e, key, onKeyDown) {
+                e.preventDefault();
+                console.log(e.key);
+                triggerFull();
+    } */
     
     /* useEffect(() => {
         
@@ -88,9 +141,10 @@ const Bios = () => {
     }, [setIsBiosLoaded, setIsSystemLoading]); */
 
 
-    useOnKeyDownOnce(LOAD_WITH_SOUND_KEY)
+    useOnKeyDownOnce(LOAD_WITH_FULLSCREEN_KEY)
+    
     return(
-        <StyledBios>
+        <StyledBios /* ref={element} onKeyDown={onKeyPressed} tabIndex={0} */>
             <BiosInfoSections>
                 <BiosInfoSection>
                     <tr>
@@ -115,13 +169,12 @@ const Bios = () => {
                     <BiosInfoEntry label="Current Date Time" value={new Date().toLocaleString()}/>
                     <BiosInfoEntry label="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone}/>
                 </BiosInfoSection>
-                <div style={{marginBottom:'20px'}}>
+                <div style={{marginBottom:'50px'}}>
                     <p>
-                        Press <strong>{LOAD_WITH_SOUND_KEY}</strong> to startup WIN98.
+                        Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.
                     </p>
                     <p>
-                        Press <strong>{LOAD_WITHOUT_SOUND_KEY}</strong> to do it without
-            sound.
+                        Press <strong>{LOAD_WITHOUT_FULLSCREEN_KEY}</strong> to Normal-Screen Startup PortFolio 98.
                     </p>
                 </div>
             </BiosInfoSections>

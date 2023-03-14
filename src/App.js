@@ -9,19 +9,30 @@ import {Provider} from 'react-redux'
 import { createStore } from 'redux';
 import reducer from './store/reducers/reducer'
 
+
+/* import { useFullscreen } from './hooks/useFullscreen'; */
+
 function App() {
   
   const store = createStore(reducer);
+  /* const Fullscreen = useFullscreen();
+  const { element, triggerFull, exitFull } = Fullscreen;
+  function onKeyPressed(e, key, onKeyDown) {
+    e.preventDefault();
+    console.log(e.key);
+    triggerFull();
+} */
+/* ref={element} onKeyDown={onKeyPressed} tabIndex={0} */
   return (
-      <BrowserRouter>
-      <Provider store={store}>
-        <Routes>
-            <Route path={"/"} element={<Bios />}></Route>
-            <Route path={"/Loading"} element={<Loading />}></Route>
-            <Route path={"/Windows"} element={<Windows />}></Route>
-        </Routes>
-        </Provider>
-      </BrowserRouter> 
+        <BrowserRouter >
+        <Provider store={store} >
+            <Routes >
+                <Route path={"/"} element={<Bios />}></Route>
+                <Route path={"/Loading"} element={<Loading />}></Route>
+                <Route path={"/Windows"} element={<Windows />}></Route>
+            </Routes>
+          </Provider>
+        </BrowserRouter> 
   );
 }
 
