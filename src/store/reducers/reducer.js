@@ -326,7 +326,7 @@ const reducer = (state = initialState, action) => {
                 actionTypes MAXIMIZE
     \*----------------------------------------*/
 
-    case actionTypes.MAXIMIZE_NOTEPAD:
+    /* case actionTypes.MAXIMIZE_NOTEPAD:
       return {
         ...state,
         about: {
@@ -375,7 +375,7 @@ const reducer = (state = initialState, action) => {
         blurred: false,
         maximized: true
       }
-    }
+    } */
 
     /*----------------------------------------*\
                 actionTypes EXIT

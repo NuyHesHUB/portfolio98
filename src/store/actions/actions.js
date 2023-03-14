@@ -133,7 +133,7 @@ export function minimizeResume() {
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
-export function maximizeNotepad() {
+/* export function maximizeNotepad() {
   return {
     type: actionTypes.MAXIMIZE_NOTEPAD
   }
@@ -149,7 +149,7 @@ export function maximizeResume() {
   return {
     type: actionTypes.MAXIMIZE_RESUME
   }
-}
+} */
 
 /*----------------------------------------*\
                    EXIT

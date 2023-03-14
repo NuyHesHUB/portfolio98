@@ -42,6 +42,9 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
         <span><u>H</u>elp</span>
     </StyledMenu> : null;
 
+    const onMaxi=()=>{
+        console.log(onMaxi);
+    }
     return (
         <StyledFrame
             left={coordinates.x}
@@ -59,7 +62,7 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
                     <button className='clickable' onClick={()=> onMinimize()}>
                         <img src={minimize} draggable='false' alt='minimize'/>
                     </button>
-                    <button className='clickable' onClick={()=> onMaximize()}>
+                    <button className='clickable full' onClick={()=> onMaxi()}>
                         <img src={maximizeDisabled} draggable='false' alt='maximize'/>
                     </button>
                     <button className='clickable' onClick={()=> onExit()}>

@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import loadingImg from '../../assets/bios-img/windows98_logo_수정.png'
+import loadingImg from '../../assets/bios-img/windows98_logo_수정2.png'
+import '../../styles/loading.scss'
 
 const StyledLoading=styled.div`
+    padding-top: 10px;
     width: 100vw;
     height: 100vh;
     position: relative;
+    background: rgb(119,173,214);
 `;
 const LoadingImg = styled.img`
     width: 100vw;
@@ -26,10 +29,10 @@ const LoadingAni = styled.div`
       animation: loading steps(16) 1s infinite;
       @keyframes loading {
         0% {
-          background-position-x: -812px;
+          background-position-x: -1012px;
         }
         100% {
-          background-position-x: 812px;
+          background-position-x: 1012px;
         }
       }
 `
@@ -44,8 +47,14 @@ const Loading = () => {
       }, []);
 
     return (
-        <StyledLoading>
-            <LoadingImg src={loadingImg} alt="logo"/>
+        <StyledLoading >
+            <div className='glitch-bg glitch--style-1'>
+              <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
+              <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
+              <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
+              <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
+              <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
+            </div>
             <LoadingAni/>
         </StyledLoading>
     );

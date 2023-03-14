@@ -10,11 +10,7 @@ import Notepad from './Notepad'
 import Resume from './Resume';
 
 
-
 import startup from '../../assets/sounds/startup.mp3'
-
-/* hook */
-/* import { useFullscreen } from '../../hooks/useFullscreen'; */
 
 
 const StyledWindows=styled.div`
@@ -30,7 +26,9 @@ function Windows({notepadVisible, resumeVisible}){
     const [audio] = useState(new Audio(startup));
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
+      audio.muted = true;
       audio.play();
+      audio.muted = false;
       return () => {
         window.removeEventListener('contextmenu', contextDisable);
       }
@@ -66,11 +64,6 @@ function Windows({notepadVisible, resumeVisible}){
             <Icons/>
             {notepadDisplay}
             {resumeDisplay}
-            {/* <div ref={element}> */}
-                <h1>Hello</h1>
-                <button /* onClick={triggerFull} */>Make this Fullscreen</button>
-                <button /* onClick={exitFull} */>Exit Fullscreen</button>
-            {/* </div> */}
             <Dockbar/>
         </StyledWindows>
     );

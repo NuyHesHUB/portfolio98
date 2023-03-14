@@ -51,9 +51,9 @@ export const MINIMIZE_RESUME = 'MINIMIZE_RESUME';
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
-export const MAXIMIZE_NOTEPAD = 'MAXIMIZE_NOTEPAD';
+/* export const MAXIMIZE_NOTEPAD = 'MAXIMIZE_NOTEPAD';
 export const MAXIMIZE_ABOUT = 'MAXIMIZE_ABOUT';
-export const MAXIMIZE_RESUME = 'MAXIMIZE_RESUME';
+export const MAXIMIZE_RESUME = 'MAXIMIZE_RESUME'; */
 
 
 /*----------------------------------------*\

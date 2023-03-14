@@ -53,7 +53,7 @@ function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResume
                     <h2>프론트엔드 개발자 주세현입니다.</h2><br/>
                     <img className='profile' src={profile} alt="profile"
                         style={{
-                            width:'20%'
+                            width:'200px'
                         }}
                     />              
                     <div>
