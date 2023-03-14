@@ -5,9 +5,12 @@ import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximizeDisabled from '../../../assets/titlebar-icons/maximize-disabled.png';
 import close from '../../../assets/titlebar-icons/close.png';
 
+import styles from '../../../styles/modal.module.scss'
+
 function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, onMaximize, onExit, isMinimized, isMaximized}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
+    const [resize, setResize] = useState(true);
 
     useEffect(()=>{
         const frameTitle = document.querySelector('#' + id + ' .title');
@@ -41,19 +44,19 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
         <span><u>S</u>earch</span>
         <span><u>H</u>elp</span>
     </StyledMenu> : null;
-
-    const onMaxi=()=>{
-        console.log(onMaxi);
-    }
+    const onHandleSize = () => {
+        setResize(!resize);
+      };
+    
     return (
         <StyledFrame
             left={coordinates.x}
             top={coordinates.y}
             id={id}
-            width={width}
+            /* width={width} */
             isMinimized={isMinimized}
-            isMaximized={isMaximized}
             blurred={blurred}
+            className={resize ? styles.modal : styles.big_modal}
         >
             <TitleBar blurred={blurred}>
                 <img src={img} draggable='false' alt='MiniIcon'/>
@@ -62,7 +65,7 @@ function Frame({children, id, img, title, blurred, showMenu, width, onMinimize, 
                     <button className='clickable' onClick={()=> onMinimize()}>
                         <img src={minimize} draggable='false' alt='minimize'/>
                     </button>
-                    <button className='clickable full' onClick={()=> onMaxi()}>
+                    <button className={`${styles.clickable} ${styles.container2}`} onClick={onHandleSize}>
                         <img src={maximizeDisabled} draggable='false' alt='maximize'/>
                     </button>
                     <button className='clickable' onClick={()=> onExit()}>

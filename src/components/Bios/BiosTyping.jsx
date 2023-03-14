@@ -3,7 +3,7 @@ import styled from 'styled-components';
 /* import '../styles/Typing.css' */
 const StyledBiosTyping = styled.span`
     white-space: pre-wrap;
-    line-height: 2;
+    line-height: 1.4;
     animation: cursor 1s step-end infinite;
     animation-duration: 0.3s; 
     animation-iteration-count: 15;

@@ -14,6 +14,7 @@ import startup from '../../assets/sounds/startup.mp3'
 
 
 const StyledWindows=styled.div`
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-image: url('/assets/wallpaper/구름.bmp');
