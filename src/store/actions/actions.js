@@ -133,7 +133,7 @@ export function minimizeResume() {
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
-/* export function maximizeNotepad() {
+export function maximizeNotepad() {
   return {
     type: actionTypes.MAXIMIZE_NOTEPAD
   }
@@ -149,8 +149,26 @@ export function maximizeResume() {
   return {
     type: actionTypes.MAXIMIZE_RESUME
   }
-} */
+}
 
+/*----------------------------------------*\
+                  DISABLED
+\*----------------------------------------*/
+export function disabledAbout() {
+  return {
+    type: actionTypes.DISABLED_ABOUT
+  }
+}
+export function disabledNotepad() {
+  return {
+    type: actionTypes.DISABLED_NOTEPAD
+  }
+}
+export function disabledResume() {
+  return {
+    type: actionTypes.DISABLED_RESUME
+  }
+}
 /*----------------------------------------*\
                    EXIT
 \*----------------------------------------*/

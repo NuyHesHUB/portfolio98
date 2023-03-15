@@ -10,6 +10,8 @@ import { startButtonClicked, openNotepad, openResume} from '../../store/actions/
 import notepadImg from '../../assets/dockbar-icon/notepad.png'
 import resumeImg from '../../assets/dockbar-icon/Myresume.png'
 
+/* import { Frame, onFullsize} from '../Windows/WindowsFrame/WindowsFrame' */
+
 const StyledDockbarGroup=styled.div`
     height: 100%;
     display: inline-block;
@@ -19,14 +21,23 @@ const StyledGroup = styled.div`
     display: flex;
 `;
 
-
+/* console.log(Frame); */
+/* console.log(onFullsize); */
 
 function DockbarGroup({showStart, notepad, resume, onStartClick, onNotepadClick, onResumeClick}){
+    console.log(resume.maximized);
     const notepadButton = notepad.show?
     <Button
         id="notepad-button"
         pressed={!notepad.minimized && !notepad.blurred}
         clicked={()=> onNotepadClick()}
+        /* clicked={()=> {
+            onNotepadClick();
+            if(resume.maximized===true){
+                console.log('오오오');
+            }
+        }} */
+        
     >
         <div>
             <img src={notepadImg} alt="notepad" /* style={{width:'20px', height:'20px'}} */   />
@@ -39,6 +50,18 @@ function DockbarGroup({showStart, notepad, resume, onStartClick, onNotepadClick,
         id="resume-button"
         pressed={!resume.minimized && !resume.blurred}
         clicked={()=> onResumeClick()}
+        /* clicked={()=>{
+            if(resume.maximized===true){
+                onResumeClick()
+                console.log('트루??');
+                
+            }else{
+                console.log('펄스??');
+                resume.maximized=true;
+                onResumeClick()
+            }
+        }
+        } */
     >
         <div>
             <img src={resumeImg} alt="resume" style={{width:'16px', height:'18px', marginRight:'2px'}}   />

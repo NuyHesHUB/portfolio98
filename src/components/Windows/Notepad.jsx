@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 import WindowsFrame from './WindowsFrame/WindowsFrame'
-import {focusNotepad, blurNotepad, minimizeNotepad, /* maximizeNotepad, */ exitNotepad} from '../../store/actions/actions'
+import {focusNotepad, blurNotepad, minimizeNotepad, maximizeNotepad, disabledNotepad,exitNotepad} from '../../store/actions/actions'
 import notepadImage from '../../assets/dockbar-icon/notepad.png'
 
-function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize/* , onNotepadMaximize */ ,onNotepadExit }) {
+function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, onNotepadMaximize, onNotepadDisabled, onNotepadExit }) {
     const inputRef = React.createRef();
   
     useEffect(() => {
@@ -31,16 +31,18 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize/* ,
           x="120"
           y="90"
           width="600"
-          height="348"
+          /* height="348" */
           img={notepadImage}
           title="Untitled - Notepad"
           blurred={notepad.blurred}
           showMenu={true}
           onMinimize={onNotepadMinimize}
-          /* onMaximize={onNotepadMaximize} */
+          onMaximize={onNotepadMaximize}
+          onDisabled={onNotepadDisabled}
           onExit={onNotepadExit}
           isMinimized={notepad.minimized}
-          /* isMaximized={notepad.maximized} */
+          isMaximized={notepad.maximized}
+          isDisabled={notepad.maximized}
           >
           <div
             className="Notepad"
@@ -63,7 +65,8 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize/* ,
       onNotepadBlur: () => dispatch(blurNotepad()),
       onNotepadFocus: () => dispatch(focusNotepad()),
       onNotepadMinimize: () => dispatch(minimizeNotepad()),
-      /* onNotepadMaximize: () => dispatch(maximizeNotepad()), */
+      onNotepadMaximize: () => dispatch(maximizeNotepad()),
+      onNotepadDisabled: () => dispatch(disabledNotepad()),
       onNotepadExit: () => dispatch(exitNotepad()),
     }
   }

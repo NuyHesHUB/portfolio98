@@ -14,16 +14,16 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     display: ${props=>props.isMinimized ? `none` : `initial`};
     /* margin: 8px; */
     div.Notepad {
-    height: 300px;
+    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
     background-color: rgb(255, 255, 255);
-    overflow-y: auto;
+    overflow:auto;
     box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
     border-right: 2px solid rgb(240, 240, 240); 
     border-bottom: 2px solid rgb(240, 240, 240); 
     box-sizing: border-box;
     padding: 3px 0 0 4px;
     font-size: 13px;
-    
+
     /* &::-webkit-scrollbar {
     width: 20px;
     background: green;
@@ -33,8 +33,11 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     } */
     }
     div.Resume {
-    height: 700px;
-    /* overflow-y: auto; */
+    /* height: 700px; */
+    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `700px`};
+    /* max-height: calc(100vh - 78px);
+    min-height: 700px; */
+    overflow:auto;
     /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
     box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
     /* border-right: 2px solid rgb(240, 240, 240); 

@@ -51,10 +51,16 @@ export const MINIMIZE_RESUME = 'MINIMIZE_RESUME';
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
-/* export const MAXIMIZE_NOTEPAD = 'MAXIMIZE_NOTEPAD';
+export const MAXIMIZE_NOTEPAD = 'MAXIMIZE_NOTEPAD';
 export const MAXIMIZE_ABOUT = 'MAXIMIZE_ABOUT';
-export const MAXIMIZE_RESUME = 'MAXIMIZE_RESUME'; */
+export const MAXIMIZE_RESUME = 'MAXIMIZE_RESUME';
 
+/*----------------------------------------*\
+                  DISABLED
+\*----------------------------------------*/
+export const DISABLED_NOTEPAD = 'DISABLED_NOTEPAD';
+export const DISABLED_ABOUT = 'DISABLED_ABOUT';
+export const DISABLED_RESUME = 'DISABLED_RESUME';
 
 /*----------------------------------------*\
                    EXIT

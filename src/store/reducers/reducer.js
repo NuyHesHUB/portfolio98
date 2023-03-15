@@ -1,10 +1,10 @@
 import * as actionTypes from '../actions/actionTypes';
-import { getEnvConfig } from '../../components/utiles/getEnvConfig';
+/* import { getEnvConfig } from '../../components/utiles/getEnvConfig'; */
 
 const initialState = {
-  isBiosLoaded : getEnvConfig().isDevelopment,
-  isWindowsLoaded : getEnvConfig().isDevelopment,
-  systemLoading: false,
+  /* isBiosLoaded : getEnvConfig().isDevelopment,
+  isWindowsLoaded : getEnvConfig().isDevelopment, */
+  /* systemLoading: false, */
   showStart: false,
   showModal: false,
   about: {
@@ -23,7 +23,7 @@ const initialState = {
     show: true,
     blurred: false,
     minimized: false,
-    maximized:false,
+    maximized: false,
   },
   shutDown: false
 }
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
     /*----------------------------------------*\
                 actionTypes BIOS
     \*----------------------------------------*/
-    case actionTypes.CHANGE_BIOS_LOADING_STATUS:
+    /* case actionTypes.CHANGE_BIOS_LOADING_STATUS:
       return {
         ...state,
         isBiosLoaded: action.loadingStatus
@@ -42,7 +42,7 @@ const reducer = (state = initialState, action) => {
         return {
           ...state,
           isWindowsLoaded: action.loadingStatus
-      }
+      } */
     /*----------------------------------------*\
                 actionTypes SHUT_DOWN
     \*----------------------------------------*/
@@ -129,7 +129,8 @@ const reducer = (state = initialState, action) => {
         notepad: {
           show: true,
           blurred: false,
-          minimized: false
+          minimized: false,
+          /* maximized: true, */
         },
         resume: {
           ...state.resume,
@@ -169,7 +170,8 @@ const reducer = (state = initialState, action) => {
           resume: {
             show: true,
             blurred: false,
-            minimized: false
+            minimized: false,
+            /* maximized: true, */
           }
         }
 
@@ -318,7 +320,8 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume,
-          minimized: true
+          minimized: true,
+          
         }
       }
 
@@ -326,17 +329,15 @@ const reducer = (state = initialState, action) => {
                 actionTypes MAXIMIZE
     \*----------------------------------------*/
 
-    /* case actionTypes.MAXIMIZE_NOTEPAD:
+    case actionTypes.MAXIMIZE_NOTEPAD:
       return {
         ...state,
-        about: {
-          ...state.about
-        },
         notepad: {
           ...state.notepad,
-          blurred: false,
-          minimized: false,
           maximized: true
+        },
+        about: {
+          ...state.about
         },
         resuem: {
           ...state.resume
@@ -351,32 +352,71 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about,
-          minimized: false,
-          blurred: false,
-          maximized: true,
+          maximized: true
         },
         resuem: {
           ...state.resume
         }
       }
-
     case actionTypes.MAXIMIZE_RESUME:
-    return {
-      ...state,
-      notepad: {
-        ...state.notepad
-      },
-      about: {
-        ...state.about
-      },
-      resuem: {
-        ...state.resume,
-        minimized: false,
-        blurred: false,
-        maximized: true
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume,
+          maximized: true
+        }
       }
-    } */
-
+    /*----------------------------------------*\
+            actionTypes MAXIMIZE Disabled
+    \*----------------------------------------*/
+    case actionTypes.DISABLED_NOTEPAD:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad,
+          maximized: false
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume
+        }
+      }
+    case actionTypes.DISABLED_ABOUT:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about,
+          maximized: false
+        },
+        resume: {
+          ...state.resume
+        }
+      }
+    case actionTypes.DISABLED_RESUME:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume,
+          maximized: false
+        }
+      }
     /*----------------------------------------*\
                 actionTypes EXIT
     \*----------------------------------------*/
@@ -390,6 +430,7 @@ const reducer = (state = initialState, action) => {
         notepad: {
           show: false,
           minimized: false,
+          maximized: false,
           blurred: false
         },
         resume: {
@@ -406,7 +447,8 @@ const reducer = (state = initialState, action) => {
         about: {
           show: false,
           blurred: false,
-          minimized: false
+          minimized: false,
+          maximized: false,
         },
         resume: {
           ...state.resume
@@ -440,7 +482,8 @@ const reducer = (state = initialState, action) => {
         resume: {
           show: false,
           blurred: false,
-          minimized: false
+          minimized: false,
+          maximized: false,
         }
       }
 
