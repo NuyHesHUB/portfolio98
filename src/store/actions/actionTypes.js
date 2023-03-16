@@ -1,9 +1,9 @@
 /*----------------------------------------*\
                     BIOS
 \*----------------------------------------*/
-export const CHANGE_BIOS_LOADING_STATUS = 'CHANGE_BIOS_LOADING_STATUS'
+/* export const CHANGE_BIOS_LOADING_STATUS = 'CHANGE_BIOS_LOADING_STATUS'
 
-export const CHANGE_WINDOWS_LOADING_STATUS = 'CHANGE_WINDOWS_LOADING_STATUS'
+export const CHANGE_WINDOWS_LOADING_STATUS = 'CHANGE_WINDOWS_LOADING_STATUS' */
 
 /*----------------------------------------*\
                 SHUT_DOWN
@@ -44,7 +44,7 @@ export const BLUR_RESUME = 'BLUR_RESUME';
                   MINIMIZE
 \*----------------------------------------*/
 export const MINIMIZE_NOTEPAD = 'MINIMIZE_NOTEPAD';
-export const MINIMIZE_ABOUT = 'MINIMIZE_ABOUT';
+/* export const MINIMIZE_ABOUT = 'MINIMIZE_ABOUT'; */
 export const MINIMIZE_RESUME = 'MINIMIZE_RESUME';
 
 
@@ -52,14 +52,14 @@ export const MINIMIZE_RESUME = 'MINIMIZE_RESUME';
                   MAXIMIZE
 \*----------------------------------------*/
 export const MAXIMIZE_NOTEPAD = 'MAXIMIZE_NOTEPAD';
-export const MAXIMIZE_ABOUT = 'MAXIMIZE_ABOUT';
+/* export const MAXIMIZE_ABOUT = 'MAXIMIZE_ABOUT'; */
 export const MAXIMIZE_RESUME = 'MAXIMIZE_RESUME';
 
 /*----------------------------------------*\
                   DISABLED
 \*----------------------------------------*/
 export const DISABLED_NOTEPAD = 'DISABLED_NOTEPAD';
-export const DISABLED_ABOUT = 'DISABLED_ABOUT';
+/* export const DISABLED_ABOUT = 'DISABLED_ABOUT'; */
 export const DISABLED_RESUME = 'DISABLED_RESUME';
 
 /*----------------------------------------*\

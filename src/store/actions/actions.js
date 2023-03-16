@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes';
 /*----------------------------------------*\
                     BIOS
 \*----------------------------------------*/
-export function ChangeBiosLoadingStatus() {
+/* export function ChangeBiosLoadingStatus() {
   return {
     type: actionTypes.CHANGE_BIOS_LOADING_STATUS,
     loadingStatus: Boolean
@@ -15,7 +15,7 @@ export function ChangeWindowsLoadingStatus() {
     type: actionTypes.CHANGE_WINDOWS_LOADING_STATUS,
     loadingStatus: Boolean
   }
-}
+} */
 
 /*----------------------------------------*\
                 SHUT_DOWN
@@ -118,11 +118,11 @@ export function minimizeNotepad() {
   }
 }
 
-export function minimizeAbout() {
+/* export function minimizeAbout() {
   return {
     type: actionTypes.MINIMIZE_ABOUT
   }
-}
+} */
 
 export function minimizeResume() {
   return {
@@ -139,11 +139,11 @@ export function maximizeNotepad() {
   }
 }
 
-export function maximizeAbout() {
+/* export function maximizeAbout() {
   return {
     type: actionTypes.MAXIMIZE_ABOUT
   }
-}
+} */
 
 export function maximizeResume() {
   return {
@@ -154,11 +154,11 @@ export function maximizeResume() {
 /*----------------------------------------*\
                   DISABLED
 \*----------------------------------------*/
-export function disabledAbout() {
+/* export function disabledAbout() {
   return {
     type: actionTypes.DISABLED_ABOUT
   }
-}
+} */
 export function disabledNotepad() {
   return {
     type: actionTypes.DISABLED_NOTEPAD

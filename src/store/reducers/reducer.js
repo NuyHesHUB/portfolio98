@@ -10,8 +10,8 @@ const initialState = {
   about: {
     show: false,
     blurred: false,
-    minimized: false,
-    maximized:false,
+    /* minimized: false,
+    maximized:false, */
   },
   notepad: {
     show: false,
@@ -144,7 +144,7 @@ const reducer = (state = initialState, action) => {
         about: {
           show: true,
           blurred: false,
-          minimized: false
+          /* minimized: false */
         },
         notepad: {
           ...state.notepad,
@@ -171,7 +171,7 @@ const reducer = (state = initialState, action) => {
             show: true,
             blurred: false,
             minimized: false,
-            /* maximized: true, */
+            /* maximized: false, */
           }
         }
 
@@ -294,7 +294,7 @@ const reducer = (state = initialState, action) => {
         }
       }
 
-    case actionTypes.MINIMIZE_ABOUT:
+    /* case actionTypes.MINIMIZE_ABOUT:
       return {
         ...state,
         notepad: {
@@ -307,7 +307,7 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume
         }
-      }
+      } */
 
     case actionTypes.MINIMIZE_RESUME:
       return {
@@ -344,7 +344,7 @@ const reducer = (state = initialState, action) => {
         }
       }
 
-    case actionTypes.MAXIMIZE_ABOUT:
+    /* case actionTypes.MAXIMIZE_ABOUT:
       return {
         ...state,
         notepad: {
@@ -352,12 +352,11 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about,
-          maximized: true
         },
         resuem: {
           ...state.resume
         }
-      }
+      } */
     case actionTypes.MAXIMIZE_RESUME:
       return {
         ...state,
@@ -389,7 +388,7 @@ const reducer = (state = initialState, action) => {
           ...state.resume
         }
       }
-    case actionTypes.DISABLED_ABOUT:
+    /* case actionTypes.DISABLED_ABOUT:
       return {
         ...state,
         notepad: {
@@ -397,12 +396,11 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about,
-          maximized: false
         },
         resume: {
           ...state.resume
         }
-      }
+      } */
     case actionTypes.DISABLED_RESUME:
       return {
         ...state,
@@ -447,8 +445,8 @@ const reducer = (state = initialState, action) => {
         about: {
           show: false,
           blurred: false,
-          minimized: false,
-          maximized: false,
+          /* minimized: false,
+          maximized: false, */
         },
         resume: {
           ...state.resume

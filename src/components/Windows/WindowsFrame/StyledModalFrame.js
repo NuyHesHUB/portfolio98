@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFrame = styled.div.attrs(({top, left})=>({
+export const StyledModalFrame = styled.div.attrs(({top, left})=>({
     style: {
         top, left
     }
@@ -12,61 +12,17 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     z-index: ${props=>props.blurred? `` : `8`};
     padding: 3px 4px 4px 4px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
-    /* margin: 8px; */
-    div.Notepad {
-    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
-    background-color: rgb(255, 255, 255);
+    div.About {
+    /* height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`}; */
+    height: 320px;
+    /* background-color: rgb(255, 255, 255); */
     overflow:auto;
-    box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
-    border-right: 2px solid rgb(240, 240, 240); 
-    border-bottom: 2px solid rgb(240, 240, 240); 
+    /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
+    /* border-right: 2px solid rgb(240, 240, 240); 
+    border-bottom: 2px solid rgb(240, 240, 240); */ 
     box-sizing: border-box;
     padding: 3px 0 0 4px;
     font-size: 13px;
-
-    /* &::-webkit-scrollbar {
-    width: 20px;
-    background: green;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: red;
-    } */
-    }
-    div.Resume {
-    /* height: 700px; */
-    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `700px`};
-    padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 20px 0 20px;`};
-    /* max-height: calc(100vh - 78px);
-    min-height: 700px; */
-    /* overflow:auto; */
-    overflow-y:scroll;
-    /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
-    box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
-    /* border-right: 2px solid rgb(240, 240, 240); 
-    border-bottom: 2px solid rgb(240, 240, 240);  */
-    box-sizing: border-box;
-    /* padding: 3px 0 0 4px; */
-    font-size: 13px;
-    position: absolute
-        h2{
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .profile{
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
-        .project01{
-            width: 250px;
-            display: block;
-            margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
-
-        }
     }
 `;
 
@@ -101,7 +57,6 @@ export const ButtonGroup = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2px;
-    
     }
     .clickable:active {
         box-shadow: rgb(0, 0, 0) 1px 1px 1px inset,
@@ -112,12 +67,10 @@ export const ButtonGroup = styled.div`
     width: 13px;
     }
 `
-
-export const StyledMenu = styled.div`
+/* export const StyledMenu = styled.div`
 display: flex;
 flex-direction: row;
 width: 25%;
-/* justify-content: space-between; */
 span {
   padding: 1px 8px;
   margin: 1px;
@@ -127,4 +80,4 @@ span:hover {
   background-color: rgb(0, 0, 127);
   color: rgb(255, 255, 255);
 }
-`;
+`; */

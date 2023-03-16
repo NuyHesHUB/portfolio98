@@ -64,10 +64,14 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
             frameTitle.addEventListener('mousedown', dragStart);
         }
       };
+    const onFullsizeCancel = () => {
+        if(resize===false){
+            /* console.log('false 다'); */
+            setResize(!resize);
+        }
+    }
       
-      /* console.log('ismini',isMinimized); */
-      console.log('resize',resize);
-      /* console.log('ismaxi',isMaximized); */
+      /* console.log('resize',resize); */
       
     return (
         <StyledFrame
@@ -86,7 +90,11 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
                 <img src={img} draggable='false' alt='MiniIcon'/>
                 <span className='title'>{title}</span>
                 <ButtonGroup>
-                    <button className='clickable' onClick={()=> onMinimize()}>
+                    <button className='clickable' onClick={()=> {
+                        onMinimize()
+                        onFullsizeCancel()
+                    }
+                        }>
                         <img src={minimize} draggable='false' alt='minimize'/>
                     </button>
                     {

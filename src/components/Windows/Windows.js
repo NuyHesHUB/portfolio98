@@ -8,6 +8,7 @@ import Dockbar from '../Dockbar/Dockbar';
 
 import Notepad from './Notepad'
 import Resume from './Resume';
+import About from './About'
 
 
 import startup from '../../assets/sounds/startup.mp3'
@@ -17,13 +18,14 @@ const StyledWindows=styled.div`
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/wallpaper/구름.bmp');
+    background-image: url('/assets/wallpaper/없음.png');
+    /* background-image: url('/assets/wallpaper/구름.bmp'); */
     background-repeat: no-repeat;
     background-size: cover;
 `
 
 
-function Windows({notepadVisible, resumeVisible}){
+function Windows({notepadVisible, resumeVisible, aboutVisible}){
     const [audio] = useState(new Audio(startup));
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
@@ -42,7 +44,7 @@ function Windows({notepadVisible, resumeVisible}){
 
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
     const resumeDisplay = resumeVisible ? <Resume/> : null;
-    
+    const aboutDisplay = aboutVisible ? <About/> : null;
 /*     const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; */
 
@@ -61,10 +63,12 @@ function Windows({notepadVisible, resumeVisible}){
     return (
         
         <StyledWindows className='App'/*  ref={element} */ /* onClick={triggerFull} */>
-            <h2>Windows페이지</h2>
+            {/* <h2>Windows페이지</h2> */}
+            <br/>
             <Icons/>
             {notepadDisplay}
             {resumeDisplay}
+            {aboutDisplay}
             <Dockbar/>
         </StyledWindows>
     );
@@ -73,7 +77,8 @@ const mapStateToProps=(state)=>{
     return{
         shutDown: state.shutDown,
         notepadVisible: state.notepad.show,
-        resumeVisible: state.resume.show
+        resumeVisible: state.resume.show,
+        aboutVisible: state.about.show,
     }
 }
 

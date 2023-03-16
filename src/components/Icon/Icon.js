@@ -23,20 +23,24 @@ const StyledIconWithLabel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 25px;  
+  /* padding-bottom: 25px; */  
+  padding-bottom: 15px;  
   img {
     width: 36px;
     height: 36px;
   }  
   span {
     color: rgb(255, 255, 255);
+    /* color: rgb(2, 2, 2); */
     font-size: 11px;
+    /* font-weight: bold; */
     padding: 1px 2px;
     margin-top: 7px;
     border: 1px solid transparent;
   }
   ${props => props.clicked && `
       span {
+        color: rgb(255, 255, 255);
         background-color: rgb(0, 0, 127);
         border: 1px dotted rgba(200, 200, 200);
       }
