@@ -8,6 +8,8 @@ import resumeImage from '../../assets/dockbar-icon/Myresume.png'
 import profile from '../../assets/resume-img/profile.jpg'
 import project01 from '../../assets/resume-img/display_1.png'
 
+import ResumeSkill from './ResumeSkill';
+
 function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResumeMaximize, onResumeDisabled, onResumeExit}){
     /* const inputRef = React.createRef(); */
 
@@ -51,11 +53,6 @@ function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResume
                 isDisabled={resume.maximized}
                 style={{overFlow:'auto'}}
             >
-                {/* <div
-                    className='Resume'
-                    contentEditable="true"
-                    ref={inputRef}
-                /> */}
                 <div className='Resume' >
                     {/* <h2>프론트엔드 개발자 주세현입니다.</h2><br/> */}
                     <br/>
@@ -65,7 +62,15 @@ function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResume
                         }}
                     />              
                     <div >
-                        <h2 style={{display:'inline-block'}}>주세현</h2> 🖥
+                        <h2 >주세현 (JOO SE HYEON)</h2> 
+                        <h3 style={{color:'#666', marginTop:'10px'}}>web Front-end </h3> 
+                        <p style={{display:'inline-block', color:'#666', marginTop:'10px'}}>📍 경기도 화성 </p> 
+                    </div>
+                    <ResumeSkill/>
+                    <div>
+                        <ul style={{listStyle:'none'}}>
+                            <li></li>
+                        </ul>
                     </div>
                     <br/>
                     <hr/>

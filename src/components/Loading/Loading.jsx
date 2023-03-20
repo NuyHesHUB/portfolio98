@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import loadingImg from '../../assets/bios-img/windows98_logo_수정2.png'
 import '../../styles/loading.scss'
+import { Container } from '../../styles/Container';
 
 const StyledLoading=styled.div`
     padding-top: 10px;
@@ -56,6 +57,7 @@ const Loading = () => {
               <LoadingImg className='glitch__img' src={loadingImg} alt="logo"/>
             </div>
             <LoadingAni/>
+            <Container/>
         </StyledLoading>
     );
 };

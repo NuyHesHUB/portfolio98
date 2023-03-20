@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux'
-import { openNotepad, openResume} from '../../store/actions/actions';
+import { openNotepad, openResume, openDeleted} from '../../store/actions/actions';
 
 import Icon from './Icon';
 
@@ -35,7 +35,7 @@ const StyledIcons = styled.div`
     } */
 `
 
-function Icons({onOpenNotepad, onOpenResum}) {
+function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
     const [icons, setIcons] = useState([
         {label: '내컴퓨터', img: Mycomputer, clicked: false},
         /* {label: '내문서', img: Mydocument, clicked: false}, */
@@ -82,7 +82,7 @@ function Icons({onOpenNotepad, onOpenResum}) {
             onOpenNotepad();
         }
         else if (label === '휴지통') {
-            window.open('https://github.com/Arish-Shah/win95');
+            /* onOpenDelete(); */
         }
         else if (label === '자기소개서') {
             onOpenResum();
@@ -94,7 +94,7 @@ function Icons({onOpenNotepad, onOpenResum}) {
             window.open('https://github.com/NuyHesHUB')
         }
         else{
-            console.log('haha');
+            window.open('https://github.com/Arish-Shah/win95');
         }
         console.log(label);   
     }
@@ -117,6 +117,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
       onOpenNotepad: () => dispatch(openNotepad()),
       onOpenResum: () => dispatch(openResume()),
+      onOpenDeleted: () => dispatch(openDeleted()),
     }
   }
 

@@ -67,6 +67,12 @@ export function openResume() {
   }
 }
 
+export function openDeleted() {
+  return {
+    type: actionTypes.OPEN_DELETED
+  }
+}
+
 /*----------------------------------------*\
                   FOCUS
 \*----------------------------------------*/
@@ -88,6 +94,11 @@ export function focusResume() {
   }
 }
 
+export function focusDeleted() {
+  return {
+    type: actionTypes.FOCUS_DELETED
+  }
+}
 /*----------------------------------------*\
                   BLUR
 \*----------------------------------------*/
@@ -109,6 +120,11 @@ export function blurResume() {
   }
 }
 
+export function blurDeleted() {
+  return {
+    type: actionTypes.BLUR_DELETED
+  }
+}
 /*----------------------------------------*\
                   MINIMIZE
 \*----------------------------------------*/
@@ -130,6 +146,11 @@ export function minimizeResume() {
   }
 }
 
+export function minimizeDeleted() {
+  return {
+    type: actionTypes.MINIMIZE_DELETED
+  }
+}
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
@@ -151,6 +172,11 @@ export function maximizeResume() {
   }
 }
 
+export function maximizeDeleted() {
+  return {
+    type: actionTypes.MAXIMIZE_DELETED
+  }
+}
 /*----------------------------------------*\
                   DISABLED
 \*----------------------------------------*/
@@ -167,6 +193,12 @@ export function disabledNotepad() {
 export function disabledResume() {
   return {
     type: actionTypes.DISABLED_RESUME
+  }
+}
+
+export function disabledDeleted() {
+  return {
+    type: actionTypes.DISABLED_DELETED
   }
 }
 /*----------------------------------------*\
@@ -193,5 +225,11 @@ export function exitModal() {
 export function exitResume() {
   return {
     type: actionTypes.EXIT_RESUME
+  }
+}
+
+export function exitDeleted() {
+  return {
+    type: actionTypes.EXIT_DELETED
   }
 }

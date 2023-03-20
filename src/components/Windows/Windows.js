@@ -12,7 +12,7 @@ import About from './About'
 
 
 import startup from '../../assets/sounds/startup.mp3'
-
+import { Container } from '../../styles/Container';
 
 const StyledWindows=styled.div`
     position: relative;
@@ -20,12 +20,13 @@ const StyledWindows=styled.div`
     height: 100vh;
     background-image: url('/assets/wallpaper/없음.png');
     /* background-image: url('/assets/wallpaper/구름.bmp'); */
+    
     background-repeat: no-repeat;
     background-size: cover;
 `
 
 
-function Windows({notepadVisible, resumeVisible, aboutVisible}){
+function Windows({notepadVisible, resumeVisible, aboutVisible, deleteVisible}){
     const [audio] = useState(new Audio(startup));
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
@@ -45,6 +46,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible}){
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
     const resumeDisplay = resumeVisible ? <Resume/> : null;
     const aboutDisplay = aboutVisible ? <About/> : null;
+    const deleteDisplay = deleteVisible ? null : null ;
 /*     const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; */
 
@@ -69,7 +71,9 @@ function Windows({notepadVisible, resumeVisible, aboutVisible}){
             {notepadDisplay}
             {resumeDisplay}
             {aboutDisplay}
+            {deleteDisplay}
             <Dockbar/>
+            <Container/>
         </StyledWindows>
     );
 };
@@ -79,6 +83,7 @@ const mapStateToProps=(state)=>{
         notepadVisible: state.notepad.show,
         resumeVisible: state.resume.show,
         aboutVisible: state.about.show,
+        deleteVisible: state.delete.show,
     }
 }
 

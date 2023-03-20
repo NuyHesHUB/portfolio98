@@ -1,6 +1,8 @@
 import React, {/* useCallback, useEffect, useState */} from 'react';
 import styled from 'styled-components';
 
+import { Container } from '../../styles/Container';
+
 import { BiosInfoEntry } from './BiosInfoEntry';
 import { BiosInfoSection, BiosInfoSectionStyled} from './BiosInfoSection';
 
@@ -71,8 +73,20 @@ const BiosInfoSections=styled.div`
         strong{
             color: white;
             text-transform: uppercase;
+            animation: box1 2s ease-in-out 0.4s infinite;
+            animation-delay: 6s;
         }
+        
     }
+    @keyframes box1 {
+                0%,
+                100% {
+                    color: red;
+                }
+                50% {
+                    color: white;
+                }
+            }
 `;
 
 /* const BiosLink=styled.a`
@@ -172,11 +186,10 @@ const Bios = () => {
                 </BiosInfoSection>
                 <BiosInfoSection>
                     <BiosInfoEntry label="나의 역량" value="로딩 완료..."/>
-                    <BiosInfoEntry label="HTML" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="CSS" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="JavaScript" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="React" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="Vue" value="■■■■■■■■■■■■■■ 100%"/>
+                    <BiosInfoEntry label="의사소통능력" value="■■■■■■■■■■■■■■ 100%"/>
+                    <BiosInfoEntry label="문제 해결 능력" value="■■■■■■■■■■■■■■ 100%"/>
+                    <BiosInfoEntry label="학습능력" value="■■■■■■■■■■■■■■ 100%"/>
+                    <BiosInfoEntry label="자기주도 능력, 탐구력" value="■■■■■■■■■■■■■■ 100%"/>
                 </BiosInfoSection>
                 <BiosInfoSection height={300}>
                     <tr>
@@ -196,6 +209,7 @@ const Bios = () => {
             </BiosInfoSections>
             {/* <BiosLogo/> */}
             <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'20px'}}/>
+            <Container/>
         </StyledBios>
     )
     

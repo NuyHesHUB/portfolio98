@@ -94,7 +94,8 @@ function DockbarGroup({showStart, notepad, resume, about, onStartClick, onNotepa
                         <img 
                             src={start} 
                             alt="start"
-                            style={{width:'22px',height:'22px', marginTop:'2px'}}
+                            /* style={{width:'28px',height:'22px', marginTop:'2px'}} */
+                            style={{width:'35px',height:'25px', marginTop:'2px'}}
                         />
                         <b>시작</b>
                     </div>

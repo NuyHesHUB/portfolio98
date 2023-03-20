@@ -25,6 +25,12 @@ const initialState = {
     minimized: false,
     maximized: false,
   },
+  deleted: {
+    show: false,
+    blurred: false,
+    minimized: false,
+    maximized: false,
+  },
   shutDown: false
 }
 
@@ -58,6 +64,9 @@ const reducer = (state = initialState, action) => {
         resume:{
           ...state.resume
         },
+        deleted:{
+          ...state.deleted
+        },
         shutDown: true
       }
 
@@ -80,6 +89,10 @@ const reducer = (state = initialState, action) => {
           ...state.resume,
           blurred: true
         },
+        deleted: {
+          ...state.deleted,
+          blurred: true
+        },
         showStart: !state.showStart
       }
 
@@ -94,6 +107,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         },
         showStart: false
       }
@@ -116,6 +132,10 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume,
           blurred: true
+        },
+        deleted: {
+          ...state.deleted,
+          blurred: true
         }
       }
 
@@ -135,6 +155,10 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume,
           blurred: true
+        },
+        deleted: {
+          ...state.deleted,
+          blurred: true
         }
       }
 
@@ -152,6 +176,10 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume,
+          blurred: true
+        },
+        deleted: {
+          ...state.deleted,
           blurred: true
         }
       }
@@ -172,6 +200,32 @@ const reducer = (state = initialState, action) => {
             blurred: false,
             minimized: false,
             /* maximized: false, */
+          },
+          deleted: {
+            ...state.deleted,
+            blurred: true
+          }
+        }
+
+        case actionTypes.OPEN_DELETED:
+        return {
+          ...state,
+          about: {
+            ...state.about,
+            blurred: true,
+          },
+          notepad: {
+            ...state.notepad,
+            blurred: true
+          },
+          resume: {
+            ...state.resume,
+            blurred: true
+          },
+          deleted: {
+            show: true,
+            blurred: false,
+            minimized: false,
           }
         }
 
@@ -191,6 +245,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -206,6 +263,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
     }
@@ -221,6 +281,28 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume,
+          blurred: false
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+    }
+
+    case actionTypes.FOCUS_DELETED: {
+      return {
+        ...state,
+        about: {
+          ...state.about,
+        },
+        notepad: {
+          ...state.notepad
+        },
+        resume: {
+          ...state.resume,
+        },
+        deleted: {
+          ...state.deleted,
           blurred: false
         }
       }
@@ -242,6 +324,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -257,6 +342,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -271,6 +359,27 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume,
+          blurred: true
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+
+      case actionTypes.BLUR_DELETED:
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        resume: {
+          ...state.resume
+        },
+        deleted: {
+          ...state.deleted,
           blurred: true
         }
       }
@@ -291,6 +400,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -321,7 +433,27 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume,
           minimized: true,
-          
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+
+      case actionTypes.MINIMIZE_DELETED:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume
+        },
+        deleted: {
+          ...state.deleted,
+          minimized: true,
         }
       }
 
@@ -341,6 +473,9 @@ const reducer = (state = initialState, action) => {
         },
         resuem: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -369,6 +504,27 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume,
           maximized: true
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+
+      case actionTypes.MAXIMIZE_DELETED:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume
+        },
+        deleted: {
+          ...state.deleted,
+          maximized: true
         }
       }
     /*----------------------------------------*\
@@ -386,6 +542,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
     /* case actionTypes.DISABLED_ABOUT:
@@ -413,6 +572,27 @@ const reducer = (state = initialState, action) => {
         resume: {
           ...state.resume,
           maximized: false
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+
+      case actionTypes.DISABLED_DELETED:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume
+        },
+        deleted: {
+          ...state.deleted,
+          maximized: false
         }
       }
     /*----------------------------------------*\
@@ -433,6 +613,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -450,6 +633,9 @@ const reducer = (state = initialState, action) => {
         },
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
 
@@ -465,6 +651,9 @@ const reducer = (state = initialState, action) => {
         showModal: false,
         resume: {
           ...state.resume
+        },
+        deleted: {
+          ...state.deleted
         }
       }
     
@@ -478,6 +667,29 @@ const reducer = (state = initialState, action) => {
           ...state.about
         },
         resume: {
+          show: false,
+          blurred: false,
+          minimized: false,
+          maximized: false,
+        },
+        deleted: {
+          ...state.deleted
+        }
+      }
+
+      case actionTypes.EXIT_DELETED:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        resume: {
+          ...state.resume
+        },
+        deleted: {
           show: false,
           blurred: false,
           minimized: false,

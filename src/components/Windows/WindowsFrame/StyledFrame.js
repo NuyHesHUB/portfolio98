@@ -12,7 +12,6 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     z-index: ${props=>props.blurred? `` : `8`};
     padding: 3px 4px 4px 4px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
-    /* margin: 8px; */
     div.Notepad {
     height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
     background-color: rgb(255, 255, 255);
@@ -35,7 +34,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     div.Resume {
     /* height: 700px; */
     height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `700px`};
-    padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 20px 0 20px;`};
+    padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`};
     /* max-height: calc(100vh - 78px);
     min-height: 700px; */
     /* overflow:auto; */

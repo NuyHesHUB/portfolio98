@@ -6,7 +6,7 @@ const StyledBiosTyping = styled.span`
     line-height: 1.4;
     animation: cursor 1s step-end infinite;
     animation-duration: 0.3s; 
-    animation-iteration-count: 15;
+    animation-iteration-count: 20;
     @keyframes cursor{
     0%{border-right: 5px solid #fff} 
     50%{border-right: 5px solid #000} 
