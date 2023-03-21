@@ -6,11 +6,12 @@ import { connect } from 'react-redux'
 import start from '../../assets/dockbar-icon/startlogo.png'
 import Button from '../Button'
 
-import { startButtonClicked, openNotepad, openResume, openAbout} from '../../store/actions/actions';
+import { startButtonClicked, openNotepad, openResume, openAbout, openDeleted} from '../../store/actions/actions';
 
 import notepadImg from '../../assets/dockbar-icon/notepad.png'
 import resumeImg from '../../assets/dockbar-icon/Myresume.png'
 import aboutImg from '../../assets/dockbar-icon/about.png'
+import deletedImg from '../../assets/dockbar-icon/Delete.png'
 
 
 const StyledDockbarGroup=styled.div`
@@ -25,62 +26,74 @@ const StyledGroup = styled.div`
 /* console.log(Frame); */
 /* console.log(onFullsize); */
 
-function DockbarGroup({showStart, notepad, resume, about, onStartClick, onNotepadClick, onResumeClick, onAboutClick}){
+function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick, onNotepadClick, onResumeClick, onAboutClick, onDeletedClick}){
     /* console.log(resume.maximized); */
     const notepadButton = notepad.show?
-    <Button
-        id="notepad-button"
-        pressed={!notepad.minimized && !notepad.blurred}
-        clicked={()=> onNotepadClick()}
-        /* clicked={()=> {
-            onNotepadClick();
-            if(resume.maximized===true){
-                console.log('오오오');
-            }
-        }} */
-    >
-        <div>
-            <img src={notepadImg} alt="notepad" /* style={{width:'20px', height:'20px'}} */   />
-            <span>Untitled - 메모장</span>
-        </div>
-    </Button> : null;
+        <Button
+            id="notepad-button"
+            pressed={!notepad.minimized && !notepad.blurred}
+            clicked={()=> onNotepadClick()}
+            /* clicked={()=> {
+                onNotepadClick();
+                if(resume.maximized===true){
+                    console.log('오오오');
+                }
+            }} */
+        >
+            <div>
+                <img src={notepadImg} alt="notepad" /* style={{width:'20px', height:'20px'}} */   />
+                <span>Untitled - 메모장</span>
+            </div>
+        </Button> : null;
 
     const resumeButton = resume.show?
-    <Button
-        id="resume-button"
-        pressed={!resume.minimized && !resume.blurred}
-        clicked={()=> onResumeClick()}
-        /* clicked={()=>{
-            if(resume.maximized===true){
-                onResumeClick()
-                console.log('트루??');
-                
-            }else{
-                console.log('펄스??');
-                resume.maximized=true;
-                onResumeClick()
+        <Button
+            id="resume-button"
+            pressed={!resume.minimized && !resume.blurred}
+            clicked={()=> onResumeClick()}
+            /* clicked={()=>{
+                if(resume.maximized===true){
+                    onResumeClick()
+                    console.log('트루??');
+                    
+                }else{
+                    console.log('펄스??');
+                    resume.maximized=true;
+                    onResumeClick()
+                }
             }
-        }
-        } */
-    >
-        <div>
-            <img src={resumeImg} alt="resume" style={{width:'16px', height:'18px', marginRight:'2px'}}   />
-            <span>자기소개서</span>
-        </div>
-    </Button> : null;
+            } */
+        >
+            <div>
+                <img src={resumeImg} alt="resume" style={{width:'16px', height:'18px', marginRight:'2px'}}   />
+                <span>자기소개서</span>
+            </div>
+        </Button> : null;
 
 
     const aboutButton = about.show?
-    <Button
-        id="about-button"
-        pressed={ !about.blurred }
-        clicked={()=> onAboutClick()}
-    >
-        <div>
-            <img src={aboutImg} alt="about"/>
-            <span>about</span>
-        </div>
-    </Button> : null;
+        <Button
+            id="about-button"
+            pressed={ !about.blurred }
+            clicked={()=> onAboutClick()}
+        >
+            <div>
+                <img src={aboutImg} alt="about"/>
+                <span>about</span>
+            </div>
+        </Button> : null;
+
+    const deletedButton = deleted.show?
+        <Button
+            id="deleted-button"
+            pressed={!deleted.minimized && !deleted.blurred}
+            clicked={()=> onDeletedClick()}
+        >
+            <div>
+                <img src={deletedImg} alt="deleted" /* style={{width:'20px', height:'20px'}} */   />
+                <span>휴지통</span>
+            </div>
+        </Button> : null;
     return (
         <StyledDockbarGroup>
             <StyledGroup>
@@ -103,6 +116,7 @@ function DockbarGroup({showStart, notepad, resume, about, onStartClick, onNotepa
                 {notepadButton}
                 {resumeButton}
                 {aboutButton}
+                {deletedButton}
             </StyledGroup>
         </StyledDockbarGroup>
     );
@@ -114,7 +128,8 @@ const mapStateToProps = (state) => {
       notepad: state.notepad,
       showModal: state.showModal,
       resume: state.resume,
-      about: state.about
+      about: state.about,
+      deleted: state.deleted,
     }
   }
 
@@ -123,7 +138,8 @@ const mapDispatchToProps = (dispatch) => {
       onStartClick: () => dispatch(startButtonClicked()),
       onNotepadClick: () => dispatch(openNotepad()),
       onResumeClick: () => dispatch(openResume()),
-      onAboutClick: ()=> dispatch(openAbout(),)
+      onAboutClick: ()=> dispatch(openAbout(),),
+      onDeletedClick: ()=> dispatch(openDeleted()),
     }
   }
 

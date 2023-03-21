@@ -8,7 +8,7 @@ import resumeImage from '../../assets/dockbar-icon/Myresume.png'
 import profile from '../../assets/resume-img/profile.jpg'
 import project01 from '../../assets/resume-img/display_1.png'
 
-import ResumeSkill from './ResumeSkill';
+import ResumeSkill from '../../components/effect/ResumeEffect/ResumeSkill';
 
 function Resume({resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResumeMaximize, onResumeDisabled, onResumeExit}){
     /* const inputRef = React.createRef(); */

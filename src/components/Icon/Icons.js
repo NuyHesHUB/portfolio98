@@ -82,7 +82,7 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
             onOpenNotepad();
         }
         else if (label === '휴지통') {
-            /* onOpenDelete(); */
+            onOpenDeleted();
         }
         else if (label === '자기소개서') {
             onOpenResum();
@@ -94,7 +94,7 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
             window.open('https://github.com/NuyHesHUB')
         }
         else{
-            window.open('https://github.com/Arish-Shah/win95');
+            console.log('haha');
         }
         console.log(label);   
     }

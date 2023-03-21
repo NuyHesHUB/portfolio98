@@ -72,7 +72,7 @@ function Start({onStartMenuBlur, onShutDown, onOpenModal, onOpenAbout}) {
         }else if(text === 'Project 02 : 메이필드 호텔'){
             window.open('https://nuyheshub.github.io/project02_mayfield_hotel/')
         }else if(text === 'Project 03 : 영화 페이지'){
-            window.open('https://nuyheshub.github.io/app/')
+            window.open('https://nuyheshub.github.io/project03_movie_app/')
         }
         else {
           onStartMenuBlur();

@@ -22,7 +22,6 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     box-sizing: border-box;
     padding: 3px 0 0 4px;
     font-size: 13px;
-
     /* &::-webkit-scrollbar {
     width: 20px;
     background: green;
@@ -64,7 +63,75 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
             margin: 0 auto;
             margin-top: 20px;
             margin-bottom: 20px;
-
+        }
+    }
+    div.Deleted{
+        height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
+        box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px  inset;
+        border-right: 2px solid rgb(240, 240, 240); 
+        border-bottom: 2px solid rgb(240, 240, 240); 
+        display: flex;
+        padding-left: 2px;
+        padding-bottom: 2px;
+        box-sizing: border-box;
+        >.bg{
+            width: 30%;
+            height: 100%;
+            overflow-y: scroll;
+            margin-top: 2px;
+            background: #fff;
+            position: relative;
+            .Deleted-bg{
+                height: 500px;
+                background-size: cover;
+                background-position: -81px -62px;
+                background-repeat: no-repeat;
+                padding: 0 20px;
+                img{
+                width: 36px;
+                height: 36px;
+                margin-top: 20px;
+                /* margin-left: 20px; */
+                }
+                h3{
+                    font-size: 20px;
+                }
+            }
+            .line-list{
+                position: absolute;
+                display: flex;
+                top: 120px;
+                list-style: none;
+                width: 100%;
+                height: 2px;
+                li{
+                    width: 25%;
+                    margin-right: 1px;
+                    &:nth-child(1){background:rgb(250,133,103);}
+                    &:nth-child(2){background:rgb(255,232,138);}
+                    &:nth-child(3){background:rgb(151,221,117);}
+                    &:nth-child(4){background:rgb(138,208,255);}
+                }
+            }
+        }
+        .ct{
+            width: 80%;
+            .word {
+            position: absolute;
+            cursor: grab;
+            font-size: 30px;
+            color: #ffeb3b;
+            }
+            .word.highlighted {
+            font-weight: bold;
+            color: black;
+            }
+            a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 1rem;
+            }
         }
     }
 `;
