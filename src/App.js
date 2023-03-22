@@ -16,9 +16,9 @@ function App() {
         <HashRouter>
         <Provider store={store} >
             <Routes >
-                <Route path={'/'}element={<Bios />}></Route>
-                <Route path={'/Loading'} element={<Loading />}></Route>
-                <Route path={"/Windows"} element={<Windows />}></Route>
+                <Route path='/'element={<Bios />}></Route>
+                <Route path='/Loading' element={<Loading />}></Route>
+                <Route path="/Windows" element={<Windows />}></Route>
             </Routes>
           </Provider>
         </HashRouter> 
