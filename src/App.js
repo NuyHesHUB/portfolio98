@@ -13,11 +13,11 @@ function App() {
   const store = createStore(reducer);
 
   return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter/*  basename={process.env.PUBLIC_URL} */>
         <Provider store={store} >
             <Routes >
-                <Route path={"/"} element={<Bios />}></Route>
-                <Route path={"/Loading"} element={<Loading />}></Route>
+                <Route path={'/pilot-test-win'}element={<Bios />}></Route>
+                <Route path={'/Loading'} element={<Loading />}></Route>
                 <Route path={"/Windows"} element={<Windows />}></Route>
             </Routes>
           </Provider>
@@ -25,4 +25,5 @@ function App() {
   );
 }
 //"homepage": "https://nuyheshub.github.io/pilot-test-win/",
+//{`${process.env.PUBLIC_URL}/`} 
 export default App;

@@ -6,7 +6,7 @@ import Icon2 from '../../../assets/desktop-icon/Paint.png'
 import Icon3 from '../../../assets/desktop-icon/Mydocument.png'
 import Icon4 from '../../../assets/desktop-icon/Note.png'
 
-export const FallingWrap = styled.div`
+const FallingWrap = styled.div`
     /* position: absolute;
     width: 100%;
     overflow: hidden; */
@@ -14,8 +14,8 @@ export const FallingWrap = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* background-color: transparent; */
-    background-color: ${props=>props.show ? 'red' : 'blue'};
+    background-color: transparent;
+    /* background-color: ${props=>props.isMaximized ? 'red' : 'blue'}; */
     font-size: 36px;
     font-weight: bold;
     animation: hurueru .2s infinite;
@@ -27,7 +27,7 @@ export const FallingWrap = styled.div`
     100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 `
-export const FallingText = styled.span`
+const FallingText = styled.span`
     div{
         display: flex;
         flex-direction: column;
@@ -72,9 +72,9 @@ export const FallingText = styled.span`
 @keyframes falldown {
         0% {transform: translate(0px, 0px) rotateZ(0deg)}
         /* 70% {transform: translate(0px, 0px) rotateZ(0deg)} */
-        /* 100% {transform: translate(0px, 900px) rotateZ(120deg)} */
+        100% {transform: translate(0px, 900px) rotateZ(120deg)}
         /* 100% {transform: translate(0px, 100vh) rotateZ(120deg)} */
-        100% {transform: translate(0px, ${props=>props.show ? '1000px' : '100px'}) rotateZ(120deg)}
+        /* 100% {transform: translate(0px, ${props=>props.show ? '1000px' : '100px'}) rotateZ(120deg)} */
         
         
         
@@ -85,8 +85,8 @@ export const FallingText = styled.span`
 
     
 `
-const Falling = ({deleted, maximized}) => {
-    console.log(deleted);
+const Falling = ({deleted}) => {
+    /* console.log(deleted); */
     return (
         <FallingWrap show={deleted.show}>
             <FallingText className={deleted.show ? "fall-1" : null}><div><img src={Icon1} alt="" /><span>완벽주의</span></div></FallingText>

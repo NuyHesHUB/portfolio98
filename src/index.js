@@ -32,4 +32,3 @@ root.render(
 );
 reportWebVitals();
 
-//"homepage": "https://nuyheshub.github.io/pilot-test-win/",

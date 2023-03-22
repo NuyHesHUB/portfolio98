@@ -11,18 +11,22 @@ import Resume from './Resume';
 import About from './About'
 import Deleted from './Deleted'
 
+import Profile from './Profile';
+
 
 import startup from '../../assets/sounds/startup.mp3'
 import { Container } from '../../styles/Container';
+
+
 
 const StyledWindows=styled.div`
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('/assets/wallpaper/없음.png');
-    /* background-image: url('/assets/wallpaper/구름.bmp'); */
+    background: rgb(058,110,165);
+    /* background-image: 'url()';
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 `
 
 
@@ -72,6 +76,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
             {resumeDisplay}
             {aboutDisplay}
             {deletedDisplay}
+            <Profile/>
             <Dockbar/>
             <Container/>
         </StyledWindows>
