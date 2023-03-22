@@ -24,5 +24,5 @@ function App() {
         </BrowserRouter> 
   );
 }
-
+//"homepage": "https://nuyheshub.github.io/pilot-test-win/",
 export default App;

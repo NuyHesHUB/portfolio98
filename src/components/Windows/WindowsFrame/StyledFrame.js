@@ -116,22 +116,8 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
         }
         .ct{
             width: 80%;
-            .word {
-            position: absolute;
-            cursor: grab;
-            font-size: 30px;
-            color: #ffeb3b;
-            }
-            .word.highlighted {
-            font-weight: bold;
-            color: black;
-            }
-            a {
-            text-decoration: none;
-            color: black;
-            display: block;
-            padding: 1rem;
-            }
+            position: relative;
+            overflow: hidden;
         }
     }
 `;
