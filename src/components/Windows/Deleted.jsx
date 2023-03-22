@@ -5,7 +5,7 @@ import WindowsFrame from './WindowsFrame/WindowsFrame';
 import {focusDeleted, blurDeleted, minimizeDeleted, maximizeDeleted, disabledDeleted,exitDeleted} from '../../store/actions/actions';
 import deletedImage from '../../assets/dockbar-icon/Delete.png';
 import deletedLimgage from '../../../src/assets/desktop-icon/Delete.png';
-import cloud from '../../assets/cloud-img/windows_98_clouds.jpg';
+import cloud from '../../assets/wallpaper/windows_98_clouds.jpg';
 
 import Burning from '../effect/DeleteEffect/Burning';
 import Falling from '../effect/DeleteEffect/Falling';

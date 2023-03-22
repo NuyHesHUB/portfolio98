@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter/*  basename={process.env.PUBLIC_URL} */>
         <Provider store={store} >
             <Routes >
-                <Route path={'/pilot-test-win'}element={<Bios />}></Route>
+                <Route path={'/'}element={<Bios />}></Route>
                 <Route path={'/Loading'} element={<Loading />}></Route>
                 <Route path={"/Windows"} element={<Windows />}></Route>
             </Routes>
@@ -25,5 +25,6 @@ function App() {
   );
 }
 //"homepage": "https://nuyheshub.github.io/pilot-test-win/",
+//<Route path={'/pilot-test-win'}element={<Bios />}></Route>
 //{`${process.env.PUBLIC_URL}/`} 
 export default App;
