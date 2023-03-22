@@ -10,7 +10,7 @@ import cloud from '../../assets/cloud-img/windows_98_clouds.jpg';
 import Burning from '../effect/DeleteEffect/Burning';
 import Falling from '../effect/DeleteEffect/Falling';
 
-function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, onDeletedMaximize, onDeletedDisabled, onDeletedExit }) {
+function Deleted({ deleted, blurred, onDeletedFocus, onDeletedBlur, onDeletedMinimize, onDeletedMaximize, onDeletedDisabled, onDeletedExit }) {
   
     useEffect(() => {
       window.addEventListener('click', deletedBlur);
@@ -59,12 +59,15 @@ function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, on
                     </ul>
               </div>
               <div className='ct' >
-                <Falling/>
+                <Falling
+                  show={deleted.show}
+                  blurred={deleted.blurred}
+                />
                 <Burning/>
               </div>
           </div>
         </WindowsFrame> : null;
-  
+    console.log(deleted.blurred);
     return displayContent;
   }
   

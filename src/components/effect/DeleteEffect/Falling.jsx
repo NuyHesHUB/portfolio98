@@ -6,7 +6,7 @@ import Icon2 from '../../../assets/desktop-icon/Paint.png'
 import Icon3 from '../../../assets/desktop-icon/Mydocument.png'
 import Icon4 from '../../../assets/desktop-icon/Note.png'
 
-const FallingWrap = styled.div`
+export const FallingWrap = styled.div`
     /* position: absolute;
     width: 100%;
     overflow: hidden; */
@@ -14,7 +14,8 @@ const FallingWrap = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: ${props=>props.show ? 'red' : 'blue'};
     font-size: 36px;
     font-weight: bold;
     animation: hurueru .2s infinite;
@@ -26,7 +27,7 @@ const FallingWrap = styled.div`
     100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 `
-const FallingText = styled.span`
+export const FallingText = styled.span`
     div{
         display: flex;
         flex-direction: column;
@@ -34,7 +35,12 @@ const FallingText = styled.span`
         text-align: center;
         margin-right: 20px;
         img{width: 36px; margin: 0 auto;}
-        span{font-size: 14px;}
+        span{
+            padding: 1px 2px;
+            margin-top: 7px;
+            border: 1px solid transparent;
+            font-size: 11px;
+        }
     }
     &.fall-1{
         display: inline-block;
@@ -66,7 +72,12 @@ const FallingText = styled.span`
 @keyframes falldown {
         0% {transform: translate(0px, 0px) rotateZ(0deg)}
         /* 70% {transform: translate(0px, 0px) rotateZ(0deg)} */
-        100% {transform: translate(0px, 900px) rotateZ(120deg)}
+        /* 100% {transform: translate(0px, 900px) rotateZ(120deg)} */
+        /* 100% {transform: translate(0px, 100vh) rotateZ(120deg)} */
+        100% {transform: translate(0px, ${props=>props.show ? '1000px' : '100px'}) rotateZ(120deg)}
+        
+        
+        
     }
     
 
@@ -74,10 +85,10 @@ const FallingText = styled.span`
 
     
 `
-const Falling = ({deleted}) => {
+const Falling = ({deleted, maximized}) => {
     console.log(deleted);
     return (
-        <FallingWrap>
+        <FallingWrap show={deleted.show}>
             <FallingText className={deleted.show ? "fall-1" : null}><div><img src={Icon1} alt="" /><span>완벽주의</span></div></FallingText>
             <FallingText className={deleted.show ? "fall-2" : null}><div><img src={Icon2} alt="" /><span>많은생각</span></div></FallingText>
             <FallingText className={deleted.show ? "fall-3" : null}><div><img src={Icon3} alt="" /><span>행동 실천 부족</span></div></FallingText>

@@ -226,6 +226,7 @@ const reducer = (state = initialState, action) => {
             show: true,
             blurred: false,
             minimized: false,
+            maximized: false,
           }
         }
 
