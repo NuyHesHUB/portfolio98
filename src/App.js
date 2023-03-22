@@ -13,7 +13,7 @@ function App() {
   const store = createStore(reducer);
 
   return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Provider store={store} >
             <Routes >
                 <Route path={'/'}element={<Bios />}></Route>
