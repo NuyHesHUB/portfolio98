@@ -59,9 +59,16 @@ const ProfileWrap=styled.div`
             color: yellow;
             font-weight: 600;
             padding: 3px 10px;
+            &:last-child{
+                animation: tutorial .5s infinite;
+            }
             &:hover{
                 background: #ededed;
                 color: blue;
+            }
+            @keyframes tutorial {
+                0% {color: red}
+                100% {color: yellow;}
             }
         }
     }
