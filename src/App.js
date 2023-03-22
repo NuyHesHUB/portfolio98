@@ -1,5 +1,5 @@
 import React/* , { useState, useEffect }  */from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { /* BrowserRouter, */HashRouter, Routes, Route } from 'react-router-dom';
 
 import Bios from './components/Bios/Bios';
 import Loading from './components/Loading/Loading';
@@ -13,7 +13,7 @@ function App() {
   const store = createStore(reducer);
 
   return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
         <Provider store={store} >
             <Routes >
                 <Route path={'/'}element={<Bios />}></Route>
@@ -21,7 +21,7 @@ function App() {
                 <Route path={"/Windows"} element={<Windows />}></Route>
             </Routes>
           </Provider>
-        </BrowserRouter> 
+        </HashRouter> 
   );
 }
 //"homepage": "https://nuyheshub.github.io/pilot-test-win/",
