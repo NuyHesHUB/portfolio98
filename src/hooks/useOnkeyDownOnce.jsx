@@ -4,7 +4,7 @@ export function useOnKeyDownOnce(key, onKeyDown) {
     useEffect(() => {
         const listener = (event) => {
             if (event.key === key) {
-                window.location.href='pilot-test-win/loading'
+                window.location.pathname='/loading'
                 console.log(key);
                 console.log(onKeyDown);
             }
