@@ -19,7 +19,7 @@ function App() {
             <Routes >
                 {/* <Route path={"/pilot-test-win"} element={<Bios />}></Route> */}
                 <Route path={"/"} element={<Bios />}></Route>
-                <Route path="loading" element={<Loading />}></Route>
+                <Route path="pilot-test-win/loading" element={<Loading />}></Route>
                 <Route path={"Windows"} element={<Windows />}></Route>
             </Routes>
           </Provider>
