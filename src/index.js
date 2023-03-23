@@ -56,8 +56,8 @@ root.render(
   <BrowserRouter >
     <Provider store={store}>
       <Routes>
-        <Route path="/pilot-test-win" element={<Bios/>}></Route>
-        <Route path="/loading" element={<Loading/>}></Route>
+        {/* <Route path="/" element={<Bios/>}></Route> */}
+        <Route path="/" element={<Loading/>}></Route>
         <Route path="/windows" element={<Windows/>}></Route>
       </Routes>
     </Provider>
