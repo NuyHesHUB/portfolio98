@@ -46,6 +46,9 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
     function contextDisable(e){
         e.preventDefault();
     }
+    function linkfn(){
+        window.location.href= '/loading'
+    }
 
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
     const resumeDisplay = resumeVisible ? <Resume/> : null;
@@ -76,6 +79,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
             {resumeDisplay}
             {aboutDisplay}
             {deletedDisplay}
+            <button onClick={linkfn}>test버튼</button>
             <Profile/>
             <Dockbar/>
             <Container/>
