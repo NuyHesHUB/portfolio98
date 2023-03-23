@@ -17,6 +17,8 @@ import Profile from './Profile';
 import startup from '../../assets/sounds/startup.mp3'
 import { Container } from '../../styles/Container';
 
+import { Link } from 'react-router-dom';
+
 
 
 const StyledWindows=styled.div`
@@ -47,7 +49,8 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
         e.preventDefault();
     }
     function linkfn(){
-        window.location.href= '/loading'
+        /* window.location.href= '/loading' */
+        /* return <Link to={`/loading`}></Link> */
     }
 
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
@@ -80,6 +83,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
             {aboutDisplay}
             {deletedDisplay}
             <button onClick={linkfn}>test버튼</button>
+            <Link to={`/loading`}>링ㅋ크</Link>
             <Profile/>
             <Dockbar/>
             <Container/>
