@@ -18,8 +18,8 @@ function App() {
         <Provider store={store} >
             <Routes >
                 <Route path="/" element={<Bios />}></Route>
-                <Route path="/loading" element={<Loading />}></Route>
-                <Route path="/windows" element={<Windows />}></Route>
+                <Route path="/Loading" element={<Loading />}></Route>
+                <Route path="/Windows" element={<Windows />}></Route>
             </Routes>
           </Provider>
           </BrowserRouter>
