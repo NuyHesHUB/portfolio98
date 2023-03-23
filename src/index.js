@@ -53,12 +53,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = createStore(reducer);
 
 root.render(
-  <BrowserRouter >
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <Routes>
         {/* <Route path="/" element={<Bios/>}></Route> */}
-        <Route path="/" element={<Loading/>}></Route>
-        <Route path="/windows" element={<Windows/>}></Route>
+        {/* <Route path="/" element={<Loading/>}></Route> */}
+        <Route path="/" element={<Windows/>}></Route>
       </Routes>
     </Provider>
   </BrowserRouter>
