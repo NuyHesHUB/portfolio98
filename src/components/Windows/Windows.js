@@ -83,7 +83,8 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
             {aboutDisplay}
             {deletedDisplay}
             <button onClick={linkfn}>test버튼</button>
-            <Link to={`/loading`}>링ㅋ크</Link>
+            <Link to={`/loading`}>로딩 링크</Link>
+            <Link to={`/windows`}>윈도우 링크</Link>
             <Profile/>
             <Dockbar/>
             <Container/>
