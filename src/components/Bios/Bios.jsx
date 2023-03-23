@@ -20,7 +20,7 @@ import energylogo from '../../assets/bios-img/epa-logo.png'
 import blurlogo from '../../assets/bios-img/a-logo.png'
 import BiosTyping from './BiosTyping'
 
-
+import { Link } from 'react-router-dom';
 const StyledBios=styled.div`
     width: 100vw;
     height: 100vh;
@@ -199,6 +199,7 @@ const Bios = () => {
                     </tr>
                 </BiosInfoSection>
                 <div style={{marginBottom:'30px'}}>
+                <Link style={{color:'#fff'}} to={`/windows`}>윈도우링크</Link>
                     <p>
                         Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.
                     </p>
@@ -208,6 +209,7 @@ const Bios = () => {
                 </div>
             </BiosInfoSections>
             {/* <BiosLogo/> */}
+            
             <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'20px'}}/>
             <Container/>
         </StyledBios>

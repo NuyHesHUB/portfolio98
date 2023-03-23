@@ -1,6 +1,6 @@
 import React/* , { useState, useEffect }  */from 'react';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
-/* import {  HashRouter as Routes, Route } from 'react-router-dom'; */
+/* import {  HashRouter, Routes, Route } from 'react-router-dom'; */
 
 import Bios from './components/Bios/Bios';
 import Loading from './components/Loading/Loading';
@@ -18,7 +18,7 @@ function App() {
         <Provider store={store} >
             <Routes >
                 {/* <Route path={"/pilot-test-win"} element={<Bios />}></Route> */}
-                <Route exact path="/"  element={<Bios/>}></Route>
+                <Route path="/"  element={<Bios/>}></Route>
                 <Route path="/loading" element={<Loading/>}></Route>
                 <Route path="/Windows" element={<Windows/>}></Route>
             </Routes>

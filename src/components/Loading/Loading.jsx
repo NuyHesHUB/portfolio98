@@ -41,7 +41,7 @@ const LoadingAni = styled.div`
 const Loading = () => {
     useEffect(() => {
         const fakeLoadingtimer = setTimeout(() => {
-            window.location.pathname='/windows'
+            window.location.href='/windows'
             console.log('Initial timeout!')
         }, 5000);
         return () => clearTimeout(fakeLoadingtimer);
