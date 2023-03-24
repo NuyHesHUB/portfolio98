@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import loadingImg from '../../assets/bios-img/windows98_logo_수정2.png'
 import '../../styles/loading.scss'
 import { Container } from '../../styles/Container';
+import { useNavigate } from 'react-router-dom';
 
 const StyledLoading=styled.div`
     padding-top: 10px;
@@ -39,9 +40,11 @@ const LoadingAni = styled.div`
 `
 
 const Loading = () => {
+  const navigate = useNavigate();
     useEffect(() => {
         const fakeLoadingtimer = setTimeout(() => {
-            window.location.href='/windows'
+            navigate('/windows')
+            /* window.location.href='/windows' */
             console.log('Initial timeout!')
         }, 5000);
         return () => clearTimeout(fakeLoadingtimer);
