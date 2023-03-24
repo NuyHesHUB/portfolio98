@@ -34,6 +34,12 @@ export function startButtonClicked() {
   }
 }
 
+export function startTutorialClicked() {
+  return {
+    type: actionTypes.START_TUTORIAL_CLICKED
+  }
+}
+
 export function startMenuBlur() {
   return {
     type: actionTypes.START_MENU_BLUR

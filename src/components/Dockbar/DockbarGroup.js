@@ -28,6 +28,7 @@ const StyledGroup = styled.div`
 
 function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick, onNotepadClick, onResumeClick, onAboutClick, onDeletedClick}){
     /* console.log(resume.maximized); */
+    /* console.log('showStart',showStart); */
     const notepadButton = notepad.show?
         <Button
             id="notepad-button"
@@ -94,6 +95,7 @@ function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick,
                 <span>휴지통</span>
             </div>
         </Button> : null;
+        
     return (
         <StyledDockbarGroup>
             <StyledGroup>

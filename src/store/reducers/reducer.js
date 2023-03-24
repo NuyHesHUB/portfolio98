@@ -7,6 +7,7 @@ const initialState = {
   /* systemLoading: false, */
   showStart: false,
   showModal: false,
+  showTutorial: false,
   about: {
     show: false,
     blurred: false,
@@ -96,6 +97,12 @@ const reducer = (state = initialState, action) => {
         showStart: !state.showStart
       }
 
+    case actionTypes.START_TUTORIAL_CLICKED:
+      return{
+        ...state,
+        showTutorial: !state.showTutorial
+      }
+      
     case actionTypes.START_MENU_BLUR:
       return {
         ...state,
@@ -113,7 +120,7 @@ const reducer = (state = initialState, action) => {
         },
         showStart: false
       }
-
+      
     /*----------------------------------------*\
                 actionTypes OPEN
     \*----------------------------------------*/

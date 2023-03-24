@@ -13,6 +13,7 @@ import Deleted from './Deleted'
 
 import Profile from './Profile';
 
+import Tutorial from './Tutorial';
 
 import startup from '../../assets/sounds/startup.mp3'
 import { Container } from '../../styles/Container';
@@ -32,7 +33,7 @@ const StyledWindows=styled.div`
 `
 
 
-function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
+function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,deletedVisible}){
     const [audio] = useState(new Audio(startup));
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
@@ -57,6 +58,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
     const resumeDisplay = resumeVisible ? <Resume/> : null;
     const aboutDisplay = aboutVisible ? <About/> : null;
     const deletedDisplay = deletedVisible ? <Deleted/> : null ;
+    const tutorialDisplay = tutorialVisible ? <Tutorial/> : null;
 /*     const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; */
 
@@ -82,6 +84,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, deletedVisible}){
             {resumeDisplay}
             {aboutDisplay}
             {deletedDisplay}
+            {tutorialDisplay}
             <button onClick={linkfn}>test버튼</button>
             <Link to={`/loading`}>로딩 링크</Link>
             <Link to={`/windows`}>윈도우 링크</Link>
@@ -98,6 +101,7 @@ const mapStateToProps=(state)=>{
         resumeVisible: state.resume.show,
         aboutVisible: state.about.show,
         deletedVisible: state.deleted.show,
+        tutorialVisible: state.showTutorial,
     }
 }
 

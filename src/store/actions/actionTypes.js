@@ -15,6 +15,7 @@ export const SHUT_DOWN = 'SHUT_DOWN';
 \*----------------------------------------*/
 export const START_BUTTON_CLICKED = 'START_BUTTON_CLICKED';
 export const START_MENU_BLUR = 'START_MENU_BLUR';
+export const START_TUTORIAL_CLICKED = 'START_TUTORIAL_CLICKED'
 
 
 /*----------------------------------------*\

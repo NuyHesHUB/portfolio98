@@ -54,6 +54,7 @@ const StyledButton = styled.button`
 `;
 
 function Button({ id, children, pressed, clicked, pad }) {
+  /* console.log(pressed); */
   return (
     <StyledButton onClick={clicked} pressed={pressed} id={id}>
       <StyledButtonInside pad={pad}>{children}</StyledButtonInside>
