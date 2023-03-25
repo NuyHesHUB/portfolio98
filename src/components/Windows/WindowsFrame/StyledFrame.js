@@ -14,7 +14,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     padding: 3px 4px 4px 4px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
     div.Notepad {
-    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
+    height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `600px`};
     background-color: rgb(255, 255, 255);
     overflow:auto;
     box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;

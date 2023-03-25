@@ -236,16 +236,16 @@ const reducer = (state = initialState, action) => {
           ...state,
           /* showTutorial: !state.showTutorial, */
           showTutorial: true,
-          /* resume: {
-            show: true,
-            blurred: false,
-            minimized: false,
+          resume: {
+            ...state.resume,
+            show: false,
+            blurred: true,
           },
           notepad: {
-            show: false,
+            ...state.notepad,
+            show: true,
             blurred: false,
-            minimized: false,
-          }, */
+          },
         }
 
     /*----------------------------------------*\
@@ -721,16 +721,17 @@ const reducer = (state = initialState, action) => {
           ...state,
           /* showTutorial: !state.showTutorial, */
           showTutorial: false,
-          /* resume: {
+          resume: {
+            ...state.resume,
             show: true,
             blurred: false,
-            minimized: false,
           },
           notepad: {
+            ...state.notepad,
             show: false,
-            blurred: false,
-            minimized: false,
-          }, */
+            blurred: true,
+          },
+          
         }
 
     default: return state;

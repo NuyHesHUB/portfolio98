@@ -73,7 +73,7 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
     }
       
       /* console.log('resize',resize); */
-      
+      console.log(blurred);
     return (
         <StyledFrame
             left={coordinates.x}

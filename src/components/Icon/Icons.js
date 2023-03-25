@@ -19,11 +19,20 @@ import Github from '../../assets/desktop-icon/github.png'
 import Myresume from '../../assets/desktop-icon/Myresume.png'
 
 const StyledIcons = styled.div`
+    position: absolute;
+    left: 10px;
     display: flex;
     flex-direction: column;
     float: left;
     padding: 8px;
     position: relative;
+    z-index: ${props=>props.showTutorial ? '9999' : ''};
+    animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
+    @keyframes tutorial1 {
+        0%,
+        100%{outline: 5px solid red}
+        50%{outline: 5px solid #ededed}
+    }
     /* &>div:first-child{
         background: red;
     } */
@@ -35,7 +44,7 @@ const StyledIcons = styled.div`
     } */
 `
 
-function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
+function Icons({onOpenNotepad, onOpenResum, onOpenDeleted, showTutorial}) {
     const [icons, setIcons] = useState([
         {label: '내컴퓨터', img: Mycomputer, clicked: false},
         /* {label: '내문서', img: Mydocument, clicked: false}, */
@@ -100,7 +109,10 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
     }
 
     return (
-        <StyledIcons id="Icons">
+        <StyledIcons 
+            id="Icons"
+            showTutorial={showTutorial}
+        >
             {icons.map(({label, img, clicked}, index)=>
                 <Icon key={index}
                     label={label}
@@ -113,6 +125,12 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted}) {
         </StyledIcons>
     );
 };
+const mapStateToProps = (state) => {
+    return {
+        showTutorial: state.showTutorial,
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
       onOpenNotepad: () => dispatch(openNotepad()),
@@ -121,4 +139,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 
-export default connect(null, mapDispatchToProps)(Icons);
+export default connect(mapStateToProps, mapDispatchToProps)(Icons);
