@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pilot-test-win/static/css/main.cd159890.css",
-    "main.js": "/pilot-test-win/static/js/main.ceebc46e.js",
+    "main.js": "/pilot-test-win/static/js/main.cea94b66.js",
     "static/js/787.50932043.chunk.js": "/pilot-test-win/static/js/787.50932043.chunk.js",
     "static/media/windows98_logo_수정2.png": "/pilot-test-win/static/media/windows98_logo_수정2.a6c93b091fac2dd644a8.png",
     "static/media/startup.mp3": "/pilot-test-win/static/media/startup.3d0ca3c26ba1af9cb6d0.mp3",
@@ -12,11 +12,11 @@
     "static/media/windows_98_clouds.jpg": "/pilot-test-win/static/media/windows_98_clouds.13127b76eac6624d4b6d.jpg",
     "index.html": "/pilot-test-win/index.html",
     "main.cd159890.css.map": "/pilot-test-win/static/css/main.cd159890.css.map",
-    "main.ceebc46e.js.map": "/pilot-test-win/static/js/main.ceebc46e.js.map",
+    "main.cea94b66.js.map": "/pilot-test-win/static/js/main.cea94b66.js.map",
     "787.50932043.chunk.js.map": "/pilot-test-win/static/js/787.50932043.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd159890.css",
-    "static/js/main.ceebc46e.js"
+    "static/js/main.cea94b66.js"
   ]
 }
