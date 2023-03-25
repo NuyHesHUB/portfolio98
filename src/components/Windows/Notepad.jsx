@@ -5,7 +5,7 @@ import WindowsFrame from './WindowsFrame/WindowsFrame'
 import {focusNotepad, blurNotepad, minimizeNotepad, maximizeNotepad, disabledNotepad,exitNotepad} from '../../store/actions/actions'
 import notepadImage from '../../assets/dockbar-icon/notepad.png'
 
-function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, onNotepadMaximize, onNotepadDisabled, onNotepadExit }) {
+function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, onNotepadMaximize, onNotepadDisabled, onNotepadExit, showTutorial}) {
     const inputRef = React.createRef();
   
     useEffect(() => {
@@ -43,6 +43,7 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, on
           isMinimized={notepad.minimized}
           isMaximized={notepad.maximized}
           isDisabled={notepad.maximized}
+          showTutorial={showTutorial}
           >
           <div
             className="Notepad"
@@ -56,7 +57,8 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, on
   
   const mapStateToProps = (state) => {
     return {
-      notepad: state.notepad
+      notepad: state.notepad,
+      showTutorial: state.showTutorial,
     }
   }
   

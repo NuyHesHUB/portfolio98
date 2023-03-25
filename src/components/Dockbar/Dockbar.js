@@ -14,11 +14,14 @@ const StyledDockbar = styled.div`
     padding: 3px;
     background-color: rgb(195, 199, 203);
     box-shadow: 0 0 0 2px rgba(255, 255, 255);
+    z-index: ${props=>props.showTutorial ? '999' : ''};
 `;
 
-function Dockbar({showStart}) {
+function Dockbar({showStart, showTutorial}) {
     return (
-        <StyledDockbar>
+        <StyledDockbar
+            showTutorial={showTutorial}
+        >
             <DockbarGroup/>
             {showStart ? <Start /> : null}
             <Docktime/>
@@ -28,7 +31,8 @@ function Dockbar({showStart}) {
 
 const mapStateToProps = (state) => {
     return {
-      showStart: state.showStart
+      showStart: state.showStart,
+      showTutorial: state.showTutorial
     }
   }
 

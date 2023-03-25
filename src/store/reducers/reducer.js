@@ -7,7 +7,8 @@ const initialState = {
   /* systemLoading: false, */
   showStart: false,
   showModal: false,
-  showTutorial: false,
+  /* showTutorial: false, */
+  showTutorial: true,
   about: {
     show: false,
     blurred: false,
@@ -15,13 +16,13 @@ const initialState = {
     maximized:false, */
   },
   notepad: {
-    show: false,
+    show: true,
     blurred: false,
     minimized: false,
     maximized:false,
   },
   resume: {
-    show: true,
+    show: false,
     blurred: false,
     minimized: false,
     maximized: false,
@@ -95,12 +96,6 @@ const reducer = (state = initialState, action) => {
           blurred: true
         },
         showStart: !state.showStart
-      }
-
-    case actionTypes.START_TUTORIAL_CLICKED:
-      return{
-        ...state,
-        showTutorial: !state.showTutorial
       }
       
     case actionTypes.START_MENU_BLUR:
@@ -235,6 +230,22 @@ const reducer = (state = initialState, action) => {
             minimized: false,
             maximized: false,
           }
+        }
+      case actionTypes.OPEN_TUTORIAL:
+        return{
+          ...state,
+          /* showTutorial: !state.showTutorial, */
+          showTutorial: true,
+          /* resume: {
+            show: true,
+            blurred: false,
+            minimized: false,
+          },
+          notepad: {
+            show: false,
+            blurred: false,
+            minimized: false,
+          }, */
         }
 
     /*----------------------------------------*\
@@ -704,6 +715,23 @@ const reducer = (state = initialState, action) => {
           maximized: false,
         }
       }
+
+      case actionTypes.EXIT_TUTORIAL:
+        return{
+          ...state,
+          /* showTutorial: !state.showTutorial, */
+          showTutorial: false,
+          /* resume: {
+            show: true,
+            blurred: false,
+            minimized: false,
+          },
+          notepad: {
+            show: false,
+            blurred: false,
+            minimized: false,
+          }, */
+        }
 
     default: return state;
   }

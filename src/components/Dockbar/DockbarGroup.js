@@ -21,12 +21,17 @@ const StyledDockbarGroup=styled.div`
 const StyledGroup = styled.div`
     height: 100%;
     display: flex;
+    /* #StartButton{
+    outline: 5px solid red
+    } */
+    outline: ${props=>props.showTutorial ? '5px solid red':''};
+    animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
 `;
 
 /* console.log(Frame); */
 /* console.log(onFullsize); */
 
-function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick, onNotepadClick, onResumeClick, onAboutClick, onDeletedClick}){
+function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick, onNotepadClick, onResumeClick, onAboutClick, onDeletedClick, showTutorial}){
     /* console.log(resume.maximized); */
     /* console.log('showStart',showStart); */
     const notepadButton = notepad.show?
@@ -34,15 +39,9 @@ function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick,
             id="notepad-button"
             pressed={!notepad.minimized && !notepad.blurred}
             clicked={()=> onNotepadClick()}
-            /* clicked={()=> {
-                onNotepadClick();
-                if(resume.maximized===true){
-                    console.log('오오오');
-                }
-            }} */
         >
             <div>
-                <img src={notepadImg} alt="notepad" /* style={{width:'20px', height:'20px'}} */   />
+                <img src={notepadImg} alt="notepad"/>
                 <span>Untitled - 메모장</span>
             </div>
         </Button> : null;
@@ -52,18 +51,6 @@ function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick,
             id="resume-button"
             pressed={!resume.minimized && !resume.blurred}
             clicked={()=> onResumeClick()}
-            /* clicked={()=>{
-                if(resume.maximized===true){
-                    onResumeClick()
-                    console.log('트루??');
-                    
-                }else{
-                    console.log('펄스??');
-                    resume.maximized=true;
-                    onResumeClick()
-                }
-            }
-            } */
         >
             <div>
                 <img src={resumeImg} alt="resume" style={{width:'16px', height:'18px', marginRight:'2px'}}   />
@@ -77,6 +64,7 @@ function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick,
             id="about-button"
             pressed={ !about.blurred }
             clicked={()=> onAboutClick()}
+            showTutorial={showTutorial}
         >
             <div>
                 <img src={aboutImg} alt="about"/>
@@ -91,19 +79,22 @@ function DockbarGroup({showStart, notepad, resume, about, deleted, onStartClick,
             clicked={()=> onDeletedClick()}
         >
             <div>
-                <img src={deletedImg} alt="deleted" /* style={{width:'20px', height:'20px'}} */   />
+                <img src={deletedImg} alt="deleted"/>
                 <span>휴지통</span>
             </div>
         </Button> : null;
         
     return (
         <StyledDockbarGroup>
-            <StyledGroup>
+            <StyledGroup
+                showTutorial={showTutorial}
+            >
                 <Button
                     id="StartButton"
                     clicked={()=>onStartClick()}
                     pressed={showStart}
                     pad="0"
+                    
                 >
                     <div>
                         <img 
@@ -132,6 +123,7 @@ const mapStateToProps = (state) => {
       resume: state.resume,
       about: state.about,
       deleted: state.deleted,
+      showTutorial: state.showTutorial,
     }
   }
 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyledFrame, TitleBar, ButtonGroup, StyledMenu} from './StyledFrame'
+import { connect } from 'react-redux';
 /* ICONS */
 import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximize from '../../../assets/titlebar-icons/maximize.png';
@@ -8,7 +9,7 @@ import close from '../../../assets/titlebar-icons/close.png';
 /* SCSS */
 import styles from '../../../styles/modal.module.scss'
 
-export function Frame({children, id, img, title, blurred, showMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled}){
+export function Frame({children, id, img, title, blurred, showMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
     const [resize, setResize] = useState(true);
@@ -85,6 +86,8 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
             isDisabled={isDisabled}
             blurred={blurred}
             className={resize ? styles.modal : styles.big_modal}
+            showTutorial={showTutorial}
+            
         >
             <TitleBar blurred={blurred}>
                 <img src={img} draggable='false' alt='MiniIcon'/>
@@ -122,5 +125,10 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         </StyledFrame>
     );
 };
+const mapStateToProps=(state)=>{
+    return{
+        tutorialVisible: state.showTutorial,
+    }
+}
 
-export default Frame;
+export default connect(mapStateToProps)(Frame);

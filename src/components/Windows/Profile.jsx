@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import ProfileIMG from '../../assets/resume-img/profile.jpg'
 import {connect} from 'react-redux'
-import { startTutorialClicked } from '../../store/actions/actions'
-import Tutorial from './Tutorial';
+import { openTutorial } from '../../store/actions/actions'
+/* import Tutorial from './Tutorial'; */
 /* import Button from '../Button'; */
 
 const ProfileFrame=styled.div`
-    width: 220px;
-    height: 350px;
+    width: 250px;
+    height: 310px;
     background-color: rgb(195,199,203);
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
     /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
@@ -18,7 +18,13 @@ const ProfileFrame=styled.div`
     position: absolute;
     top: 2%;
     right: 2%;
-    /* padding-top: 30px; */
+    z-index: ${props => props.showTutorial ? '999' : ''};
+    animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
+    @keyframes tutorial1 {
+        0%,
+        100%{outline: 5px solid red}
+        50%{outline: 5px solid #ededed}
+    }
 `
 const ProfileWrap=styled.div`
     width: 100%;
@@ -34,14 +40,12 @@ const ProfileWrap=styled.div`
     .title{
         text-align: center;
         padding: 5px 0;
-        border: 1px dotted #ededed;
+        /* border-top: 1px dotted #ededed; */
+        border-bottom: 1px dotted #ededed;
         color: #fff;
         font-weight: 600;
     }
     .picture{
-        /* width: 80px;
-        height: 80px;
-        border-radius: 50%; */
         margin-top: 5px;
         margin-bottom: 5px;
         div{
@@ -58,23 +62,26 @@ const ProfileWrap=styled.div`
     ul{
         border-top: 1px dotted #ededed;
         list-style: none;
+        /* padding: 5px; */
         li{
             border-bottom: 1px dotted #ededed;
             color: yellow;
             font-weight: 600;
             padding: 3px 10px;
             &:first-child{
-                animation: tutorial 1s infinite;
+                padding: 7px;
             }
-            &:hover{
+            &:last-child{
+                border: none;
+            }
+            &:hover:not(:first-child){
                 background: #ededed;
                 color: blue;
             }
-            @keyframes tutorial {
-                0%{color: red}
-                50% {color: yellow;}
-                100% {color: red;}
-            }
+            /* &:hover{
+                background: #ededed;
+                color: blue;
+            } */
         }
     }
 `
@@ -83,16 +90,19 @@ const ProfileWrap=styled.div`
 } */
 const StyledButtonInside = styled.div`
   border: 1px dotted transparent;
-  /* padding: 0 ${props => props.pad ? props.pad + 'px' : '10px'}; */
   height: 100%;
   width: 100%;
   text-align: center;
-  display: flex;
+  line-height: ${props=>props.pressed? '21px':'30px'};
+  &:active{
+    line-height: 21px;
+  }
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   /* width: ${props => props.pad ? `auto` : `160px`}; */
 
-  div {
+  /* div {
     display: flex;
     
     span, b {
@@ -101,7 +111,7 @@ const StyledButtonInside = styled.div`
       justify-content: center;
       padding-left: 3px;
     }
-  }
+  } */
 `;
 const StyledTutoBtn = styled.div`
   /* box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
@@ -113,18 +123,23 @@ const StyledTutoBtn = styled.div`
   height: 100%; */
   width: 100%;
   height: 30px;
-  background: blue;
-  box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
-    rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
+  /* background: blue; */
+  /* box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+    rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px; */
   color:yellow;
-  
-  
+  animation: ${props=>props.pressed ? '': 'tutorial 2s infinite'};
+  @keyframes tutorial {
+                0%{color: red}
+                50% {color: yellow;}
+                100% {color: red;}
+            }
   ${props => props.pressed ? `
     box-shadow: rgb(255, 255, 255) 1px 1px 0 1px, rgb(0, 0, 0) 1px 1px 0px 1px inset !important;
     font-weight: bold;
     background-color: #blue !important;
     padding: 4px 2px 2px 4px;
-  `: ``};
+  `: `box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+        rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;`};
   
   &:focus {
     box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
@@ -142,20 +157,26 @@ const StyledTutoBtn = styled.div`
 `;
 
 function TutoBtn({ id, children, pressed, clicked, pad}){
+    console.log('pressed',pressed);
     return(
         <StyledTutoBtn onClick={clicked} pressed={pressed} id={id}>
-            <StyledButtonInside>Test Tutorial</StyledButtonInside>
+            <StyledButtonInside
+                pressed={pressed}
+            >User Tutorial</StyledButtonInside>
         </StyledTutoBtn>
     )
 }
 
 function Profile({showTutorial, onTutorialClick}){
+    
     console.log('showTutorial',showTutorial);
-    console.log('onTutorialClick',onTutorialClick);
+    /* console.log('onTutorialClick',onTutorialClick); */
     /* const tutorialButton = showTutorial ?
         <Tutorial/> : null; */
     return (
-        <ProfileFrame>
+        <ProfileFrame
+            showTutorial={showTutorial}
+        >
             <ProfileWrap>
                 <div>
                     <h3 style={{textAlign:'center',background:'rgb(0,216,215)', color:'blue'}}>Quick Menu</h3>
@@ -163,20 +184,20 @@ function Profile({showTutorial, onTutorialClick}){
                     <div className='picture'>
                        <div style={{backgroundImage:`url(${ProfileIMG})`}}></div>
                     </div>
-                    <TutoBtn
-                            id="StartTutorial"
-                            clicked={()=>onTutorialClick()}
-                            pressed={showTutorial}
-                            pad="0"
-                        >
-                        </TutoBtn>
                     <ul>
-                        <li style={{textAlign:'center'}}>User Tutorial</li>
+                        <li>
+                            <TutoBtn
+                                    id="StartTutorial"
+                                    clicked={()=>onTutorialClick()}
+                                    pressed={showTutorial}
+                                    pad="0"
+                                >
+                            </TutoBtn>
+                        </li>
                         <li>&gt; Biography</li>
                         <li>&gt; Resume</li>
                         <li>&gt; Project</li>
                         <li>&gt; Contact</li>
-                        <li></li>
                     </ul>
                 </div>
             </ProfileWrap>
@@ -191,7 +212,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onTutorialClick: () => dispatch(startTutorialClicked())
+        onTutorialClick: () => dispatch(openTutorial())
     }
 }
 

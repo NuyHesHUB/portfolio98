@@ -10,7 +10,6 @@ export const StyledStart = styled.div`
   border-top: 2px solid rgba(255, 255, 255, 1);
   border-left: 2px solid rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.7) -2px -2px 1px inset;
-
   padding-bottom: 2px;
 `;
 

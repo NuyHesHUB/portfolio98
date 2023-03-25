@@ -34,12 +34,6 @@ export function startButtonClicked() {
   }
 }
 
-export function startTutorialClicked() {
-  return {
-    type: actionTypes.START_TUTORIAL_CLICKED
-  }
-}
-
 export function startMenuBlur() {
   return {
     type: actionTypes.START_MENU_BLUR
@@ -76,6 +70,12 @@ export function openResume() {
 export function openDeleted() {
   return {
     type: actionTypes.OPEN_DELETED
+  }
+}
+
+export function openTutorial() {
+  return {
+    type: actionTypes.OPEN_TUTORIAL
   }
 }
 
@@ -237,5 +237,11 @@ export function exitResume() {
 export function exitDeleted() {
   return {
     type: actionTypes.EXIT_DELETED
+  }
+}
+
+export function exitTutorial() {
+  return {
+    type: actionTypes.EXIT_TUTORIAL
   }
 }

@@ -73,7 +73,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,d
     /* const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; *//* (onChange); */
     
-
+    console.log('tutorialvisible',tutorialVisible);
     return (
         
         <StyledWindows className='App'/*  ref={element} */ /* onClick={triggerFull} */>
@@ -89,7 +89,7 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,d
             <Link to={`/loading`}>로딩 링크</Link>
             <Link to={`/windows`}>윈도우 링크</Link>
             <Profile/>
-            <Dockbar/>
+            <Dockbar styled={{zIndex:'999'}}/>
             <Container/>
         </StyledWindows>
     );

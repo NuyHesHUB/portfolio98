@@ -1,120 +1,106 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { exitTutorial } from '../../store/actions/actions'
+
 const StyledTutorial = styled.div`
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -18px;
     left: 0;
     background: rgba(0,0,0,.5);
     z-index: 999;
-    .dockbar_content{
+    .closewrap{
         position: absolute;
-        bottom: 79px;
-        left: 86px;
-        color: #ededed;
-        font-weight: 400;
-        font-size: 16px;
-        &::after{
-            position: absolute;
-            top: 27px;
-            left: -48px;
-            width: 3px;
-            height: 61px;
-            content: "";
-            background: #ededed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        width: 168px;
+        height: 41px;
+        background: rgb(195, 199, 203);
+        box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+    rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
+        padding: 5px;
+        box-sizing: border-box;
+    .content{
+        color: yellow;
+        background: blue;
+        display: inline-block;
+        line-height: 26px;
+        font-weight: 600;
+        padding: 2px 15px;
+        box-sizing: border-box;
+    }
+    .close{
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: rgb(195, 199, 203);
+        box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+        rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
+        &:focus {
+            box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+            rgba(0, 0, 0, 0.4) 0px 0px 0 1.5px inset, rgb(0, 0, 0) 1px 1px 0px 1px;
         }
-        &::before{
+        &:active {
+            box-shadow: rgb(255, 255, 255) 1px 1px 0 1px, rgb(0, 0, 0) 1px 1px 0px 1px inset !important;
+            padding: 4px 2px 2px 4px;
+        }
+        .close-1{
             position: absolute;
-            top: 27px;
-            left: -47px;
-            width: 60px;
-            height: 3px;
+            bottom: 14px;
+            left: 5px;
+            rotate: 45deg;
             content: '';
-            background: #ededed;
+            width: 20px;
+            height: 2px;
+            background: #242424;
+        }
+        .close-2{
+            position: absolute;
+            bottom: 14px;
+            left: 5px;
+            rotate: -45deg;
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: #242424;
         }
     }
-`
-const Dockbar = styled.div`
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    z-index: 999;
-    width: 80px;
-    height: 30px;
-    /* background: red; */
-    border: 3px solid #ededed;
-    animation: tutorial1 2s infinite;
-    /* &::after{
-        position: absolute;
-        top: -102px;
-        left: 35px;
-        width: 3px;
-        height: 100px;
-        content: '';
-        background: #ededed;
     }
-    &::before{
-        position: absolute;
-        top: -139px;
-        left: 69px;
-        width: 3px;
-        height: 71px;
-        content: '';
-        background: #ededed;
-        rotate: 90deg;
-    } */
-    @keyframes tutorial1 {
-        0%,
-        100%{opacity:1}
-        50%{opacity:0}
-    }
-`
-const QuickMenu = styled.div`
-    position: absolute;
-    top: 15px;
-    right: 22px;
-    z-index: 999;
-    width: 225px;
-    height: 356px;
-    border: 3px solid #ededed;
-    animation: tutorial2 2s infinite;
-    @keyframes tutorial2 {
-        0%,
-        100%{opacity:1}
-        50%{opacity:0}
-    }
-`
-const Icons = styled.div`
-    position: absolute;
-    top: 16px;
-    left: 4px;
-    z-index: 999;
-    width: 70px;
-    height: 470px;
-    border: 3px solid #ededed;
-    animation: tutorial3 2s infinite;
-    @keyframes tutorial3 {
-        0%,
-        100%{opacity:1}
-        50%{opacity:0}
-    }
+        
 `
 
-const Tutorial = () => {
+
+function Tutorial({onTutorialExit}){
     return (
         <StyledTutorial>
-            <Dockbar>
-            </Dockbar>
-            <div className='dockbar_content'>
-                    <p>
-                    &#x27A4;시작 메뉴 포트폴리오 프로젝트 깃허브 , 블로그 메뉴가 있습니다.
-                    </p>
+            <div className='closewrap'>
+                <div className='content'>
+                    <p>User Tutorial</p>
                 </div>
-            <QuickMenu></QuickMenu>
-            <Icons></Icons>
+                <div className='close'
+                    onClick={()=>{onTutorialExit()}}
+                >
+                    <span className='close-1'></span>
+                    <span className='close-2'></span>
+                </div>
+            </div>
         </StyledTutorial>
     );
 };
+const mapStateToProps=(state)=>{
+    return{
+        showTutorial: state.showTutorial,
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+      onTutorialExit: () => dispatch(exitTutorial()),
+    }
+  }
 
-export default Tutorial;
+export default connect(mapStateToProps, mapDispatchToProps)(Tutorial);

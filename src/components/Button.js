@@ -20,6 +20,7 @@ const StyledButtonInside = styled.div`
       padding-left: 3px;
     }
   }
+  
 `;
 
 const StyledButton = styled.button`

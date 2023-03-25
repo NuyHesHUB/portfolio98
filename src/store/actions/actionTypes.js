@@ -15,7 +15,7 @@ export const SHUT_DOWN = 'SHUT_DOWN';
 \*----------------------------------------*/
 export const START_BUTTON_CLICKED = 'START_BUTTON_CLICKED';
 export const START_MENU_BLUR = 'START_MENU_BLUR';
-export const START_TUTORIAL_CLICKED = 'START_TUTORIAL_CLICKED'
+
 
 
 /*----------------------------------------*\
@@ -26,6 +26,7 @@ export const OPEN_ABOUT = 'OPEN_ABOUT';
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const OPEN_RESUME = 'OPEN_RESUME';
 export const OPEN_DELETED = 'OPEN_DELETED';
+export const OPEN_TUTORIAL = 'OPEN_TUTORIAL';
 
 /*----------------------------------------*\
                   FOCUS
@@ -77,3 +78,4 @@ export const EXIT_ABOUT = 'EXIT_ABOUT';
 export const EXIT_MODAL = 'EXIT_MODAL';
 export const EXIT_RESUME = 'EXIT_RESUME';
 export const EXIT_DELETED = 'EXIT_DELETED';
+export const EXIT_TUTORIAL = 'EXIT_TUTORIAL';
