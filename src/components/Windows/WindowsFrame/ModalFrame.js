@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {StyledModalFrame, TitleBar, ButtonGroup} from './StyledModalFrame'
-/* ICONS */
+
+/* Styles */
+import { StyledModalFrame, TitleBar, ButtonGroup } from './StyledModalFrame'
+
+/* Image */
 import close from '../../../assets/titlebar-icons/close.png';
 
 export function ModalFrame({children, id, img, title, blurred, width, height, onExit}){
@@ -15,22 +18,25 @@ export function ModalFrame({children, id, img, title, blurred, width, height, on
     },[offset])
 
     /*----------------------------------------*\
-                       DRAG 
+                        DRAG 
     \*----------------------------------------*/
     function dragStart(event){
         window.onmousemove=(e)=>dragging(e,{x: event.clientX, y: event.clientY});
         window.onmouseup=dragEnd;
     }
+
     function dragging(event, axis) {
         let x = axis.x - event.clientX;
         let y = axis.y - event.clientY;
         setOffset({ x: event.clientX, y: event.clientY });
         setCoordinates({ x: coordinates.x - x, y: coordinates.y - y });
-      }
+    }
+
     function dragEnd() {
         window.onmousemove = null;
         window.onmouseup = null;
     }
+    
     function random(){
         return Math.round(Math.random()*30);
     }

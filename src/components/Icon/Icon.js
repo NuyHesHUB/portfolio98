@@ -1,5 +1,9 @@
 import React from 'react';
+
+/* Library */
 import styled from 'styled-components'
+
+/* Styles */
 import iconBg from '../../styles/iconBg';
 
 const StyledIcon = styled.div`
@@ -7,7 +11,6 @@ const StyledIcon = styled.div`
   width: 36px;
   background-image: url(${props => props.background});
   background-size: 36px auto;
-  
   &::after {
     content: undefined;
     display: block;
@@ -44,7 +47,6 @@ const StyledIconWithLabel = styled.div`
         background-color: rgb(0, 0, 127);
         border: 1px dotted rgba(200, 200, 200);
       }
-      
       ${StyledIcon}::after {
         content: "";
       }

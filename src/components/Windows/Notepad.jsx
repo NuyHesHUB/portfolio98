@@ -57,7 +57,7 @@ function Notepad({ notepad, onNotepadFocus, onNotepadBlur, onNotepadMinimize, on
               <TutorialText><i>PORTFOLIO98</i> 의 사용방법을 알아볼까요?</TutorialText>
               <br/>
               <hr/>
-              <TutorialText style={{textAlign:'center',fontSize:'10px',marginBottom:'10px', marginTop:'10px'}}><i style={{fontSize:'10px',marginRight:'5px'}}>&#x274B;</i><i style={{color:'white',background:'red',padding:'2px 3px'}}>SKIP</i> 이 필요하시다면 아래의 <i style={{padding:'2px 3px', background:'blue', color:'yellow'}}>User Tutorial</i><i style={{background:'rgb(195, 199, 203)',padding:'2px 3px'}}>X</i> 닫는 창을 눌러주세요.<i style={{fontSize:'10px',marginLeft:'5px'}}>&#x274B;</i></TutorialText>
+              <TutorialText style={{textAlign:'center',fontSize:'10px',marginBottom:'10px', marginTop:'10px'}}><i style={{fontSize:'10px',marginRight:'5px'}}>&#x274B;</i><i style={{color:'white',background:'red',padding:'2px 3px'}}>SKIP</i> 이 필요하시다면 아래의 <i style={{padding:'2px 3px', background:'blue', color:'yellow'}}>User Tutorial</i><i style={{background:'rgb(195, 199, 203)',padding:'2px 3px'}}>X</i> 닫는 버튼을 눌러주세요.<i style={{fontSize:'10px',marginLeft:'5px'}}>&#x274B;</i></TutorialText>
               <hr/>
               <TutorialSubTitle>&#x2776; 시작메뉴</TutorialSubTitle>
               <br/>

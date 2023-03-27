@@ -1,9 +1,15 @@
 import React, {useEffect} from 'react';
+
+/* Library */
 import styled from 'styled-components';
-import loadingImg from '../../assets/bios-img/windows98_logo_수정2.png'
-import '../../styles/loading.scss'
-import { Container } from '../../styles/Container';
 import { useNavigate } from 'react-router-dom';
+
+/* Styles */
+import { Container } from '../../styles/Container';
+import '../../styles/loading.scss'
+
+/* Image */
+import loadingImg from '../../assets/bios-img/windows98_logo_수정2.png'
 
 const StyledLoading=styled.div`
     padding-top: 10px;
@@ -22,21 +28,22 @@ const LoadingAni = styled.div`
     bottom:0;
     width:100%;
     height:30px;
-    background: linear-gradient(
+    background: 
+      linear-gradient(
         0.25turn,
         transparent,
         #fff 45% 55%,
         transparent
       );
-      animation: loading steps(16) 1s infinite;
-      @keyframes loading {
-        0% {
-          background-position-x: -1012px;
-        }
-        100% {
-          background-position-x: 1012px;
-        }
+    animation: loading steps(16) 1s infinite;
+    @keyframes loading {
+      0% {
+        background-position-x: -1012px;
       }
+      100% {
+        background-position-x: 1012px;
+      }
+    }
 `
 
 const Loading = () => {
@@ -48,6 +55,7 @@ const Loading = () => {
             console.log('Initial timeout!')
         }, 5000);
         return () => clearTimeout(fakeLoadingtimer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
     return (

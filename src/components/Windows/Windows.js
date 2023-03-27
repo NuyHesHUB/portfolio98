@@ -1,26 +1,27 @@
-import React, {useState, useEffect/* , useRef */} from 'react';
-import {connect} from 'react-redux'
+import React, { useState, useEffect } from 'react';
 
+/* Library */
+import {connect} from 'react-redux';
+/* import { Link } from 'react-router-dom'; */ /* Link test를 위해 사용 */
 import styled from 'styled-components';
 
-import Icons from '../Icon/Icons'
-import Dockbar from '../Dockbar/Dockbar';
-
-import Notepad from './Notepad'
-import Resume from './Resume';
-import About from './About'
-import Deleted from './Deleted'
-
-import Profile from './Profile';
-
-import Tutorial from './Tutorial';
-
-import startup from '../../assets/sounds/startup.mp3'
+/* Styles */
 import { Container } from '../../styles/Container';
 
-import { Link } from 'react-router-dom';
+/* Component */
+import Icons from '../Icon/Icons';
+import Dockbar from '../Dockbar/Dockbar';
+import Notepad from './Notepad';
+import Biography from './Biography';
+import About from './About';
+import Deleted from './Deleted';
+import Profile from './Profile';
+import Tutorial from './Tutorial';
+import Resume from './Resume';
+import Project from './Project';
 
-
+/* Audio */
+import startup from '../../assets/sounds/startup.mp3';
 
 const StyledWindows=styled.div`
     position: relative;
@@ -32,9 +33,10 @@ const StyledWindows=styled.div`
     background-size: cover; */
 `
 
-
-function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,deletedVisible}){
+function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisible, deletedVisible, resumeVisible, projectVisible}){
+    
     const [audio] = useState(new Audio(startup));
+
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
       audio.muted = true;
@@ -49,31 +51,40 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,d
     function contextDisable(e){
         e.preventDefault();
     }
-    function linkfn(){
-        /* window.location.href= '/loading' */
-        /* return <Link to={`/loading`}></Link> */
-    }
+    
+    /*----------------------------------------*\
+                    link test
+    \*----------------------------------------*/
+    /* function linkfn(){
+        window.location.href= '/loading'
+        return <Link to={`/loading`}></Link>
+    } */
 
     const notepadDisplay = notepadVisible ? <Notepad/> : null;
-    const resumeDisplay = resumeVisible ? <Resume/> : null;
     const aboutDisplay = aboutVisible ? <About/> : null;
     const deletedDisplay = deletedVisible ? <Deleted/> : null ;
+    const biographyDisplay = biographyVisible ? <Biography/> : null;
+    const resumeDisplay = resumeVisible ? <Resume/> : null;
+    const projectDisplay = projectVisible ? <Project/> : null;
     const tutorialDisplay = tutorialVisible ? <Tutorial/> : null;
-/*     const Fullscreen = useFullscreen();
-    const { element, triggerFull, exitFull } = Fullscreen; */
+    
+/* ------------------------------------------------------------------- */
+    /* const Fullscreen = useFullscreen(); */
+    /* const { element, triggerFull, exitFull } = Fullscreen; */
 
     /* window.addEventListener('load',function(){
         console.log('load');
         console.log(triggerFull);
         return {triggerFull}
     }) */
+
     /* window.addEventListener('load',triggerFull) */
+    /* const Fullscreen = useFullscreen(); */
+    /* const { element, triggerFull, exitFull } = Fullscreen; (onChange); */
 /* ------------------------------------------------------------------- */
-    
-    /* const Fullscreen = useFullscreen();
-    const { element, triggerFull, exitFull } = Fullscreen; *//* (onChange); */
-    
-    console.log('tutorialvisible',tutorialVisible);
+
+    /* console.log('tutorialvisible',tutorialVisible); */
+
     return (
         
         <StyledWindows className='App'/*  ref={element} */ /* onClick={triggerFull} */>
@@ -81,13 +92,17 @@ function Windows({notepadVisible, resumeVisible, aboutVisible, tutorialVisible,d
             <br/>
             <Icons/>
             {notepadDisplay}
-            {resumeDisplay}
+            {biographyDisplay}
             {aboutDisplay}
             {deletedDisplay}
+            {resumeDisplay}
+            {projectDisplay}
             {tutorialDisplay}
-            <button onClick={linkfn}>test버튼</button>
-            <Link to={`/loading`}>로딩 링크</Link>
-            <Link to={`/windows`}>윈도우 링크</Link>
+            {/* ----------------------------------------- */}
+            {/* <button onClick={linkfn}>test버튼</button> */}
+            {/* <Link to={`/loading`}>로딩 링크</Link> */}
+            {/* <Link to={`/windows`}>윈도우 링크</Link> */}
+            {/* ----------------------------------------- */}
             <Profile/>
             <Dockbar styled={{zIndex:'999'}}/>
             <Container/>
@@ -98,9 +113,11 @@ const mapStateToProps=(state)=>{
     return{
         shutDown: state.shutDown,
         notepadVisible: state.notepad.show,
-        resumeVisible: state.resume.show,
         aboutVisible: state.about.show,
         deletedVisible: state.deleted.show,
+        biographyVisible: state.biography.show,
+        resumeVisible: state.resume.show,
+        projectVisible: state.project.show,
         tutorialVisible: state.showTutorial,
     }
 }

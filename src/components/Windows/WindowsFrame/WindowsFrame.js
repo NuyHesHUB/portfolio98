@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import {StyledFrame, TitleBar, ButtonGroup, StyledMenu} from './StyledFrame'
+
+/* Library */
 import { connect } from 'react-redux';
-/* ICONS */
+
+/* Styles */
+import {StyledFrame, TitleBar, ButtonGroup, StyledMenu} from './StyledFrame';
+import styles from '../../../styles/modal.module.scss';
+
+/* Image */
 import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximize from '../../../assets/titlebar-icons/maximize.png';
 import disabled from '../../../assets/titlebar-icons/disabled3.png';
 import close from '../../../assets/titlebar-icons/close.png';
-/* SCSS */
-import styles from '../../../styles/modal.module.scss'
 
 export function Frame({children, id, img, title, blurred, showMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
@@ -33,14 +37,17 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         let y = axis.y - event.clientY;
         setOffset({ x: event.clientX, y: event.clientY });
         setCoordinates({ x: coordinates.x - x, y: coordinates.y - y });
-      }
+    }
+
     function dragEnd() {
         window.onmousemove = null;
         window.onmouseup = null;
     }
+
     function random(){
         return Math.round(Math.random()*30);
     }
+
     /*----------------------------------------*\
                       SHOW MENU 
     \*----------------------------------------*/
@@ -51,10 +58,11 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         <span><u>S</u>earch</span>
         <span><u>H</u>elp</span>
     </StyledMenu> : null;
+
     /*----------------------------------------*\
             MAXIMIZE CLASS TOGGLE FUNCTION
     \*----------------------------------------*/
-   const onFullsize = () => {
+    const onFullsize = () => {
         const frameTitle = document.querySelector('#' + id + ' .title');
         setResize(!resize);
         /* console.log(resize); */
@@ -64,16 +72,17 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         else{
             frameTitle.addEventListener('mousedown', dragStart);
         }
-      };
+    };
+
     const onFullsizeCancel = () => {
         if(resize===false){
             /* console.log('false 다'); */
             setResize(!resize);
         }
     }
-      
-      /* console.log('resize',resize); */
-      console.log(blurred);
+    /* console.log('resize',resize); */
+    console.log(blurred);
+
     return (
         <StyledFrame
             left={coordinates.x}
@@ -87,7 +96,6 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
             blurred={blurred}
             className={resize ? styles.modal : styles.big_modal}
             showTutorial={showTutorial}
-            
         >
             <TitleBar blurred={blurred}>
                 <img src={img} draggable='false' alt='MiniIcon'/>
@@ -97,23 +105,23 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
                         onMinimize()
                         onFullsizeCancel()
                     }
-                        }>
+                    }>
                         <img src={minimize} draggable='false' alt='minimize'/>
                     </button>
                     {
-                        resize===true? <button className="clickable"/* {`${styles.clickable} ${styles.container2}`} */ onClick={()=>{
+                        resize===true? 
+                        <button className="clickable"/* {`${styles.clickable} ${styles.container2}`} */ onClick={()=>{
                             onMaximize()
                             onFullsize()
                             }}>
                             <img src={maximize} draggable='false' alt='maximize'/>
                         </button>
-                        
                         :<button className="clickable"/* {`${styles.clickable} ${styles.container2}`} */ onClick={()=>{
-                        onDisabled()
-                        onFullsize()
+                            onDisabled()
+                            onFullsize()
                         }}>
-                        <img src={disabled} draggable='false' alt='maximize'/>
-                    </button>
+                            <img src={disabled} draggable='false' alt='maximize'/>
+                        </button>
                     }
                     <button className='clickable' onClick={()=> onExit()}>
                         <img src={close} draggable='false' alt='close'/>
@@ -125,6 +133,7 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         </StyledFrame>
     );
 };
+
 const mapStateToProps=(state)=>{
     return{
         tutorialVisible: state.showTutorial,

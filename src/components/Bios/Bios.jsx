@@ -1,26 +1,27 @@
-import React, {/* useCallback, useEffect, useState */} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+/* Library */
 import styled from 'styled-components';
 
+/* Styles */
 import { Container } from '../../styles/Container';
-
 import { BiosInfoEntry } from './BiosInfoEntry';
 import { BiosInfoSection, BiosInfoSectionStyled} from './BiosInfoSection';
 
+/* Component */
 import BiosLogo from './BiosLogo';
-
 /* import { useBiosLoading } from '../../hooks/useBiosLoading'; */
 import { useBrowserInfo } from '../../hooks/useBrowserInfo';
 import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
-
 /* import { useFullscreen } from '../../hooks/useFullscreen'; */
-
 /* import { getEnvConfig } from '../utiles/getEnvConfig'; */
 
+/* Image */
 import energylogo from '../../assets/bios-img/epa-logo.png'
 import blurlogo from '../../assets/bios-img/a-logo.png'
 import BiosTyping from './BiosTyping'
 
-import { Link } from 'react-router-dom';
 const StyledBios=styled.div`
     width: 100vw;
     height: 100vh;
@@ -76,7 +77,6 @@ const BiosInfoSections=styled.div`
             animation: box1 2s ease-in-out 0.4s infinite;
             animation-delay: 6s;
         }
-        
     }
     @keyframes box1 {
                 0%,
@@ -88,7 +88,6 @@ const BiosInfoSections=styled.div`
                 }
             }
 `;
-
 /* const BiosLink=styled.a`
     color: inherit;
 `; */
@@ -121,12 +120,10 @@ const LOAD_WITHOUT_SOUND_KEY = 'm' */
 const LOAD_WITH_FULLSCREEN_KEY = 'F11'
 const LOAD_WITHOUT_FULLSCREEN_KEY = 'Enter'
 
-
 const Bios = () => {
     /* const { projectUrl } = getEnvConfig(); */
     const browserInfo = useBrowserInfo();
     /* const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState(); */
-
     /* const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; */
 
@@ -135,26 +132,23 @@ const Bios = () => {
         console.log(e.key);
       }; */
 
-
-      /* function onKeyPressed(e, key, onKeyDown) {
+    /* function onKeyPressed(e, key, onKeyDown) {
                 e.preventDefault();
                 console.log(e.key);
                 triggerFull();
     } */
     
     /* useEffect(() => {
-        
         (async () => {
             const storageEstimate = await browserInfo.storageEstimate;
             setBrowserInfoLoadedValues({ storageEstimate });
         })();
     }, [browserInfo.storageEstimate]); */
 
-/*     const loadBase = useCallback(() => {
+    /* const loadBase = useCallback(() => {
         setIsBiosLoaded(true);
         setIsSystemLoading(true);
     }, [setIsBiosLoaded, setIsSystemLoading]); */
-
 
     useOnKeyDownOnce(LOAD_WITH_FULLSCREEN_KEY)
     useOnKeyDownOnce(LOAD_WITHOUT_FULLSCREEN_KEY)
@@ -214,7 +208,6 @@ const Bios = () => {
             <Container/>
         </StyledBios>
     )
-    
 };
 
 export default Bios;

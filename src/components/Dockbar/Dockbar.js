@@ -1,7 +1,10 @@
 import React from 'react';
+
+/* Library */
 import styled from 'styled-components';
 import {connect} from 'react-redux'
 
+/* Component */
 import Docktime from './Docktime';
 import Start from './Start';
 import DockbarGroup from './DockbarGroup';
@@ -19,11 +22,9 @@ const StyledDockbar = styled.div`
 
 function Dockbar({showStart, showTutorial}) {
     return (
-        <StyledDockbar
-            showTutorial={showTutorial}
-        >
+        <StyledDockbar showTutorial={showTutorial}>
             <DockbarGroup/>
-            {showStart ? <Start /> : null}
+                {showStart ? <Start /> : null}
             <Docktime/>
         </StyledDockbar>
     );

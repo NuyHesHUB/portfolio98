@@ -1,10 +1,16 @@
 import React, {useEffect} from 'react';
+
+/* Library */
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+/* Component */
 import ModalFrame from './WindowsFrame/ModalFrame';
+
+/* Action */
 import {blurAbout, focusAbout, exitAbout} from '../../store/actions/actions'
 
+/* Image */
 import aboutImage from '../../assets/dockbar-icon/about.png'
 import logo from '../../assets/about-img/about_logo.png'
 
@@ -12,7 +18,6 @@ function About({ about, onAboutFocus, onAboutBlur, onAboutExit }) {
 
     useEffect(() => {
       window.addEventListener('click', aboutBlur);
-  
       return () => window.removeEventListener('click', aboutBlur);
       // eslint-disable-next-line
     }, []);
@@ -59,12 +64,11 @@ function About({ about, onAboutFocus, onAboutBlur, onAboutExit }) {
                 Physical memory available to Windows: 196.052 KB<br/>
                 System resources: 90% Free<br/>
             </span>
-            
           </div>
         </ModalFrame> : null;
   
     return displayContent;
-  }
+}
   
   const mapStateToProps = (state) => {
     return {
@@ -80,4 +84,4 @@ function About({ about, onAboutFocus, onAboutBlur, onAboutExit }) {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(mapStateToProps, mapDispatchToProps)(About);

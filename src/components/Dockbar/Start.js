@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react';
-import {connect} from 'react-redux'
 
+/* Library */
+import {connect} from 'react-redux'
 import {StyledStart, StyledContainer, Vertical, AllPrograms, ProgramGroup} from './StyledDockbar'
 
+/* Image */
 import About from '../../assets/start-icon/about1.png'
 import Velog from '../../assets/start-icon/velog.png'
 import Github from '../../assets/start-icon/github.png'
@@ -15,13 +17,14 @@ import Help from '../../assets/start-icon/help.png'
 /* import Run from '../../assets/start-icon/run.png' */
 import LogOff from '../../assets/start-icon/logoff.png'
 import ShutDown from '../../assets/start-icon/shutdown.png'
-
 import Suwon from '../../assets/start-icon/suwon.png'
 import May from '../../assets/start-icon/mayfield.png'
 import Zoocinema from '../../assets/start-icon/movie.png'
-import { startMenuBlur, shutDown, openModal, openAbout} from '../../store/actions/actions';
 
-function Start({onStartMenuBlur, onShutDown, onOpenModal, onOpenAbout}) {
+/* Actions */
+import { startMenuBlur, shutDown, openAbout, openTutorial} from '../../store/actions/actions';
+
+function Start({onStartMenuBlur, onShutDown, onOpenAbout, onOpenTutorial}) {
     const allPrograms = [
         {text: 'About', img: About, showArrow: false},
         {text: 'Velog', img: Velog, showArrow: false},
@@ -34,7 +37,7 @@ function Start({onStartMenuBlur, onShutDown, onOpenModal, onOpenAbout}) {
         {text: 'Project 01 : 수원 관공서', img: Suwon, showArrow: false},
         {text: 'Project 02 : 메이필드 호텔', img: May, showArrow: false},
         {text: 'Project 03 : 영화 페이지', img: Zoocinema, showArrow: false},
-        {text: 'Help', img: Help, showArrow: false},
+        {text: 'User Tutorial', img: Help, showArrow: false},
         /* {text: 'Run...', img: Run, showArrow: false}, */
         {text: 'LogOff...', img: LogOff, showArrow: false},
         {text: 'ShutDown...', img: ShutDown, showArrow: false}
@@ -73,13 +76,13 @@ function Start({onStartMenuBlur, onShutDown, onOpenModal, onOpenAbout}) {
             window.open('https://nuyheshub.github.io/project02_mayfield_hotel/')
         }else if(text === 'Project 03 : 영화 페이지'){
             window.open('https://nuyheshub.github.io/project03_movie_app/')
+        }else if(text === 'User Tutorial'){
+            onOpenTutorial();
         }
         else {
           onStartMenuBlur();
-          onOpenModal();
         }
       }
-
 
     return (
         <StyledStart id="Start">
@@ -104,8 +107,8 @@ const mapDispatchToProps=(dispatch)=>{
     return{
         onStartMenuBlur:()=>dispatch(startMenuBlur()),
         onShutDown:()=>dispatch(shutDown()),
-        onOpenModal:()=>dispatch(openModal()),
         onOpenAbout:()=>dispatch(openAbout()),
+        onOpenTutorial:()=>dispatch(openTutorial()),
     }
 }
 

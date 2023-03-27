@@ -1,22 +1,26 @@
 import React, {useState, useEffect} from 'react';
+
+/* Library */
 import styled from 'styled-components';
 import {connect} from 'react-redux'
-import { openNotepad, openResume, openDeleted} from '../../store/actions/actions';
 
+/* Action */
+import { openNotepad, openBiography, openDeleted, openResume, openProject } from '../../store/actions/actions';
+
+/* Component */
 import Icon from './Icon';
 
-import Mycomputer from '../../assets/desktop-icon/Mycomputer.png'
+/* Image */
+import Mycomputer from '../../assets/desktop-icon/Mycomputer.png';
 /* import Mydocument from '../../assets/desktop-icon/Mydocument.png' */
-import Delete from '../../assets/desktop-icon/Delete.png'
+import Delete from '../../assets/desktop-icon/Delete.png';
 /* import Myportfolio from '../../assets/desktop-icon/Myportfolio.png' */
-import Note from '../../assets/desktop-icon/Note.png'
+import Note from '../../assets/desktop-icon/Note.png';
 /* import Paint from '../../assets/desktop-icon/Paint.png' */
-import Velog from '../../assets/desktop-icon/velog.png'
-import Github from '../../assets/desktop-icon/github.png'
-
-
-/* 추가 아이콘 */
-import Myresume from '../../assets/desktop-icon/Myresume.png'
+import Velog from '../../assets/desktop-icon/velog.png';
+import Github from '../../assets/desktop-icon/github.png';
+import Mybiography from '../../assets/desktop-icon/MyBiography.png';
+import Myportfolio from '../../assets/desktop-icon/Myportfolio.png';
 
 const StyledIcons = styled.div`
     position: absolute;
@@ -42,19 +46,20 @@ const StyledIcons = styled.div`
         top: 0;
         left: 100px;
     } */
-`
+`;
 
-function Icons({onOpenNotepad, onOpenResum, onOpenDeleted, showTutorial}) {
+function Icons({onOpenNotepad, onOpenBiography, onOpenDeleted, showTutorial, onOpenProject, onOpenResume}) {
     const [icons, setIcons] = useState([
-        {label: '내컴퓨터', img: Mycomputer, clicked: false},
+        {label: '이력서', img: Mycomputer, clicked: false},
+        {label: '자기소개서', img: Mybiography, clicked: false},
         /* {label: '내문서', img: Mydocument, clicked: false}, */
         {label: '휴지통', img: Delete, clicked: false},
         /* {label: '내포트폴리오', img: Myportfolio, clicked: false}, */
         {label: '벨로그', img: Velog, clicked: false},
         {label: '깃허브', img: Github, clicked: false},
-        {label: '메모장', img: Note, clicked: false},
+        {label: '튜토리얼', img: Note, clicked: false},
+        {label: '프로젝트', img: Myportfolio, clicked: false},
         /* {label: '그림판', img: Paint, clicked: false}, */
-        {label: '자기소개서', img: Myresume, clicked: false},
     ]);
 
     useEffect(()=>{
@@ -68,7 +73,6 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted, showTutorial}) {
     function handleClick(label){
         const index = icons.findIndex(icon => icon.label === label);
         const updatedIcon =[...icons]
-
         updatedIcon.map(icon=>icon.clicked = false);
         updatedIcon[index].clicked = true;
         setIcons(updatedIcon);
@@ -85,22 +89,29 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted, showTutorial}) {
         updatedIcon.map(icon => icon.clicked =false);
         setIcons(updatedIcon);
     }
+
     function doubleClicked(label){
         reset();
-        if(label === '메모장'){
+        if(label === '튜토리얼'){
             onOpenNotepad();
         }
         else if (label === '휴지통') {
             onOpenDeleted();
         }
         else if (label === '자기소개서') {
-            onOpenResum();
+            onOpenBiography();
+        }
+        else if (label === '이력서') {
+            onOpenResume();
         }
         else if (label === '벨로그') {
             window.open('https://velog.io/@nuyhes')
         }
         else if (label === '깃허브') {
             window.open('https://github.com/NuyHesHUB')
+        }
+        else if (label === '프로젝트') {
+            onOpenProject();
         }
         else{
             console.log('haha');
@@ -125,6 +136,7 @@ function Icons({onOpenNotepad, onOpenResum, onOpenDeleted, showTutorial}) {
         </StyledIcons>
     );
 };
+
 const mapStateToProps = (state) => {
     return {
         showTutorial: state.showTutorial,
@@ -134,8 +146,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       onOpenNotepad: () => dispatch(openNotepad()),
-      onOpenResum: () => dispatch(openResume()),
+      onOpenBiography: () => dispatch(openBiography()),
       onOpenDeleted: () => dispatch(openDeleted()),
+      onOpenResume: () => dispatch(openResume()),
+      onOpenProject: () => dispatch(openProject()),
     }
   }
 

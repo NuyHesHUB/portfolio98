@@ -40,6 +40,7 @@ const BiosLogoStyled=styled.div`
     }
   }
 `
+
 const BiosLogo = () => {
     return (
         <BiosLogoStyled>

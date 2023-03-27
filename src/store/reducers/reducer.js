@@ -5,15 +5,12 @@ const initialState = {
   /* isBiosLoaded : getEnvConfig().isDevelopment,
   isWindowsLoaded : getEnvConfig().isDevelopment, */
   /* systemLoading: false, */
+
   showStart: false,
-  showModal: false,
-  /* showTutorial: false, */
   showTutorial: true,
   about: {
     show: false,
     blurred: false,
-    /* minimized: false,
-    maximized:false, */
   },
   notepad: {
     show: true,
@@ -21,19 +18,31 @@ const initialState = {
     minimized: false,
     maximized:false,
   },
-  resume: {
-    show: false,
-    blurred: false,
-    minimized: false,
-    maximized: false,
-  },
   deleted: {
     show: false,
     blurred: false,
     minimized: false,
     maximized: false,
   },
-  shutDown: false
+  biography: {
+    show: false,
+    blurred: false,
+    minimized: false,
+    maximized: false,
+  },
+  resume: {
+    show: false,
+    blurred: false,
+    minimized: false,
+    maximized: false,
+  },
+  project: {
+    show: false,
+    blurred: false,
+    minimized: false,
+    maximized: false,
+  },
+  shutDown: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -63,9 +72,6 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
-        resume:{
-          ...state.resume
-        },
         deleted:{
           ...state.deleted
         },
@@ -87,10 +93,6 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           blurred: true
         },
-        resume: {
-          ...state.resume,
-          blurred: true
-        },
         deleted: {
           ...state.deleted,
           blurred: true
@@ -107,39 +109,15 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
-        resume: {
-          ...state.resume
-        },
         deleted: {
           ...state.deleted
         },
-        showStart: false
+        showStart: false,
       }
       
     /*----------------------------------------*\
                 actionTypes OPEN
     \*----------------------------------------*/
-
-    case actionTypes.OPEN_MODAL:
-      return {
-        ...state,
-        about: {
-          ...state.about,
-          blurred: true
-        },
-        notepad: {
-          ...state.notepad
-        },
-        showModal: true,
-        resume: {
-          ...state.resume,
-          blurred: true
-        },
-        deleted: {
-          ...state.deleted,
-          blurred: true
-        }
-      }
 
     case actionTypes.OPEN_NOTEPAD:
       return {
@@ -154,12 +132,20 @@ const reducer = (state = initialState, action) => {
           minimized: false,
           /* maximized: true, */
         },
-        resume: {
-          ...state.resume,
-          blurred: true
-        },
         deleted: {
           ...state.deleted,
+          blurred: true
+        },
+        biography: {
+          ...state.biography,
+          blurred: true
+        },
+        resume: {
+          ...state.resume,
+          blureed: true
+        },
+        project: {
+          ...state.project,
           blurred: true
         }
       }
@@ -176,77 +162,164 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           blurred: true
         },
+        deleted: {
+          ...state.deleted,
+          blurred: true
+        },
+        biography: {
+          ...state.biography,
+          blurred: true
+        },
         resume: {
           ...state.resume,
+          blureed: true
+        },
+        project: {
+          ...state.project,
+          blurred: true
+        }
+      }
+
+    case actionTypes.OPEN_DELETED:
+    return {
+      ...state,
+      about: {
+        ...state.about,
+        blurred: true,
+      },
+      notepad: {
+        ...state.notepad,
+        blurred: true
+      },
+      deleted: {
+        show: true,
+        blurred: false,
+        minimized: false,
+        maximized: false,
+      },
+      biography: {
+        ...state.biography,
+        blurred: true
+      },
+      resume: {
+        ...state.resume,
+        blureed: true
+      },
+      project: {
+        ...state.project,
+        blurred: true
+      }
+    }
+
+    case actionTypes.OPEN_TUTORIAL:
+      return{
+        ...state,
+        /* showTutorial: !state.showTutorial, */
+        showTutorial: true,
+        biography: {
+          ...state.biography,
+          show: false,
+          blurred: true,
+        },
+        notepad: {
+          ...state.notepad,
+          show: true,
+          blurred: false,
+        },
+      }
+
+    case actionTypes.OPEN_BIOGRAPHY:
+      return {
+        ...state,
+        about: {
+          ...state.about,
+          blurred: true,
+        },
+        notepad: {
+          ...state.notepad,
           blurred: true
         },
         deleted: {
           ...state.deleted,
           blurred: true
+        },
+        biography: {
+          show: true,
+          blurred: false,
+          minimized: false,
+          maximized: false,
+        },
+        resume: {
+          ...state.resume,
+          blureed: true
+        },
+        project: {
+          ...state.project,
+          blurred: true
         }
       }
 
       case actionTypes.OPEN_RESUME:
-        return {
-          ...state,
-          about: {
-            ...state.about,
-            blurred: true,
-          },
-          notepad: {
-            ...state.notepad,
-            blurred: true
-          },
-          resume: {
-            show: true,
-            blurred: false,
-            minimized: false,
-            /* maximized: false, */
-          },
-          deleted: {
-            ...state.deleted,
-            blurred: true
-          }
+      return {
+        ...state,
+        about: {
+          ...state.about,
+          blurred: true,
+        },
+        notepad: {
+          ...state.notepad,
+          blurred: true
+        },
+        deleted: {
+          ...state.deleted,
+          blurred: true
+        },
+        biography: {
+          ...state.biography,
+          blureed: true
+        },
+        resume: {
+          show: true,
+          blurred: false,
+          minimized: false,
+          maximized: false,
+        },
+        project: {
+          ...state.project,
+          blurred: true
         }
+      }
 
-        case actionTypes.OPEN_DELETED:
-        return {
-          ...state,
-          about: {
-            ...state.about,
-            blurred: true,
-          },
-          notepad: {
-            ...state.notepad,
-            blurred: true
-          },
-          resume: {
-            ...state.resume,
-            blurred: true
-          },
-          deleted: {
-            show: true,
-            blurred: false,
-            minimized: false,
-            maximized: false,
-          }
+      case actionTypes.OPEN_PROJECT:
+      return {
+        ...state,
+        about: {
+          ...state.about,
+          blurred: true,
+        },
+        notepad: {
+          ...state.notepad,
+          blurred: true
+        },
+        deleted: {
+          ...state.deleted,
+          blurred: true
+        },
+        biography: {
+          ...state.biography,
+          blurred: true
+        },
+        resume: {
+          ...state.resume,
+          blureed: true
+        },
+        project: {
+          show: true,
+          blurred: false,
+          minimized: false,
+          maximized: false,
         }
-      case actionTypes.OPEN_TUTORIAL:
-        return{
-          ...state,
-          /* showTutorial: !state.showTutorial, */
-          showTutorial: true,
-          resume: {
-            ...state.resume,
-            show: false,
-            blurred: true,
-          },
-          notepad: {
-            ...state.notepad,
-            show: true,
-            blurred: false,
-          },
-        }
+      }
 
     /*----------------------------------------*\
                 actionTypes FOCUS
@@ -262,11 +335,17 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           blurred: false
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
@@ -280,30 +359,17 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
-        }
-      }
-    }
-
-    case actionTypes.FOCUS_RESUME: {
-      return {
-        ...state,
-        about: {
-          ...state.about,
-        },
-        notepad: {
-          ...state.notepad
-        },
-        resume: {
-          ...state.resume,
-          blurred: false
-        },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
     }
@@ -317,11 +383,92 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
-        resume: {
-          ...state.resume,
-        },
         deleted: {
           ...state.deleted,
+          blurred: false
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+    }
+
+    case actionTypes.FOCUS_BIOGRAPHY: {
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography,
+          blurred: false
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+    }
+    
+    case actionTypes.FOCUS_RESUME: {
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume,
+          blurred: false
+        },
+        project: {
+          ...state.project
+        }
+      }
+    }
+
+    case actionTypes.FOCUS_PROJECT: {
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project,
           blurred: false
         }
       }
@@ -341,11 +488,17 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           blurred: true,
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
@@ -359,29 +512,17 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
-        }
-      }
-
-      case actionTypes.BLUR_RESUME:
-      return {
-        ...state,
-        about: {
-          ...state.about
-        },
-        notepad: {
-          ...state.notepad
-        },
-        resume: {
-          ...state.resume,
-          blurred: true
-        },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
@@ -394,11 +535,89 @@ const reducer = (state = initialState, action) => {
         notepad: {
           ...state.notepad
         },
+        deleted: {
+          ...state.deleted,
+          blurred: true
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.BLUR_BIOGRAPHY:
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
         deleted: {
-          ...state.deleted,
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography,
+          blurred: true
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.BLUR_RESUME:
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume,
+          blurred: true
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.BLUR_PROJECT:
+      return {
+        ...state,
+        about: {
+          ...state.about
+        },
+        notepad: {
+          ...state.notepad
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project,
           blurred: true
         }
       }
@@ -417,48 +636,69 @@ const reducer = (state = initialState, action) => {
           ...state.notepad,
           minimized: true
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
-    /* case actionTypes.MINIMIZE_ABOUT:
+    case actionTypes.MINIMIZE_DELETED:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        ...state.deleted,
+        minimized: true,
+      },
+      biography: {
+        ...state.biography
+      },
+      resume: {
+        ...state.resume
+      },
+      project: {
+        ...state.project
+      }
+    }
+
+    case actionTypes.MINIMIZE_BIOGRAPHY:
       return {
         ...state,
         notepad: {
           ...state.notepad
         },
         about: {
-          ...state.about,
+          ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography,
           minimized: true
         },
         resume: {
           ...state.resume
-        }
-      } */
-
-    case actionTypes.MINIMIZE_RESUME:
-      return {
-        ...state,
-        notepad: {
-          ...state.notepad
         },
-        about: {
-          ...state.about
-        },
-        resume: {
-          ...state.resume,
-          minimized: true,
-        },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
-      case actionTypes.MINIMIZE_DELETED:
+      case actionTypes.MINIMIZE_RESUME:
       return {
         ...state,
         notepad: {
@@ -466,13 +706,43 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume,
+          minimized: true
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.MINIMIZE_PROJECT:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
         },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted,
-          minimized: true,
+        project: {
+          ...state.project,
+          minimized: true
         }
       }
 
@@ -490,28 +760,21 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about
         },
-        resuem: {
-          ...state.resume
-        },
         deleted: {
           ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
         }
       }
 
-    /* case actionTypes.MAXIMIZE_ABOUT:
-      return {
-        ...state,
-        notepad: {
-          ...state.notepad
-        },
-        about: {
-          ...state.about,
-        },
-        resuem: {
-          ...state.resume
-        }
-      } */
-    case actionTypes.MAXIMIZE_RESUME:
+    case actionTypes.MAXIMIZE_DELETED:
       return {
         ...state,
         notepad: {
@@ -519,17 +782,71 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about
+        },
+        deleted: {
+          ...state.deleted,
+          maximized: true
+        },
+        biography: {
+          ...state.biography
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+    case actionTypes.MAXIMIZE_BIOGRAPHY:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography,
+          maximized: true
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.MAXIMIZE_RESUME:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
         },
         resume: {
           ...state.resume,
           maximized: true
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
-      case actionTypes.MAXIMIZE_DELETED:
+      case actionTypes.MAXIMIZE_PROJECT:
       return {
         ...state,
         notepad: {
@@ -538,11 +855,17 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted,
+        project: {
+          ...state.project,
           maximized: true
         }
       }
@@ -559,27 +882,45 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about
         },
-        resume: {
-          ...state.resume
-        },
         deleted: {
           ...state.deleted
-        }
-      }
-    /* case actionTypes.DISABLED_ABOUT:
-      return {
-        ...state,
-        notepad: {
-          ...state.notepad
         },
-        about: {
-          ...state.about,
+        biography: {
+          ...state.biography
         },
         resume: {
           ...state.resume
+        },
+        project: {
+          ...state.project
         }
-      } */
-    case actionTypes.DISABLED_RESUME:
+      }
+
+    case actionTypes.DISABLED_DELETED:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        ...state.deleted,
+        maximized: false
+      },
+      biography: {
+        ...state.biography
+      },
+      resume: {
+        ...state.resume
+      },
+      project: {
+        ...state.project
+      }
+    }
+
+    case actionTypes.DISABLED_BIOGRAPHY:
       return {
         ...state,
         notepad: {
@@ -587,17 +928,47 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography,
+          maximized: false
+        },
+        resume: {
+          ...state.resume
+        },
+        project: {
+          ...state.project
+        }
+      }
+
+      case actionTypes.DISABLED_RESUME:
+      return {
+        ...state,
+        notepad: {
+          ...state.notepad
+        },
+        about: {
+          ...state.about
+        },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
         },
         resume: {
           ...state.resume,
           maximized: false
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
-      case actionTypes.DISABLED_DELETED:
+      case actionTypes.DISABLED_PROJECT:
       return {
         ...state,
         notepad: {
@@ -606,11 +977,17 @@ const reducer = (state = initialState, action) => {
         about: {
           ...state.about
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted,
+        project: {
+          ...state.project,
           maximized: false
         }
       }
@@ -630,11 +1007,17 @@ const reducer = (state = initialState, action) => {
           maximized: false,
           blurred: false
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
@@ -650,89 +1033,140 @@ const reducer = (state = initialState, action) => {
           /* minimized: false,
           maximized: false, */
         },
+        deleted: {
+          ...state.deleted
+        },
+        biography: {
+          ...state.biography
+        },
         resume: {
           ...state.resume
         },
-        deleted: {
-          ...state.deleted
+        project: {
+          ...state.project
         }
       }
 
-    case actionTypes.EXIT_MODAL:
-      return {
-        ...state,
-        about: {
-          ...state.about
-        },
-        notepad: {
-          ...state.notepad
-        },
-        showModal: false,
-        resume: {
-          ...state.resume
-        },
-        deleted: {
-          ...state.deleted
-        }
+    case actionTypes.EXIT_DELETED:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        show: false,
+        blurred: false,
+        minimized: false,
+        maximized: false,
+      },
+      biography: {
+        ...state.biography
+      },
+      resume: {
+        ...state.resume
+      },
+      project: {
+        ...state.project
       }
-    
+    }
+
+    case actionTypes.EXIT_BIOGRAPHY:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        ...state.deleted
+      },
+      biography: {
+        show: false,
+        minimized: false,
+        maximized: false,
+        blurred: false
+      },
+      resume: {
+        ...state.resume
+      },
+      project: {
+        ...state.project
+      }
+    }
+
     case actionTypes.EXIT_RESUME:
-      return {
-        ...state,
-        notepad: {
-          ...state.notepad
-        },
-        about: {
-          ...state.about
-        },
-        resume: {
-          show: false,
-          blurred: false,
-          minimized: false,
-          maximized: false,
-        },
-        deleted: {
-          ...state.deleted
-        }
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        ...state.deleted
+      },
+      biography: {
+        ...state.biography,
+      },
+      resume: {
+        show: false,
+        minimized: false,
+        maximized: false,
+        blurred: false
+      },
+      project: {
+        ...state.project
       }
+    }
 
-      case actionTypes.EXIT_DELETED:
-      return {
-        ...state,
-        notepad: {
-          ...state.notepad
-        },
-        about: {
-          ...state.about
-        },
-        resume: {
-          ...state.resume
-        },
-        deleted: {
-          show: false,
-          blurred: false,
-          minimized: false,
-          maximized: false,
-        }
+    case actionTypes.EXIT_PROJECT:
+    return {
+      ...state,
+      notepad: {
+        ...state.notepad
+      },
+      about: {
+        ...state.about
+      },
+      deleted: {
+        ...state.deleted
+      },
+      biography: {
+        ...state.biography
+      },
+      resume: {
+        ...state.resume
+      },
+      project: {
+        show: false,
+        minimized: false,
+        maximized: false,
+        blurred: false
       }
+    }
 
-      case actionTypes.EXIT_TUTORIAL:
-        return{
-          ...state,
-          /* showTutorial: !state.showTutorial, */
-          showTutorial: false,
-          resume: {
-            ...state.resume,
-            show: true,
-            blurred: false,
-          },
-          notepad: {
-            ...state.notepad,
-            show: false,
-            blurred: true,
-          },
-          
-        }
+    case actionTypes.EXIT_TUTORIAL:
+      return{
+        ...state,
+        /* showTutorial: !state.showTutorial, */
+        showTutorial: false,
+        biography: {
+          ...state.biography,
+          show: true,
+          blurred: false,
+        },
+        notepad: {
+          ...state.notepad,
+          show: false,
+          blurred: true,
+        },
+      }
 
     default: return state;
   }

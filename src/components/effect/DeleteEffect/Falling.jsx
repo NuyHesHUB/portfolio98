@@ -1,6 +1,10 @@
 import React from 'react';
+
+/* Library */
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
+/* Image */
 import Icon1 from '../../../assets/desktop-icon/Mycomputer.png'
 import Icon2 from '../../../assets/desktop-icon/Paint.png'
 import Icon3 from '../../../assets/desktop-icon/Mydocument.png'
@@ -20,13 +24,14 @@ const FallingWrap = styled.div`
     font-weight: bold;
     animation: hurueru .2s infinite;
     @keyframes hurueru {
-    0% {transform: translate(0px, 0px) rotateZ(0deg)}
-    25% {transform: translate(2px, 2px) rotateZ(0.1deg)}
-    50% {transform: translate(0px, 2px) rotateZ(0deg)}
-    75% {transform: translate(2px, 0px) rotateZ(-0.1deg)}
-    100% {transform: translate(0px, 0px) rotateZ(0deg)}
-}
-`
+        0% {transform: translate(0px, 0px) rotateZ(0deg)}
+        25% {transform: translate(2px, 2px) rotateZ(0.1deg)}
+        50% {transform: translate(0px, 2px) rotateZ(0deg)}
+        75% {transform: translate(2px, 0px) rotateZ(-0.1deg)}
+        100% {transform: translate(0px, 0px) rotateZ(0deg)}
+    }
+`;
+
 const FallingText = styled.span`
     div{
         display: flex;
@@ -69,21 +74,13 @@ const FallingText = styled.span`
         animation-delay: 3500ms;
         animation-fill-mode : forwards;
     }
-@keyframes falldown {
-        0% {transform: translate(0px, 0px) rotateZ(0deg)}
-        /* 70% {transform: translate(0px, 0px) rotateZ(0deg)} */
-        100% {transform: translate(0px, 900px) rotateZ(120deg)}
-        /* 100% {transform: translate(0px, 100vh) rotateZ(120deg)} */
-        /* 100% {transform: translate(0px, ${props=>props.show ? '1000px' : '100px'}) rotateZ(120deg)} */
-        
-        
-        
-    }
-    
-
-    
-
-    
+    @keyframes falldown {
+            0% {transform: translate(0px, 0px) rotateZ(0deg)}
+            /* 70% {transform: translate(0px, 0px) rotateZ(0deg)} */
+            100% {transform: translate(0px, 900px) rotateZ(120deg)}
+            /* 100% {transform: translate(0px, 100vh) rotateZ(120deg)} */
+            /* 100% {transform: translate(0px, ${props=>props.show ? '1000px' : '100px'}) rotateZ(120deg)} */
+    } 
 `
 const Falling = ({deleted}) => {
     /* console.log(deleted); */

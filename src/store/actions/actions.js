@@ -55,18 +55,6 @@ export function openAbout() {
   }
 }
 
-export function openModal() {
-  return {
-    type: actionTypes.OPEN_MODAL
-  }
-}
-
-export function openResume() {
-  return {
-    type: actionTypes.OPEN_RESUME
-  }
-}
-
 export function openDeleted() {
   return {
     type: actionTypes.OPEN_DELETED
@@ -76,6 +64,24 @@ export function openDeleted() {
 export function openTutorial() {
   return {
     type: actionTypes.OPEN_TUTORIAL
+  }
+}
+
+export function openBiography() {
+  return {
+    type: actionTypes.OPEN_BIOGRAPHY
+  }
+}
+
+export function openResume() {
+  return {
+    type: actionTypes.OPEN_RESUME
+  }
+}
+
+export function openProject() {
+  return {
+    type: actionTypes.OPEN_PROJECT
   }
 }
 
@@ -94,17 +100,30 @@ export function focusAbout() {
   }
 }
 
+export function focusDeleted() {
+  return {
+    type: actionTypes.FOCUS_DELETED
+  }
+}
+
+export function focusBiography() {
+  return {
+    type: actionTypes.FOCUS_BIOGRAPHY
+  }
+}
+
 export function focusResume() {
   return {
     type: actionTypes.FOCUS_RESUME
   }
 }
 
-export function focusDeleted() {
+export function focusProject() {
   return {
-    type: actionTypes.FOCUS_DELETED
+    type: actionTypes.FOCUS_PROJECT
   }
 }
+
 /*----------------------------------------*\
                   BLUR
 \*----------------------------------------*/
@@ -120,17 +139,30 @@ export function blurAbout() {
   }
 }
 
+export function blurDeleted() {
+  return {
+    type: actionTypes.BLUR_DELETED
+  }
+}
+
+export function blurBiography() {
+  return {
+    type: actionTypes.BLUR_BIOGRAPHY
+  }
+}
+
 export function blurResume() {
   return {
     type: actionTypes.BLUR_RESUME
   }
 }
 
-export function blurDeleted() {
+export function blurProject() {
   return {
-    type: actionTypes.BLUR_DELETED
+    type: actionTypes.BLUR_PROJECT
   }
 }
+
 /*----------------------------------------*\
                   MINIMIZE
 \*----------------------------------------*/
@@ -140,11 +172,17 @@ export function minimizeNotepad() {
   }
 }
 
-/* export function minimizeAbout() {
+export function minimizeDeleted() {
   return {
-    type: actionTypes.MINIMIZE_ABOUT
+    type: actionTypes.MINIMIZE_DELETED
   }
-} */
+}
+
+export function minimizeBiography() {
+  return {
+    type: actionTypes.MINIMIZE_BIOGRAPHY
+  }
+}
 
 export function minimizeResume() {
   return {
@@ -152,11 +190,12 @@ export function minimizeResume() {
   }
 }
 
-export function minimizeDeleted() {
+export function minimizeProject() {
   return {
-    type: actionTypes.MINIMIZE_DELETED
+    type: actionTypes.MINIMIZE_PROJECT
   }
 }
+
 /*----------------------------------------*\
                   MAXIMIZE
 \*----------------------------------------*/
@@ -166,11 +205,17 @@ export function maximizeNotepad() {
   }
 }
 
-/* export function maximizeAbout() {
+export function maximizeDeleted() {
   return {
-    type: actionTypes.MAXIMIZE_ABOUT
+    type: actionTypes.MAXIMIZE_DELETED
   }
-} */
+}
+
+export function maximizeBiography() {
+  return {
+    type: actionTypes.MAXIMIZE_BIOGRAPHY
+  }
+}
 
 export function maximizeResume() {
   return {
@@ -178,27 +223,19 @@ export function maximizeResume() {
   }
 }
 
-export function maximizeDeleted() {
+export function maximizeProject() {
   return {
-    type: actionTypes.MAXIMIZE_DELETED
+    type: actionTypes.MAXIMIZE_PROJECT
   }
 }
+
 /*----------------------------------------*\
                   DISABLED
 \*----------------------------------------*/
-/* export function disabledAbout() {
-  return {
-    type: actionTypes.DISABLED_ABOUT
-  }
-} */
+
 export function disabledNotepad() {
   return {
     type: actionTypes.DISABLED_NOTEPAD
-  }
-}
-export function disabledResume() {
-  return {
-    type: actionTypes.DISABLED_RESUME
   }
 }
 
@@ -207,6 +244,25 @@ export function disabledDeleted() {
     type: actionTypes.DISABLED_DELETED
   }
 }
+
+export function disabledBiography() {
+  return {
+    type: actionTypes.DISABLED_BIOGRAPHY
+  }
+}
+
+export function disabledResume() {
+  return {
+    type: actionTypes.DISABLED_RESUME
+  }
+}
+
+export function disabledProject() {
+  return {
+    type: actionTypes.DISABLED_PROJECT
+  }
+}
+
 /*----------------------------------------*\
                    EXIT
 \*----------------------------------------*/
@@ -222,18 +278,6 @@ export function exitAbout() {
   }
 }
 
-export function exitModal() {
-  return {
-    type: actionTypes.EXIT_MODAL
-  }
-}
-
-export function exitResume() {
-  return {
-    type: actionTypes.EXIT_RESUME
-  }
-}
-
 export function exitDeleted() {
   return {
     type: actionTypes.EXIT_DELETED
@@ -243,5 +287,23 @@ export function exitDeleted() {
 export function exitTutorial() {
   return {
     type: actionTypes.EXIT_TUTORIAL
+  }
+}
+
+export function exitBiography() {
+  return {
+    type: actionTypes.EXIT_BIOGRAPHY
+  }
+}
+
+export function exitResume() {
+  return {
+    type: actionTypes.EXIT_RESUME
+  }
+}
+
+export function exitProject() {
+  return {
+    type: actionTypes.EXIT_PROJECT
   }
 }

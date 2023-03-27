@@ -13,7 +13,7 @@ const Fire = styled.div`
     @keyframes fire-shift {
         0%   { transform: translateY(50%); }
         100% { transform: translateY(50%) translateX(3%); }
-}
+    }
 `
 const Flame = styled.span`
     display: inline-block;

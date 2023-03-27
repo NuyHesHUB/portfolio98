@@ -20,12 +20,10 @@ export const StyledContainer = styled.div`
 `;
 
 export const Vertical = styled.div`
-  
   background: linear-gradient(#000184 60%, #0f80cd);
   color: rgba(255, 255, 255);
   font-size: 20px;
   width: 35px;
-  
   span {
     display: inline-block;
     transform-origin: 0 0;
@@ -37,7 +35,6 @@ export const Vertical = styled.div`
     position: absolute;
     bottom: -15px;
   }
-  
   span strong {
     font-size: 20px;
     font-family: Arial Black, Arial Bold, Gadget, sans-serif;
@@ -50,7 +47,6 @@ export const AllPrograms = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 3px;
-  
   font-size: 13px;
 `;
 
@@ -72,7 +68,6 @@ export const ProgramGroup = styled.div`
   &:nth-child(4) img{
     margin-right: 12px;
   }
-  
   /*----------------------------------------*\
             PROGRAMS UNDERLINE :: AFTER
   \*----------------------------------------*/
@@ -106,13 +101,10 @@ export const ProgramGroup = styled.div`
   &:hover {
     background: rgb(0, 0, 127);
     color: rgba(255, 255, 255);
-
   }
   img {
     margin-right: 10px;
   }
-  
-
   span {
     flex: 2;
     padding-right: 10px;
@@ -120,11 +112,9 @@ export const ProgramGroup = styled.div`
     text-align: right;
     font-size: 9px;
   }
-
   em {
     font-style: normal;
   }
-
   em::first-letter {
     text-decoration: underline;
   }

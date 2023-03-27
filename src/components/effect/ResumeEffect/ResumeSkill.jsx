@@ -1,5 +1,6 @@
 import React from "react";
-/* import ReactDOM from 'https://cdn.skypack.dev/react-dom'; */
+
+/* Styles */
 import './ResumeSkill.css'
 
 /* const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2']; */
