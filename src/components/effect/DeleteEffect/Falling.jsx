@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 /* Image */
-import Icon1 from '../../../assets/desktop-icon/Mycomputer.png'
-import Icon2 from '../../../assets/desktop-icon/Paint.png'
-import Icon3 from '../../../assets/desktop-icon/Mydocument.png'
-import Icon4 from '../../../assets/desktop-icon/Note.png'
+import Icon1 from '../../../assets/fall-img/clean_drive-5.png'
+import Icon2 from '../../../assets/fall-img/calendar-1.png'
+import Icon3 from '../../../assets/fall-img/application_hourglass_small-2.png'
+import Icon4 from '../../../assets/fall-img/msagent-4.png'
 
 const FallingWrap = styled.div`
     /* position: absolute;
@@ -88,7 +88,7 @@ const Falling = ({deleted}) => {
         <FallingWrap show={deleted.show}>
             <FallingText className={deleted.show ? "fall-1" : null}><div><img src={Icon1} alt="" /><span>완벽주의</span></div></FallingText>
             <FallingText className={deleted.show ? "fall-2" : null}><div><img src={Icon2} alt="" /><span>많은생각</span></div></FallingText>
-            <FallingText className={deleted.show ? "fall-3" : null}><div><img src={Icon3} alt="" /><span>행동 실천 부족</span></div></FallingText>
+            <FallingText className={deleted.show ? "fall-3" : null}><div><img src={Icon3} alt="" /><span>실천부족</span></div></FallingText>
             <FallingText className={deleted.show ? "fall-4" : null}><div><img src={Icon4} alt="" /><span>낯가림</span></div></FallingText>
         </FallingWrap>
     );

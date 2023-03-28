@@ -17,7 +17,7 @@ const StyledTutorial = styled.div`
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        width: 168px;
+        /* width: 168px; */
         height: 41px;
         background: rgb(195, 199, 203);
         box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 

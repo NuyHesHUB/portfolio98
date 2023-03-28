@@ -11,11 +11,11 @@ import Button from '../Button'
 /* import start from '../../assets/dockbar-icon/start.png' */
 import start from '../../assets/dockbar-icon/startlogo.png'
 import notepadImg from '../../assets/dockbar-icon/notepad.png'
-import biographyImg from '../../assets/dockbar-icon/Mybiography.png'
 import aboutImg from '../../assets/dockbar-icon/about.png'
 import deletedImg from '../../assets/dockbar-icon/Delete.png'
-import resumeImg from '../../assets/dockbar-icon/Delete.png'
-import projectImg from '../../assets/dockbar-icon/Delete.png'
+import biographyImg from '../../assets/dockbar-icon/biography.png'
+import resumeImg from '../../assets/dockbar-icon/resume.png'
+import projectImg from '../../assets/dockbar-icon/project.png'
 
 /* Action */
 import { startButtonClicked, openNotepad, openBiography, openAbout, openDeleted, openResume, openProject } from '../../store/actions/actions';
@@ -112,7 +112,7 @@ function DockbarGroup({showStart, showTutorial, notepad, biography, about, delet
             clicked={()=> onResumeClick()}
         >
             <div>
-                <img src={deletedImg} alt="resume"/>
+                <img src={resumeImg} alt="resume"/>
                 <span>Resume</span>
             </div>
     </Button> : null;
@@ -127,7 +127,7 @@ function DockbarGroup({showStart, showTutorial, notepad, biography, about, delet
             clicked={()=> onProjectClick()}
         >
             <div>
-                <img src={deletedImg} alt="project"/>
+                <img src={projectImg} alt="project"/>
                 <span>Project</span>
             </div>
     </Button> : null;

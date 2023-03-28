@@ -8,7 +8,7 @@ import { openTutorial } from '../../store/actions/actions'
 
 const ProfileFrame=styled.div`
     width: 250px;
-    height: 310px;
+    /* height: 310px; */
     background-color: rgb(195,199,203);
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
     /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
@@ -35,7 +35,10 @@ const ProfileWrap=styled.div`
     >div{
         width: 100%;
         height: 100%;
-        border: 1px double #ededed;
+        border-top: 1px double #ededed;
+        border-left: 1px double #ededed;
+        border-right: 1px double #ededed;
+        border-bottom: 1px dotted #ededed;
     }
     .title{
         text-align: center;

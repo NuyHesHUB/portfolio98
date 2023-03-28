@@ -10,7 +10,7 @@ import WindowsFrame from './WindowsFrame/WindowsFrame'
 import {focusProject, blurProject, minimizeProject, exitProject, maximizeProject, disabledProject} from '../../store/actions/actions';
 
 /* Image */
-import biographyImage from '../../assets/dockbar-icon/Mybiography.png';
+import projectImage from '../../assets/dockbar-icon/project.png';
 
 
 function Project({ project, onProjectBlur, onProjectFocus, onProjectMinimize, onProjectMaximize, onProjectDisabled, onProjectExit }){
@@ -41,7 +41,7 @@ function Project({ project, onProjectBlur, onProjectFocus, onProjectMinimize, on
                 y="100"
                 width="600"
                 /* height="200" */
-                img={biographyImage}
+                img={projectImage}
                 title="Front-end - 자기소개서"
                 blurred={project.blurred}
                 showMenu={true}

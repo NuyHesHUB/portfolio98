@@ -11,7 +11,6 @@ import { openNotepad, openBiography, openDeleted, openResume, openProject } from
 import Icon from './Icon';
 
 /* Image */
-import Mycomputer from '../../assets/desktop-icon/Mycomputer.png';
 /* import Mydocument from '../../assets/desktop-icon/Mydocument.png' */
 import Delete from '../../assets/desktop-icon/Delete.png';
 /* import Myportfolio from '../../assets/desktop-icon/Myportfolio.png' */
@@ -19,8 +18,9 @@ import Note from '../../assets/desktop-icon/Note.png';
 /* import Paint from '../../assets/desktop-icon/Paint.png' */
 import Velog from '../../assets/desktop-icon/velog.png';
 import Github from '../../assets/desktop-icon/github.png';
-import Mybiography from '../../assets/desktop-icon/MyBiography.png';
-import Myportfolio from '../../assets/desktop-icon/Myportfolio.png';
+import Resume from '../../assets/desktop-icon/resume.png';
+import Biography from '../../assets/desktop-icon/biography.png';
+import Project from '../../assets/desktop-icon/project.png';
 
 const StyledIcons = styled.div`
     position: absolute;
@@ -50,15 +50,15 @@ const StyledIcons = styled.div`
 
 function Icons({onOpenNotepad, onOpenBiography, onOpenDeleted, showTutorial, onOpenProject, onOpenResume}) {
     const [icons, setIcons] = useState([
-        {label: '이력서', img: Mycomputer, clicked: false},
-        {label: '자기소개서', img: Mybiography, clicked: false},
+        {label: '이력서', img: Resume, clicked: false},
+        {label: '자기소개서', img: Biography, clicked: false},
         /* {label: '내문서', img: Mydocument, clicked: false}, */
         {label: '휴지통', img: Delete, clicked: false},
         /* {label: '내포트폴리오', img: Myportfolio, clicked: false}, */
         {label: '벨로그', img: Velog, clicked: false},
         {label: '깃허브', img: Github, clicked: false},
         {label: '튜토리얼', img: Note, clicked: false},
-        {label: '프로젝트', img: Myportfolio, clicked: false},
+        {label: '프로젝트', img: Project, clicked: false},
         /* {label: '그림판', img: Paint, clicked: false}, */
     ]);
 

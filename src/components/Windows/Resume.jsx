@@ -10,7 +10,7 @@ import WindowsFrame from './WindowsFrame/WindowsFrame'
 import {focusResume, blurResume, minimizeResume, exitResume, maximizeResume, disabledResume} from '../../store/actions/actions';
 
 /* Image */
-import biographyImage from '../../assets/dockbar-icon/Mybiography.png';
+import resumeImage from '../../assets/dockbar-icon/resume.png';
 
 
 function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResumeMaximize, onResumeDisabled, onResumeExit }){
@@ -41,7 +41,7 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
                 y="100"
                 width="600"
                 /* height="200" */
-                img={biographyImage}
+                img={resumeImage}
                 title="Front-end - 자기소개서"
                 blurred={resume.blurred}
                 showMenu={true}

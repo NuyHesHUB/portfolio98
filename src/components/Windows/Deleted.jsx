@@ -31,7 +31,7 @@ function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, on
           id="Deleted"
           x="120"
           y="90"
-          width="600"
+          width="500"
           /* height="348" */
           img={deletedImage}
           title="Untitled - Deleted"

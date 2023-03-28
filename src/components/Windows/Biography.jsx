@@ -10,7 +10,7 @@ import WindowsFrame from './WindowsFrame/WindowsFrame'
 import {focusBiography, blurBiography, minimizeBiography, exitBiography, maximizeBiography, disabledBiography} from '../../store/actions/actions';
 
 /* Image */
-import biographyImage from '../../assets/dockbar-icon/Mybiography.png';
+import biographyImage from '../../assets/dockbar-icon/biography.png';
 import profile from '../../assets/resume-img/profile.jpg';
 import project01 from '../../assets/resume-img/display_1.png';
 
