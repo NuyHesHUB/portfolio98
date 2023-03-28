@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 
 /* Library */
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 /* Styles */
-import {StyledFrame, TitleBar, ButtonGroup, StyledMenu} from './StyledFrame';
+import {StyledFrame, TitleBar, ButtonGroup, StyledMenu, StyledResumeMenu} from './StyledFrame';
 import styles from '../../../styles/modal.module.scss';
 
 /* Image */
@@ -12,8 +13,10 @@ import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximize from '../../../assets/titlebar-icons/maximize.png';
 import disabled from '../../../assets/titlebar-icons/disabled3.png';
 import close from '../../../assets/titlebar-icons/close.png';
+import down from '../../../assets/titlebar-icons/down.png'
+import newtab from '../../../assets/titlebar-icons/newtab.png'
 
-export function Frame({children, id, img, title, blurred, showMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
+export function Frame({children, id, img, title, blurred, showMenu, showResumeMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
     const [resize, setResize] = useState(true);
@@ -58,6 +61,16 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
         <span><u>S</u>earch</span>
         <span><u>H</u>elp</span>
     </StyledMenu> : null;
+    /*----------------------------------------*\
+                  SHOW RESUME MENU 
+    \*----------------------------------------*/
+    const resumemenu = showResumeMenu ? 
+    <StyledResumeMenu>
+        <div>
+            <Link><img src={down} alt='down'/><span><u>D</u>ownload</span></Link>
+            <Link><img src={newtab} alt='newtab'/><span><u>O</u>pen with a new tab</span></Link>
+        </div>
+    </StyledResumeMenu> : null;
 
     /*----------------------------------------*\
             MAXIMIZE CLASS TOGGLE FUNCTION
@@ -129,6 +142,7 @@ export function Frame({children, id, img, title, blurred, showMenu, width, heigh
                 </ButtonGroup>
             </TitleBar>
             {menu}
+            {resumemenu}
             {children}
         </StyledFrame>
     );

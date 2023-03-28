@@ -193,3 +193,45 @@ export const StyledMenu = styled.div`
         color: rgb(255, 255, 255);
     }
 `;
+
+export const StyledResumeMenu = styled.div`
+    
+    /* background: red; */
+    /* justify-content: space-between; */
+    div{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        /* border: 1px solid #fff; */
+        box-shadow: rgb(255, 255, 255) 0px 1px 0px 1px, 
+        rgb(0, 0, 0) 1px 1px 1px 0px inset;
+    a {
+        padding: 1px 8px;
+        margin: 1px;
+        margin-right: 5px;
+        font-size: 12px;
+        background: rgb(195, 199, 203);
+        box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+        rgb(134, 138, 142) 0px 0px 0px 1px inset, 
+        rgb(0, 0, 0) 1px 1px 0px 0px;
+        padding: 5px 7px 5px 7px;
+        display: flex;
+        align-items: center;
+        &:last-child{
+            margin-right: 0;
+        }
+        img{margin-right: 3px;}
+        &:active {
+            box-shadow: rgb(255, 255, 255) 1px 1px 0 1px, rgb(0, 0, 0) 1px 1px 0px 1px inset !important;
+            padding: 5px 7px 5px 7px;
+        }
+    }
+}
+    /* span:hover {
+        background-color: rgb(0, 0, 127);
+        color: rgb(255, 255, 255);
+    } */
+`

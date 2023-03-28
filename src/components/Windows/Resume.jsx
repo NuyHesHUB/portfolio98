@@ -3,15 +3,16 @@ import React, {useEffect} from 'react';
 /* Libary */
 import {connect} from 'react-redux';
 
+
 /* Component */
 import WindowsFrame from './WindowsFrame/WindowsFrame'
+import PdfViewer from './PdfViewer';
 
 /* Action */
 import {focusResume, blurResume, minimizeResume, exitResume, maximizeResume, disabledResume} from '../../store/actions/actions';
 
 /* Image */
 import resumeImage from '../../assets/dockbar-icon/resume.png';
-
 
 function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResumeMaximize, onResumeDisabled, onResumeExit }){
     /* const inputRef = React.createRef(); */
@@ -32,7 +33,7 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
     /* console.log('maximized',resume.maximized); */
     /* console.log('minimized',resume.minimized); */
     /* console.log('state.resume',resume);  */
-    
+
     const displayContent = 
         resume.show ?
             <WindowsFrame
@@ -42,9 +43,10 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
                 width="600"
                 /* height="200" */
                 img={resumeImage}
-                title="Front-end - 자기소개서"
+                title="Resume - 이력서"
                 blurred={resume.blurred}
-                showMenu={true}
+                /* showMenu={false} */
+                showResumeMenu={true}
                 onMinimize={onResumeMinimize}
                 onMaximize={onResumeMaximize}
                 onDisabled={onResumeDisabled}
@@ -56,6 +58,7 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
             >
                 <div className='Resume' >
                    Resume 페이지
+                    <PdfViewer/>
                 </div>
             </WindowsFrame> : null;
 
