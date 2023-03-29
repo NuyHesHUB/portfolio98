@@ -1,83 +1,68 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from 'react';
-import useWindowSize from '../../hooks/useWindowSize';
-import styled from 'styled-components';
-/* import { useNavigate } from 'react-router-dom'; */
 
-/* import 'react-pdf/dist/esm/Page/AnnotationLayer.css'; */
+/* Hooks */
+import useWindowSize from '../../hooks/useWindowSize';
 
 /* Library */
+import styled from 'styled-components';
 import { Document, Page, pdfjs } from 'react-pdf';
+
+/* PDF */
 import pdfFile from '../../assets/resume-pdf/resume.pdf'
-/* import {
-    useWindowSize,
-    useWindowWidth,
-    useWindowHeight,
-  } from '@react-hook/window-size' */
+
+/* ETC */
+/* import 'react-pdf/dist/esm/Page/AnnotationLayer.css'; */
 
 const ViewerFrame = styled.div`
-    /* .react-pdf__Page__textContent {display: none;}
-    .react-pdf__Page__annotations, .annotationLayer{display: none;}
-    .react-pdf__Page__canvas{width: 100%;} */
-    /* width: ${props=>props.width+'px'}; */
+    /* .react-pdf__Page__textContent {display: none;} */
+    /* .react-pdf__Page__annotations, .annotationLayer{display: none;} */
+    /* .react-pdf__Page__canvas{width: 100%;} */
     width: 100%;
     height: 93%;
     position: absolute;
     top: 0;
-   /*  height: ${props=>props.isMaximized ? 'calc(100vh - 178px)' : '100%'}; */
     background: #fff;
-    /* overflow: auto; */
     overflow: scroll;
-    /* background: ${props=>props.isMaximized ? 'red' : 'blue'}; */
     .page{
-        /* height: 300px; */
         text-align: center;
-        /* height: ${props=>props.isMaximized? `calc(100vh - 147px)` : `700px`}; */
-        /* background: ${props=>props.isMaximized ? 'red' : 'blue'}; */
     }
-`
+`;
 const PDFDocumentWrapper = styled.div`
-  canvas {
-        display: inline-block !important;
-  }
+  canvas {display: inline-block !important;}
 `;
 const ViewerButtonGroup = styled.div`
     position: absolute;
-    /* left: 50%;
-    transform: translateX(-50%); */
     bottom: 0;
-    /* justify-content: center; */
     display: flex;
-    /* flex-direction: column; */
     padding: 5px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* height: 15%; */
     height: 7%;
     box-sizing: border-box;
     background: rgb(195, 199, 203);
     box-shadow: rgb(255, 255, 255) 0px 1px 0px 1px, 
-        rgb(0, 0, 0) 1px 1px 1px 0px inset;
-`
+    rgb(0, 0, 0) 1px 1px 1px 0px inset;
+`;
 const ButtonFlex = styled.div`
     display: flex;
     justify-content: center;
     margin: 1px 5px 1px 1px;
     font-size: 12px;
     background: rgb(195, 199, 203);
-    box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
+    box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+    rgb(134, 138, 142) 0px 0px 0px 1px inset,
+    rgb(0, 0, 0) 1px 1px 0px 0px;
     padding: 5px 7px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-`
+`;
 const ZoomButton = styled.div`
     width: 20px;
     height: 20px;
     line-height: 18px;
     text-align: center;
-    /* margin-right: 20px; */
     background: rgb(195, 199, 203);
     box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
     rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
@@ -90,9 +75,10 @@ const ZoomButton = styled.div`
         box-shadow: rgb(255, 255, 255) 1px 1px 0 1px,
         rgb(0, 0, 0) 1px 1px 0px 1px inset !important;
     }
-`
-
-/* PDF CDN */
+`;
+/*----------------------------------------*\
+                REACT-PDF CDN
+\*----------------------------------------*/
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function PdfViewer({isMaximized}){
@@ -115,25 +101,27 @@ function PdfViewer({isMaximized}){
         setPageNumber(next => next + 1)
     }
   }
+/*----------------------------------------*\
+              test-console.log
+\*----------------------------------------*/
 /* console.log(useWindowHeight()); */
 /* console.log(resume.maximized); */
-console.log(isMaximized);
+/* console.log(isMaximized); */
+
     return (
         <>
-            <ViewerFrame
-                isMaximized={isMaximized}
-            >
+            <ViewerFrame isMaximized={isMaximized}>
                     <PDFDocumentWrapper>
                         <Document
                             file={pdfFile}
                             onLoadSuccess={onDocumentLoadSuccess}
                         >
                             <Page 
-                                /* width={windowSize.width}
-                                height={windowSize.height}  */
-                                className='page'
+                                /* width={windowSize.width} */
+                                /* height={windowSize.height}  */
                                 /* height={200} */
                                 /* width={100} */
+                                className='page'
                                 width={isMaximized ?  windowSize.width/1.5 : 600}
                                 renderTextLayer={false}
                                 pageNumber={pageNumber} 
@@ -142,7 +130,6 @@ console.log(isMaximized);
                             />
                         </Document>
                     </PDFDocumentWrapper>
-                
             </ViewerFrame>
             <ViewerButtonGroup>
                     {/* <a href='/assets/resume-pdf/resume.pdf' target="_blank">새창으로 열기</a> */}
@@ -154,28 +141,38 @@ console.log(isMaximized);
                                 이전페이지
                             </button>
                         )} */}
-                        <ZoomButton style={{marginRight:'10px'}} onClick={()=>prevPagefn()}>
-                        &lt;
-                            </ZoomButton>
+                        <ZoomButton 
+                            style={{marginRight:'10px'}} 
+                            onClick={()=>prevPagefn()}
+                        >&lt;
+                        </ZoomButton>
                         Page {pageNumber} of {numPages}
                         {/* {pageNumber < 4 && (
                         <button onClick={()=>setPageNumber(next => next + 1)}>
                                 다음페이지
                         </button>
                         )} */}
-                        <ZoomButton style={{marginLeft:'10px'}} onClick={()=>nextPagefn()}>
-                        &gt;
+                        <ZoomButton 
+                            style={{marginLeft:'10px'}} 
+                            onClick={()=>nextPagefn()}
+                        >&gt;
                         </ZoomButton>
                     </ButtonFlex>
                     <ButtonFlex>
-                        <ZoomButton style={{marginRight:'10px'}} onClick={() => {
+                        <ZoomButton 
+                            style={{marginRight:'10px'}} 
+                            onClick={() => {
                             setPageScale(pageScale === 10 ? 10 : pageScale + 0.2)
-                        }}>&#43;{/* <i className="fas fa-search-plus" style={{color: '#000000'}}></i> */}
+                            }}
+                        >&#43;
                         </ZoomButton>
                         Zoom In / Out
-                        <ZoomButton style={{marginLeft:'10px'}} onClick={() => {
+                        <ZoomButton 
+                            style={{marginLeft:'10px'}} 
+                            onClick={() => {
                             setPageScale((pageScale - 1) < 1 ? 1 : pageScale - 0.2)
-                        }}>&#8722;{/* <i className="fas fa-search-minus" style={{color: '#000000'}}></i> */}
+                            }}
+                        >&#8722;
                         </ZoomButton>
                     </ButtonFlex>
             </ViewerButtonGroup>

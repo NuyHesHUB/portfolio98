@@ -30,6 +30,10 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
           onResumeBlur();
         } else { onResumeFocus(); }
       }
+
+    /*----------------------------------------*\
+                test-console.log
+    \*----------------------------------------*/
     /* console.log('maximized',resume.maximized); */
     /* console.log('minimized',resume.minimized); */
     /* console.log('state.resume',resume);  */
@@ -65,6 +69,7 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
 
     return displayContent;
 };
+
 const mapStateToProps = (state) => {
     return{
         resume: state.resume
