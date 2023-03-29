@@ -133,6 +133,14 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
                 overflow: hidden;
             }
         }
+    /*----------------------------------------*\
+                    Resume
+    \*----------------------------------------*/
+    div.Resume{
+        position: relative;
+        background: green;
+        height: ${props=>props.isMaximized? `calc(100vh - 104px)` : `400px`};
+    }
 `;
 
 export const TitleBar = styled.div`

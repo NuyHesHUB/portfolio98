@@ -33,7 +33,6 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
     /* console.log('maximized',resume.maximized); */
     /* console.log('minimized',resume.minimized); */
     /* console.log('state.resume',resume);  */
-
     const displayContent = 
         resume.show ?
             <WindowsFrame
@@ -58,7 +57,9 @@ function Resume({ resume, onResumeBlur, onResumeFocus, onResumeMinimize, onResum
             >
                 <div className='Resume' >
                    Resume 페이지
-                    <PdfViewer/>
+                    <PdfViewer
+                        isMaximized={resume.maximized}
+                    />
                 </div>
             </WindowsFrame> : null;
 

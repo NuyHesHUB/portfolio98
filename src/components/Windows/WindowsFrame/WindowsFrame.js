@@ -94,7 +94,7 @@ export function Frame({children, id, img, title, blurred, showMenu, showResumeMe
         }
     }
     /* console.log('resize',resize); */
-    console.log(blurred);
+    /* console.log(blurred); */
 
     return (
         <StyledFrame
