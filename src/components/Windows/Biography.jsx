@@ -49,6 +49,7 @@ function Biography({ biography, onBiographyBlur, onBiographyFocus, onBiographyMi
                 title="Front-end - 자기소개서"
                 blurred={biography.blurred}
                 showMenu={true}
+                showMoreMenu={true}
                 onMinimize={onBiographyMinimize}
                 onMaximize={onBiographyMaximize}
                 onDisabled={onBiographyDisabled}

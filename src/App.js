@@ -5,7 +5,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Bios from './components/Bios/Bios';
 import Loading from './components/Loading/Loading';
 import Windows from './components/Windows/Windows'
-import './styles/total_style.css'
+import './styles/total_style.scss'
 import {Provider} from 'react-redux'
 import { createStore } from 'redux';
 import reducer from './store/reducers/reducer'

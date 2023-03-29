@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 /* Styles */
-import {StyledFrame, TitleBar, ButtonGroup, StyledMenu, StyledResumeMenu} from './StyledFrame';
+import {StyledFrame, TitleBar, ButtonGroup, StyledMenu, StyledResumeMenu, StyledMoreMenu} from './StyledFrame';
 import styles from '../../../styles/modal.module.scss';
 
 
@@ -18,9 +18,20 @@ import close from '../../../assets/titlebar-icons/close.png';
 import down from '../../../assets/titlebar-icons/down.png'
 import newtab from '../../../assets/titlebar-icons/newtab.png'
 
+import back from "../../../assets/menu-img/back.png";
+import forward from "../../../assets/menu-img/forward.png";
+import stop from "../../../assets/menu-img/stop.png";
+import refresh from "../../../assets/menu-img/refresh.png";
+import home from "../../../assets/menu-img/home.png";
+import search from "../../../assets/menu-img/search.png";
+import favorite from "../../../assets/menu-img/favorite.png";
+import history from "../../../assets/menu-img/history.png";
+import mail from "../../../assets/menu-img/mail.png";
+import print from "../../../assets/menu-img/print.png";
+
 /* Pdf */
 import pdfFile from '../../../assets/resume-pdf/resume.pdf'
-export function Frame({children, id, img, title, blurred, showMenu, showResumeMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
+export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu, showResumeMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
     const [resize, setResize] = useState(true);
@@ -64,6 +75,96 @@ export function Frame({children, id, img, title, blurred, showMenu, showResumeMe
         <span><u>S</u>earch</span>
         <span><u>H</u>elp</span>
     </StyledMenu> : null;
+    /*----------------------------------------*\
+                    SHOW MORE MENU 
+    \*----------------------------------------*/
+    const moremenu = showMoreMenu ?
+    <StyledMoreMenu >
+        <div className='moreMenuWrap'>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img  src={back} alt='back'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Back
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={forward} alt='forward'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Forward
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={stop} alt='stop'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Stop
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={refresh} alt='refresh'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Refresh
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={home} alt='home'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Home
+                </div>
+            </button>
+            <div className='divider'/>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={search} alt='search'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Search
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={favorite} alt='favorite'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Favorite
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={history} alt='history'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    History
+                </div>
+            </button>
+            <div className='divider'/>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={mail} alt='mail'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Mail
+                </div>
+            </button>
+            <button className='btn btnIconLarge'>
+                <div className='btnIconLarge-Icon'>
+                    <img src={print} alt='print'/>
+                </div>
+                <div className='btnIconLarge-Text'>
+                    Print
+                </div>
+            </button>
+        </div>
+    </StyledMoreMenu> : null;
     /*----------------------------------------*\
                   SHOW RESUME MENU 
     \*----------------------------------------*/
@@ -146,6 +247,7 @@ export function Frame({children, id, img, title, blurred, showMenu, showResumeMe
             </TitleBar>
             {menu}
             {resumemenu}
+            {moremenu}
             {children}
         </StyledFrame>
     );

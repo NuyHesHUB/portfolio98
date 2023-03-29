@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const StyledFrame = styled.div.attrs(({top, left})=>({
     style: {
         top, left
@@ -14,7 +15,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
     z-index: ${props=>props.blurred? `` : `8`};
     z-index: ${props=>props.showTutorial ? '9999' : ''};
-    padding: 3px 4px 4px 4px;
+    padding: 3px 4px 4px 2px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
     /*----------------------------------------*\
                       Notepad
@@ -48,14 +49,12 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
             min-height: 700px; */
             /* overflow:auto; */
             overflow-y:scroll;
-            /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset; */
+            box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
             box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
-            /* border-right: 2px solid rgb(240, 240, 240); 
-            border-bottom: 2px solid rgb(240, 240, 240);  */
+            border-right: 2px solid rgb(240, 240, 240); 
+            border-bottom: 2px solid rgb(240, 240, 240); 
             box-sizing: border-box;
-            /* padding: 3px 0 0 4px; */
             font-size: 13px;
-            position: absolute
                 h2{
                     text-align: center;
                     font-size: 30px;
@@ -202,8 +201,106 @@ export const StyledMenu = styled.div`
     }
 `;
 
-export const StyledResumeMenu = styled.div`
+export const StyledMoreMenu = styled.div`
+    /* display: flex;
+    flex-direction: row;
+    width: 25%; */
     
+    overflow: hidden;
+    padding: 1px 0px;
+    .moreMenuWrap{
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        width: 100%;
+        /* display: block; */
+        padding: 5px 8px 5px 12px;
+        position: relative;
+        min-height: 22px;
+        padding-left: 12px;
+        margin: 0px 1px;
+        /* box-shadow: 
+            inset 0px -1px 0px #808088, 
+            inset -1px 0px 0px #808088, 
+            inset 0px 0px 0px 1px #ffffff, 
+            -1px 0px 0px #808088, 
+            1px 0px 0px #ffffff, 
+            -1px 1px 0px 0px #ffffff, 
+            1px 1px 0px 0px #ffffff; */
+    .btn{
+        border: 0px solid transparent;
+        background-color: rgb(195, 199, 203);
+        position: relative;
+        user-select: none;
+    }
+    .divider{
+        border-left: 1px solid #808088;
+        border-right: 1px solid #ffffff;
+        width: 3px;
+        height: 33px;
+        margin: 2px 3px;
+    }
+    .btnIconLarge{
+        padding: 2px;
+        width: 48px;
+        min-width: 48px;
+        height: 38px;
+        /* display: inline-flex; */
+        flex-direction: column;
+        align-items: center;
+        &:hover{
+            box-shadow: inset -1px -1px 0px #0c0c0c, inset 1px 1px 0px #ffffff;
+        }
+        &:active{
+            box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c;
+            padding: 3px 1px 1px 3px;
+        }
+        /* &:focus{
+            box-shadow: inset -1px -1px 0px #ffffff, inset 1px 1px 0px #0c0c0c;
+            padding: 3px 1px 1px 3px;
+        } */
+        
+    }
+    .btnIconLarge:hover .btnIconLarge-Icon img{
+        filter: grayscale(0);
+    }
+    .btnIconLarge .btnIconLarge-Icon{
+        flex-grow: 1;
+        width: 20px;
+        height: 20px;
+        margin: 1px auto;
+        align-content: center;
+        
+    }
+    .btnIconLarge-Icon{
+        img{
+            max-width: 100px;
+            max-height: 100px;
+            display: block;
+            filter: grayscale(1);
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 auto;
+        }
+    }
+    .btnIconLarge-Text{
+        margin-top: auto;
+        font-size: 12px;
+    }
+}
+    /* span {
+        padding: 1px 8px;
+        margin: 1px;
+        font-size: 12px;
+    }
+    span:hover {
+        background-color: rgb(0, 0, 127);
+        color: rgb(255, 255, 255);
+    } */
+`;
+
+export const StyledResumeMenu = styled.div`
     /* background: red; */
     /* justify-content: space-between; */
     div{

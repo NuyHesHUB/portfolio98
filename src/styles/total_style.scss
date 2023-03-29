@@ -1,0 +1,72 @@
+/* background-color: #008080; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    
+    /*----------------------------------------*\
+                   text-dragging 방지
+    \*----------------------------------------*/
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /*----------------------------------------*\
+                  webkit scrollbar
+    \*----------------------------------------*/
+    /* &::-webkit-scrollbar {
+        width: 15px;
+        background: repeating-conic-gradient(rgb(195, 199, 203) 0 25%,#fff 0 50%) 50%/2px 2px
+    } */
+
+    /* &::-webkit-scrollbar-thumb {
+        background: rgb(195, 199, 203);
+        border-top: 1.5px solid #fafafa;
+        border-left: 1.5px solid #fafafa;
+        border-bottom: 1.5px solid #5a5a5a;
+        border-right: 1.5px solid #5a5a5a;
+        outline: rgb(195, 199, 203);
+    } */
+    &::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background: repeating-conic-gradient(rgb(195, 199, 203) 0 25%,#fff 0 50%) 50%/2px 2px;
+    }
+    &::-webkit-scrollbar-track {
+        position: relative;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(195, 199, 203);
+        box-shadow: inset -1px -1px 0px rgb(195, 199, 203), inset 1px 1px 0px 0px #ffffff;
+        border: 1px solid #0c0c0c;
+        border-top: 1px solid rgb(195, 199, 203);
+        border-left: 1px solid rgb(195, 199, 203);
+    }
+    /* &::-webkit-scrollbar-button{
+        background: #bbc3c4;
+        box-shadow: inset -1px -1px 0px #808088, inset 1px 1px 0px 0px #ffffff;
+        border: 1px solid #0c0c0c;
+        border-top: 1px solid #bbc3c4;
+        border-left: 1px solid #bbc3c4;
+    } */
+    &::-webkit-scrollbar-corner {
+        background-color: rgb(195, 199, 203);
+        box-shadow: inset -1px -1px 0px rgb(195, 199, 203), inset 1px 1px 0px 0px #ffffff;
+    }
+}
+html, body, .App{
+    margin: 0;
+    overflow: hidden;
+}
+/* .App{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    overflow: hidden;
+    background-image: url(../assets/wallpaper/구름.bmp);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
