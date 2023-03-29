@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/pilot-test-win/static/css/main.cd159890.css",
-    "main.js": "/pilot-test-win/static/js/main.cea94b66.js",
+    "main.css": "/pilot-test-win/static/css/main.54fd1e42.css",
+    "main.js": "/pilot-test-win/static/js/main.adf65b39.js",
     "static/js/787.50932043.chunk.js": "/pilot-test-win/static/js/787.50932043.chunk.js",
     "static/media/windows98_logo_수정2.png": "/pilot-test-win/static/media/windows98_logo_수정2.a6c93b091fac2dd644a8.png",
+    "static/media/resume.pdf": "/pilot-test-win/static/media/resume.8f21cb4604917312d497.pdf",
     "static/media/startup.mp3": "/pilot-test-win/static/media/startup.3d0ca3c26ba1af9cb6d0.mp3",
     "static/media/docktimeicon.gif": "/pilot-test-win/static/media/docktimeicon.17df2a49f09c80e818ae.gif",
     "static/media/profile.jpg": "/pilot-test-win/static/media/profile.203a6b90ba5d98fef2de.jpg",
@@ -11,12 +12,12 @@
     "static/media/about_logo.png": "/pilot-test-win/static/media/about_logo.f4f34ad8966c6b39fe46.png",
     "static/media/windows_98_clouds.jpg": "/pilot-test-win/static/media/windows_98_clouds.13127b76eac6624d4b6d.jpg",
     "index.html": "/pilot-test-win/index.html",
-    "main.cd159890.css.map": "/pilot-test-win/static/css/main.cd159890.css.map",
-    "main.cea94b66.js.map": "/pilot-test-win/static/js/main.cea94b66.js.map",
+    "main.54fd1e42.css.map": "/pilot-test-win/static/css/main.54fd1e42.css.map",
+    "main.adf65b39.js.map": "/pilot-test-win/static/js/main.adf65b39.js.map",
     "787.50932043.chunk.js.map": "/pilot-test-win/static/js/787.50932043.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd159890.css",
-    "static/js/main.cea94b66.js"
+    "static/css/main.54fd1e42.css",
+    "static/js/main.adf65b39.js"
   ]
 }
