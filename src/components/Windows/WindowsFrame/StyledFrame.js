@@ -139,7 +139,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     div.Resume{
         position: relative;
         background: green;
-        height: ${props=>props.isMaximized? `calc(100vh - 104px)` : `400px`};
+        height: ${props=>props.isMaximized? `calc(100vh - 104px)` : `600px`};
     }
 `;
 

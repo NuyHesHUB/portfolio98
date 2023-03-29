@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import {StyledFrame, TitleBar, ButtonGroup, StyledMenu, StyledResumeMenu} from './StyledFrame';
 import styles from '../../../styles/modal.module.scss';
 
+
+
 /* Image */
 import minimize from '../../../assets/titlebar-icons/minimize.png';
 import maximize from '../../../assets/titlebar-icons/maximize.png';
@@ -16,11 +18,12 @@ import close from '../../../assets/titlebar-icons/close.png';
 import down from '../../../assets/titlebar-icons/down.png'
 import newtab from '../../../assets/titlebar-icons/newtab.png'
 
+/* Pdf */
+import pdfFile from '../../../assets/resume-pdf/resume.pdf'
 export function Frame({children, id, img, title, blurred, showMenu, showResumeMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
     const [coordinates, setCoordinates]=useState({x: random() + 100, y: random() +30});
     const [offset, setOffset]=useState({x: coordinates.x, y: coordinates.y});
     const [resize, setResize] = useState(true);
-
     useEffect(()=>{
         const frameTitle = document.querySelector('#' + id + ' .title');
         frameTitle.addEventListener('mousedown', dragStart);
@@ -67,8 +70,8 @@ export function Frame({children, id, img, title, blurred, showMenu, showResumeMe
     const resumemenu = showResumeMenu ? 
     <StyledResumeMenu>
         <div>
-            <Link><img src={down} alt='down'/><span><u>D</u>ownload</span></Link>
-            <Link><img src={newtab} alt='newtab'/><span><u>O</u>pen with a new tab</span></Link>
+            <a href={pdfFile} download><img src={down} alt='down'/><span><u>D</u>ownload</span></a>
+            <Link onClick={()=>{window.open(`${pdfFile}`)}}><img src={newtab} alt='newtab'/><span><u>O</u>pen with a new tab</span></Link>
         </div>
     </StyledResumeMenu> : null;
 
