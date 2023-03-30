@@ -29,6 +29,8 @@ import history from "../../../assets/menu-img/history.png";
 import mail from "../../../assets/menu-img/mail.png";
 import print from "../../../assets/menu-img/print.png";
 
+import logo from "../../../assets/about-img/about_logo.png"
+
 /* Pdf */
 import pdfFile from '../../../assets/resume-pdf/resume.pdf'
 export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu, showResumeMenu, width, height, onMinimize, onMaximize, onDisabled, onExit, isMinimized, isMaximized, isDisabled, showTutorial}){
@@ -70,10 +72,18 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
     \*----------------------------------------*/
     const menu = showMenu ?
     <StyledMenu >
-        <span><u>F</u>ile</span>
-        <span><u>E</u>dit</span>
-        <span><u>S</u>earch</span>
-        <span><u>H</u>elp</span>
+        <div className='menuWrap'>
+            <div className='first-divider'/>
+            <div className='first-divider'/>
+            <span><u>F</u>ile</span>
+            <span><u>E</u>dit</span>
+            <span><u>S</u>earch</span>
+            <span><u>H</u>elp</span>
+        </div>
+        <div>
+            <img style={{width:'20px'}} src={logo} alt='logo'/>
+        </div>
+        
     </StyledMenu> : null;
     /*----------------------------------------*\
                     SHOW MORE MENU 
@@ -81,6 +91,8 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
     const moremenu = showMoreMenu ?
     <StyledMoreMenu >
         <div className='moreMenuWrap'>
+            <div className='first-divider'/>
+            <div className='first-divider'/>
             <button className='btn btnIconLarge'>
                 <div className='btnIconLarge-Icon'>
                     <img  src={back} alt='back'/>
@@ -163,6 +175,14 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
                     Print
                 </div>
             </button>
+        </div>
+        <div className='addrWrap'>
+            <div className='addrList'>
+                <span>A<u>d</u>dress</span>
+                <div className='titleWrap'>
+                    <img src={img} draggable='false' alt='MiniIcon'/> D:\{title}
+                </div>
+            </div>
         </div>
     </StyledMoreMenu> : null;
     /*----------------------------------------*\

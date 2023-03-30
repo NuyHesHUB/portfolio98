@@ -42,15 +42,16 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
                     Biography
     \*----------------------------------------*/
         div.Biography {
-            /* height: 700px; */
-            height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `700px`};
+            height: ${props=>props.isMaximized? `calc(100vh - 170px)` : `700px`};
             padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`};
             /* max-height: calc(100vh - 78px);
             min-height: 700px; */
             /* overflow:auto; */
             overflow-y:scroll;
-            box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
-            box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
+            /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
+            box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset; */
+            box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+            background: #fff;
             border-right: 2px solid rgb(240, 240, 240); 
             border-bottom: 2px solid rgb(240, 240, 240); 
             box-sizing: border-box;
@@ -140,10 +141,47 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
         background: green;
         height: ${props=>props.isMaximized? `calc(100vh - 104px)` : `600px`};
     }
+    /*----------------------------------------*\
+                    Project
+    \*----------------------------------------*/
+    div.Project{
+        /* height: 700px; */
+        height: ${props=>props.isMaximized? `calc(100vh - 128px)` : `700px`};
+        padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`};
+        /* max-height: calc(100vh - 78px);
+        min-height: 700px; */
+        /* overflow:auto; */
+        overflow-y:scroll;
+        box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
+        box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
+        border-right: 2px solid rgb(240, 240, 240); 
+        border-bottom: 2px solid rgb(240, 240, 240); 
+        box-sizing: border-box;
+        font-size: 13px;
+            h2{
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            .profile{
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 20px;
+            }
+            .project01{
+                width: 250px;
+                display: block;
+                margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
 `;
 
+
 export const TitleBar = styled.div`
-    background-color: ${props=>props.blurred? `rgb(0,0,0,0.4)` : `rgb(0,0,127)`};
+    background: ${props=>props.blurred? `linear-gradient(90deg,grey,#b5b5b5);` : `linear-gradient(90deg,navy,#1084d0);`};
     color: ${props=>props.blurred? `rgb(200,200,200)` : `rgb(255,255,255)`};
     font-weight: bold;
     display: flex;
@@ -186,18 +224,40 @@ export const ButtonGroup = styled.div`
 `;
 
 export const StyledMenu = styled.div`
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
-    width: 25%;
-    /* justify-content: space-between; */
-    span {
-        padding: 1px 8px;
-        margin: 1px;
-        font-size: 12px;
-    }
-    span:hover {
-        background-color: rgb(0, 0, 127);
-        color: rgb(255, 255, 255);
+    /* padding: 1px 0px; */
+    .menuWrap{
+        display: flex;
+        width: 100%;
+        /* background: green; */
+        padding: 0px 0px 0px 4px;
+        margin: 0px 1px;
+        box-shadow: 
+            rgb(128, 128, 136) 0px -1px 1px inset, 
+            rgb(128, 128, 136) -2px 0px 1px inset, 
+            rgb(255, 255, 255) 1px 0px 0px 1px inset, 
+            rgb(128, 128, 136) -1px 0px 2px, rgb(255, 255, 255) 1px 0px 0px, 
+            rgb(255, 255, 255) -1px 1px 0px 0px, 
+            rgb(255, 255, 255) 1px 1px 0px 0px;
+        .first-divider{
+            border-left: 1px solid #808088;
+            border-right: 1px solid #ffffff;
+            width: 2px;
+            height: 16px;
+            margin-top: 3px;
+        }
+        span {
+            padding: 3px 8px;
+            /* margin: 1px; */
+            margin: 0px 1px;
+            font-size: 12px;
+            /* background: red; */
+        }
+        span:hover {
+            background-color: rgb(0, 0, 127);
+            color: rgb(255, 255, 255);
+        }
     }
 `;
 
@@ -205,7 +265,6 @@ export const StyledMoreMenu = styled.div`
     /* display: flex;
     flex-direction: row;
     width: 25%; */
-    
     overflow: hidden;
     padding: 1px 0px;
     .moreMenuWrap{
@@ -214,24 +273,30 @@ export const StyledMoreMenu = styled.div`
         min-height: 40px;
         width: 100%;
         /* display: block; */
-        padding: 5px 8px 5px 12px;
+        padding: 5px 8px 5px 4px;
         position: relative;
         min-height: 22px;
-        padding-left: 12px;
+        /* padding-left: 12px; */
         margin: 0px 1px;
-        /* box-shadow: 
-            inset 0px -1px 0px #808088, 
-            inset -1px 0px 0px #808088, 
-            inset 0px 0px 0px 1px #ffffff, 
-            -1px 0px 0px #808088, 
-            1px 0px 0px #ffffff, 
-            -1px 1px 0px 0px #ffffff, 
-            1px 1px 0px 0px #ffffff; */
+        /* margin-top: 3px; */
+        box-shadow: 
+            rgb(128, 128, 136) 0px -1px 1px inset, 
+            rgb(128, 128, 136) -2px 0px 1px inset, 
+            rgb(255, 255, 255) 1px 0px 0px 1px inset, 
+            rgb(128, 128, 136) -1px 0px 2px, rgb(255, 255, 255) 1px 0px 0px, 
+            rgb(255, 255, 255) -1px 1px 0px 0px, 
+            rgb(255, 255, 255) 1px 1px 0px 0px;
     .btn{
         border: 0px solid transparent;
         background-color: rgb(195, 199, 203);
         position: relative;
         user-select: none;
+    }
+    .first-divider{
+        border-left: 1px solid #808088;
+        border-right: 1px solid #ffffff;
+        width: 2px;
+        height: 38px;
     }
     .divider{
         border-left: 1px solid #808088;
@@ -242,7 +307,7 @@ export const StyledMoreMenu = styled.div`
     }
     .btnIconLarge{
         padding: 2px;
-        width: 48px;
+        width: 51px;
         min-width: 48px;
         height: 38px;
         /* display: inline-flex; */
