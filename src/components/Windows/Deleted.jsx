@@ -31,12 +31,13 @@ function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, on
           id="Deleted"
           x="120"
           y="90"
-          width="500"
+          width="530"
           /* height="348" */
           img={deletedImage}
           title="Untitled - Deleted"
           blurred={deleted.blurred}
           showMenu={true}
+          showMoreMenu={true}
           onMinimize={onDeletedMinimize}
           onMaximize={onDeletedMaximize}
           onDisabled={onDeletedDisabled}

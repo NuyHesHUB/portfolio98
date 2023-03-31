@@ -29,7 +29,9 @@ import history from "../../../assets/menu-img/history.png";
 import mail from "../../../assets/menu-img/mail.png";
 import print from "../../../assets/menu-img/print.png";
 
-import logo from "../../../assets/about-img/about_logo.png"
+import logo from "../../../assets/menu-img/logo_shadow.png"
+
+import addrbtn from "../../../assets/scrollbar-img/scrollbar-btn-down.png"
 
 /* Pdf */
 import pdfFile from '../../../assets/resume-pdf/resume.pdf'
@@ -73,16 +75,19 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
     const menu = showMenu ?
     <StyledMenu >
         <div className='menuWrap'>
-            <div className='first-divider'/>
-            <div className='first-divider'/>
-            <span><u>F</u>ile</span>
-            <span><u>E</u>dit</span>
-            <span><u>S</u>earch</span>
-            <span><u>H</u>elp</span>
+            <div className='menuList'>
+                <div className='first-divider'/>
+                <div className='first-divider'/>
+                <span><u>F</u>ile</span>
+                <span><u>E</u>dit</span>
+                <span><u>S</u>earch</span>
+                <span><u>H</u>elp</span>
+            </div>
+            <div className='logoWrap'>
+                <img style={{width:'24px'}} src={logo} alt='logo'/>
+            </div>
         </div>
-        <div>
-            <img style={{width:'20px'}} src={logo} alt='logo'/>
-        </div>
+        
         
     </StyledMenu> : null;
     /*----------------------------------------*\
@@ -177,10 +182,18 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
             </button>
         </div>
         <div className='addrWrap'>
+            <div className='first-divider'/>
+            <div className='first-divider'/>
             <div className='addrList'>
-                <span>A<u>d</u>dress</span>
+                <span className='addr'>A<u>d</u>dress</span>
                 <div className='titleWrap'>
-                    <img src={img} draggable='false' alt='MiniIcon'/> D:\{title}
+                    <div className='urlWrap'>
+                        <img src={img} draggable='false' alt='MiniIcon'/>
+                        <span className='url'>D:\{title}</span>
+                    </div>
+                    <div className='btnWrap'>
+                        <img src={addrbtn} alt='addrbtn'/>
+                    </div>
                 </div>
             </div>
         </div>

@@ -79,7 +79,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
                     Deleted
     \*----------------------------------------*/
         div.Deleted{
-            height: ${props=>props.isMaximized? `calc(100vh - 78px)` : `400px`};
+            height: ${props=>props.isMaximized? `calc(100vh - 152px)` : `400px`};
             box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px  inset;
             border-right: 2px solid rgb(240, 240, 240); 
             border-bottom: 2px solid rgb(240, 240, 240); 
@@ -187,7 +187,7 @@ export const TitleBar = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1px 2px;
+    padding: 1px 3px;
         span{
             padding-left: 4px;
             font-size: 11px;
@@ -224,8 +224,11 @@ export const ButtonGroup = styled.div`
 `;
 
 export const StyledMenu = styled.div`
+    /* overflow: hidden;
+    display: flex; */
+    /* padding: 1px 0px; */
+    width:100%;
     overflow: hidden;
-    display: flex;
     /* padding: 1px 0px; */
     .menuWrap{
         display: flex;
@@ -233,32 +236,59 @@ export const StyledMenu = styled.div`
         /* background: green; */
         padding: 0px 0px 0px 4px;
         margin: 0px 1px;
+        justify-content: space-between;
         box-shadow: 
             rgb(128, 128, 136) 0px -1px 1px inset, 
             rgb(128, 128, 136) -2px 0px 1px inset, 
             rgb(255, 255, 255) 1px 0px 0px 1px inset, 
-            rgb(128, 128, 136) -1px 0px 2px, rgb(255, 255, 255) 1px 0px 0px, 
+            rgb(128, 128, 136) -1px 0px 2px, 
+            rgb(255, 255, 255) 1px 0px 0px, 
             rgb(255, 255, 255) -1px 1px 0px 0px, 
             rgb(255, 255, 255) 1px 1px 0px 0px;
-        .first-divider{
-            border-left: 1px solid #808088;
-            border-right: 1px solid #ffffff;
-            width: 2px;
-            height: 16px;
-            margin-top: 3px;
+        .menuList{
+            display: flex;
+            .first-divider{
+                border-left: 1px solid #808088;
+                border-right: 1px solid #ffffff;
+                width: 2px;
+                height: 16px;
+                margin-top: 3px;
+            }
+            span {
+                padding: 3px 8px;
+                /* margin: 1px; */
+                margin: 0px 1px;
+                font-size: 12px;
+                /* background: red; */
+            }
+            span:hover {
+                background-color: rgb(0, 0, 127);
+                color: rgb(255, 255, 255);
+            }
         }
-        span {
-            padding: 3px 8px;
-            /* margin: 1px; */
-            margin: 0px 1px;
-            font-size: 12px;
-            /* background: red; */
-        }
-        span:hover {
-            background-color: rgb(0, 0, 127);
-            color: rgb(255, 255, 255);
+        .logoWrap{
+            /* width: 5.1%; */
+            padding: 0 2px;
+            padding-right: 2px;
+            /* background: #000; */
+            box-shadow: 
+            rgb(128, 128, 136) 0px -1px 1px inset, 
+            rgb(128, 128, 136) -2px 0px 1px inset, 
+            rgb(255, 255, 255) 0px 0px 0px 0px inset, 
+            rgb(128, 128, 136) -1px 0px 2px, 
+            rgb(255, 255, 255) 0px 0px 0px, 
+            rgb(255, 255, 255) -1px 1px 0px 0px, 
+            rgb(255, 255, 255) 1px 1px 0px 0px;
+            img{
+                margin: 0 auto;
+                display: block;
+                margin-top: 2px;
+                margin-right: 2px;
+            }
         }
     }
+
+    
 `;
 
 export const StyledMoreMenu = styled.div`
@@ -354,15 +384,67 @@ export const StyledMoreMenu = styled.div`
         font-size: 12px;
     }
 }
-    /* span {
-        padding: 1px 8px;
-        margin: 1px;
-        font-size: 12px;
+.addrWrap{
+    align-items: center;
+    min-height: 40px;
+    width: 100%;
+    height: 25px;
+    padding: 2px 4px 2px 4px;
+    margin-bottom: 2px;
+    position: relative;
+    display: flex;
+    min-height: 24px;
+    margin: 0px 1px;
+    box-shadow: 
+        rgb(128, 128, 136) 0px -1px 1px inset, 
+        rgb(128, 128, 136) -2px 0px 1px inset, 
+        rgb(255, 255, 255) 1px 0px 0px 1px inset, 
+        rgb(128, 128, 136) -1px 0px 2px, rgb(255, 255, 255) 1px 0px 0px, 
+        rgb(255, 255, 255) -1px 1px 0px 0px, 
+        rgb(255, 255, 255) 1px 1px 0px 0px;
+    .first-divider{
+        border-left: 1px solid #808088;
+        border-right: 1px solid #ffffff;
+        width: 2px;
+        height: 18px;
     }
-    span:hover {
-        background-color: rgb(0, 0, 127);
-        color: rgb(255, 255, 255);
-    } */
+    .addrList{
+        display: flex;
+        padding: 2px;
+        width: 100%;
+        align-items: center;
+        .addr{
+            padding: 2px 8px;
+            font-size: 12px;
+        }
+        .titleWrap{
+            height: 19px;
+            background: #fff;
+            padding-left: 5px;
+            flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: rgb(255, 255, 255) -1px -1px inset, 
+            grey 1px 1px inset, 
+            rgb(223, 223, 223) -2px -2px inset, 
+            rgb(10, 10, 10) 2px 2px inset;
+            .urlWrap{
+                display: flex;
+                .url{
+                    margin-left: 5px;
+                    font-size:12px;
+                }
+            }
+            .btnWrap{
+                height: 17px;
+                margin-right: 1px;
+            }
+            img{width:16px}
+            
+        }
+    }
+}
 `;
 
 export const StyledResumeMenu = styled.div`
