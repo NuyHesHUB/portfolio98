@@ -189,7 +189,7 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
                 <div className='titleWrap'>
                     <div className='urlWrap'>
                         <img src={img} draggable='false' alt='MiniIcon'/>
-                        <span className='url'>D:\{title}</span>
+                        <span className='url'>D:\ {title}</span>
                     </div>
                     <div className='btnWrap'>
                         <img src={addrbtn} alt='addrbtn'/>

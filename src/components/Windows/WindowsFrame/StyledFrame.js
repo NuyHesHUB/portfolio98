@@ -146,36 +146,19 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     \*----------------------------------------*/
     div.Project{
         /* height: 700px; */
-        height: ${props=>props.isMaximized? `calc(100vh - 128px)` : `700px`};
-        padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`};
+        /* height: ${props=>props.isMaximized? `calc(100vh - 128px)` : `700px`}; */
+        /* padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`}; */
         /* max-height: calc(100vh - 78px);
         min-height: 700px; */
         /* overflow:auto; */
-        overflow-y:scroll;
-        box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
-        box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset;
-        border-right: 2px solid rgb(240, 240, 240); 
-        border-bottom: 2px solid rgb(240, 240, 240); 
+        /* overflow-y:scroll; */
+        /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
+        box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset; */
+        /* border-right: 2px solid rgb(240, 240, 240); 
+        border-bottom: 2px solid rgb(240, 240, 240);  */
         box-sizing: border-box;
         font-size: 13px;
-            h2{
-                text-align: center;
-                font-size: 30px;
-                font-weight: bold;
-                margin-top: 20px;
-            }
-            .profile{
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 20px;
-            }
-            .project01{
-                width: 250px;
-                display: block;
-                margin: 0 auto;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
+        margin-top:10px;
         }
 `;
 
@@ -388,7 +371,7 @@ export const StyledMoreMenu = styled.div`
     align-items: center;
     min-height: 40px;
     width: 100%;
-    height: 25px;
+    height: 28px;
     padding: 2px 4px 2px 4px;
     margin-bottom: 2px;
     position: relative;
@@ -418,7 +401,8 @@ export const StyledMoreMenu = styled.div`
             font-size: 12px;
         }
         .titleWrap{
-            height: 19px;
+            /* height: 19px; */
+            height: 20px;
             background: #fff;
             padding-left: 5px;
             flex-basis: 100%;
@@ -431,13 +415,15 @@ export const StyledMoreMenu = styled.div`
             rgb(10, 10, 10) 2px 2px inset;
             .urlWrap{
                 display: flex;
+                align-items: center;
                 .url{
                     margin-left: 5px;
-                    font-size:12px;
+                    font-size:10px;
+                    color: #222;
                 }
             }
             .btnWrap{
-                height: 17px;
+                height: 16px;
                 margin-right: 1px;
             }
             img{width:16px}
