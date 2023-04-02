@@ -88,7 +88,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
             padding-bottom: 2px;
             box-sizing: border-box;
             >.bg{
-                width: 30%;
+                width: 100%;
                 height: 100%;
                 overflow-y: scroll;
                 margin-top: 2px;
@@ -159,6 +159,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
         box-sizing: border-box;
         font-size: 13px;
         margin-top:10px;
+        padding: 0 8px;
         }
 `;
 
