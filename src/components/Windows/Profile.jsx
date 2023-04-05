@@ -18,7 +18,7 @@ const ProfileFrame=styled.div`
     position: absolute;
     top: 2%;
     right: 2%;
-    z-index: ${props => props.showTutorial ? '999' : ''};
+    z-index: ${props => props.showTutorial ? '0' : '0'};
     animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
     @keyframes tutorial1 {
         0%,
@@ -160,7 +160,7 @@ const StyledTutoBtn = styled.div`
 `;
 
 function TutoBtn({ id, children, pressed, clicked, pad}){
-    console.log('pressed',pressed);
+    /* console.log('pressed',pressed); */
     return(
         <StyledTutoBtn onClick={clicked} pressed={pressed} id={id}>
             <StyledButtonInside
@@ -172,7 +172,7 @@ function TutoBtn({ id, children, pressed, clicked, pad}){
 
 function Profile({showTutorial, onTutorialClick}){
     
-    console.log('showTutorial',showTutorial);
+    /* console.log('showTutorial',showTutorial); */
     /* console.log('onTutorialClick',onTutorialClick); */
     /* const tutorialButton = showTutorial ?
         <Tutorial/> : null; */

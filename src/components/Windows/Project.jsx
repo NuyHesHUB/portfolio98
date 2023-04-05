@@ -33,19 +33,20 @@ function Project({ project, onProjectBlur, onProjectFocus, onProjectMinimize, on
     /* console.log('maximized',resume.maximized); */
     /* console.log('minimized',resume.minimized); */
     /* console.log('state.resume',resume);  */
-    
+    /* console.log('maximized',project.maximized); */
     const displayContent = 
         project.show ?
             <WindowsFrame
                 id="Project"
                 x="100"
                 y="100"
-                width="600"
+                width="700"
                 /* height="200" */
                 img={projectImage}
                 title="Front-end - 자기소개서"
                 blurred={project.blurred}
-                showMenu={false}
+                showMenu={true}
+                showMoreMenu={true}
                 onMinimize={onProjectMinimize}
                 onMaximize={onProjectMaximize}
                 onDisabled={onProjectDisabled}
@@ -57,7 +58,10 @@ function Project({ project, onProjectBlur, onProjectFocus, onProjectMinimize, on
             >
                 
                 <div className='Project' >
-                    <ProjectFrame/>
+                    <ProjectFrame
+                        onMaximize={onProjectMaximize}
+                        isMaximized={project.maximized}
+                    />
                 </div>
             </WindowsFrame> : null;
 

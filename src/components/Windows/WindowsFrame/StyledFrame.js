@@ -13,7 +13,8 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     width: ${props=>props.width+'px'};
     position: absolute;
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
-    z-index: ${props=>props.blurred? `` : `8`};
+    z-index: ${props=>props.blurred? `1` : `8`};
+    /* z-index: ${props=>props.blurred? `` : `8`}; */
     z-index: ${props=>props.showTutorial ? '9999' : ''};
     padding: 3px 4px 4px 2px;
     display: ${props=>props.isMinimized ? `none` : `initial`};
@@ -88,7 +89,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
             padding-bottom: 2px;
             box-sizing: border-box;
             >.bg{
-                width: 100%;
+                width: 30%;
                 height: 100%;
                 overflow-y: scroll;
                 margin-top: 2px;
@@ -158,7 +159,6 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
         border-bottom: 2px solid rgb(240, 240, 240);  */
         box-sizing: border-box;
         font-size: 13px;
-        margin-top:10px;
         padding: 0 8px;
         }
 `;
@@ -235,7 +235,7 @@ export const StyledMenu = styled.div`
                 border-left: 1px solid #808088;
                 border-right: 1px solid #ffffff;
                 width: 2px;
-                height: 16px;
+                height: 14px;
                 margin-top: 3px;
             }
             span {
