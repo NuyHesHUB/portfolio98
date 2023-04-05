@@ -11,6 +11,7 @@ import { Container } from '../../styles/Container';
 /* Component */
 import Icons from '../Icon/Icons';
 import Dockbar from '../Dockbar/Dockbar';
+import WallpaperText from '../../styles/WallpaperText';
 import Notepad from './Notepad';
 import Biography from './Biography';
 import About from './About';
@@ -88,6 +89,7 @@ function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisibl
     return (
         
         <StyledWindows className='App'/*  ref={element} */ /* onClick={triggerFull} */>
+            <WallpaperText/>
             {/* <h2>Windows페이지</h2> */}
             <br/>
             <Icons/>
@@ -105,6 +107,7 @@ function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisibl
             {/* ----------------------------------------- */}
             <Profile/>
             <Dockbar styled={{zIndex:'999'}}/>
+            
             <Container/>
         </StyledWindows>
     );
