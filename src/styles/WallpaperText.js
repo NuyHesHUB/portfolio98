@@ -15,10 +15,22 @@ const WallpaperTextFrame = styled.div`
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
+        
     h1{
         font-size: 70px;
         color: rgb(58, 110, 165);
-        text-shadow: 1px 3px 1px #000;
+        text-shadow: 10px 5px 1px rgba(0, 0, 0, .1);
+        background-size: 100% 5px;
+        background-image: -webkit-linear-gradient(#000 10%, rgb(58, 110, 165) 40%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* background-image: -webkit-linear-gradient(#000 10%, #fff 50%);
+        background-position: 0 0;
+        background-size: 100% 10px;
+        background-repeat: repeat; */
+        /* -webkit-text-fill-color: transparent; */
+        
         i{
             font-style: normal;
             font-size: 120px;
