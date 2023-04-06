@@ -13,7 +13,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     width: ${props=>props.width+'px'};
     position: absolute;
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
-    z-index: ${props=>props.blurred? `1` : `8`};
+    z-index: ${props=>props.blurred? `0` : `8`};
     /* z-index: ${props=>props.blurred? `` : `8`}; */
     z-index: ${props=>props.showTutorial ? '9999' : ''};
     padding: 3px 4px 4px 2px;
@@ -43,21 +43,21 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
                     Biography
     \*----------------------------------------*/
         div.Biography {
-            height: ${props=>props.isMaximized? `calc(100vh - 170px)` : `700px`};
+            box-sizing: border-box;
+            font-size: 13px;
+            padding: 0 8px;
+            /* height: ${props=>props.isMaximized? `calc(100vh - 170px)` : `700px`};
             padding: ${props=>props.isMaximized? `3px 100px 0 100px;` : `3px 50px 0 50px;`};
-            /* max-height: calc(100vh - 78px);
-            min-height: 700px; */
-            /* overflow:auto; */
             overflow-y:scroll;
-            /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
-            box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset; */
             box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
             background: #fff;
             border-right: 2px solid rgb(240, 240, 240); 
             border-bottom: 2px solid rgb(240, 240, 240); 
             box-sizing: border-box;
-            font-size: 13px;
-                h2{
+            font-size: 13px; */
+            /* box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px 0 inset;
+            box-shadow: rgb(240, 240, 240) 1.5px 1.5px 0 inset; */
+                /* h2{
                     text-align: center;
                     font-size: 30px;
                     font-weight: bold;
@@ -74,7 +74,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
                     margin: 0 auto;
                     margin-top: 20px;
                     margin-bottom: 20px;
-                }
+                } */
         }
     /*----------------------------------------*\
                     Deleted

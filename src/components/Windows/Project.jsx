@@ -43,7 +43,7 @@ function Project({ project, onProjectBlur, onProjectFocus, onProjectMinimize, on
                 width="700"
                 /* height="200" */
                 img={projectImage}
-                title="Front-end - 자기소개서"
+                title="Project - 프로젝트"
                 blurred={project.blurred}
                 showMenu={true}
                 showMoreMenu={true}

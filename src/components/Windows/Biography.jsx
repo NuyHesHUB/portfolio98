@@ -5,13 +5,14 @@ import {connect} from 'react-redux';
 
 /* Component */
 import WindowsFrame from './WindowsFrame/WindowsFrame'
+import BiographyFrame from './Biography/BiographyFrame';
 
 /* Action */
 import {focusBiography, blurBiography, minimizeBiography, exitBiography, maximizeBiography, disabledBiography} from '../../store/actions/actions';
 
 /* Image */
 import biographyImage from '../../assets/dockbar-icon/biography.png';
-import profile from '../../assets/resume-img/profile.jpg';
+/* import profile from '../../assets/resume-img/profile.jpg'; */
 
 /* Effect */
 /* import ResumeSkill from '../effect/ResumeEffect/ResumeSkill'; */
@@ -42,7 +43,7 @@ function Biography({ biography, onBiographyBlur, onBiographyFocus, onBiographyMi
                 id="Biography"
                 x="100"
                 y="100"
-                width="600"
+                width="700"
                 /* height="200" */
                 img={biographyImage}
                 title="Front-end - 자기소개서"
@@ -59,12 +60,13 @@ function Biography({ biography, onBiographyBlur, onBiographyFocus, onBiographyMi
                 style={{overFlow:'auto'}}
             >
                 <div className='Biography' >
-                    <br/>
+                    <BiographyFrame/>
+                    {/* <br/>
                     <img className='profile' src={profile} alt="profile"
                         style={{
                             width:'200px'
                         }}
-                    />            
+                    />      */}       
                 </div>
             </WindowsFrame> : null;
 

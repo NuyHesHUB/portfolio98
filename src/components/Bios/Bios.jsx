@@ -12,7 +12,7 @@ import { BiosInfoSection, BiosInfoSectionStyled} from './BiosInfoSection';
 /* Component */
 import BiosLogo from './BiosLogo';
 /* import { useBiosLoading } from '../../hooks/useBiosLoading'; */
-import { useBrowserInfo } from '../../hooks/useBrowserInfo';
+/* import { useBrowserInfo } from '../../hooks/useBrowserInfo'; */ /* safari 오류.. */
 import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
 /* import { useFullscreen } from '../../hooks/useFullscreen'; */
 /* import { getEnvConfig } from '../utiles/getEnvConfig'; */
@@ -122,7 +122,7 @@ const LOAD_WITHOUT_FULLSCREEN_KEY = 'Enter'
 
 const Bios = () => {
     /* const { projectUrl } = getEnvConfig(); */
-    const browserInfo = useBrowserInfo();
+    /* const browserInfo = useBrowserInfo(); */ /* safari 오류.. */
     /* const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState(); */
     /* const Fullscreen = useFullscreen();
     const { element, triggerFull, exitFull } = Fullscreen; */
@@ -167,11 +167,12 @@ const Bios = () => {
                     </tr>
                 </BiosInfoSection>
                 <BiosInfoSection>
-                    <BiosInfoEntry label="Platform" value={browserInfo.platform}/>
+                    {/* safari 오류.. */}
+                    {/* <BiosInfoEntry label="Platform" value={browserInfo.platform}/>
                     <BiosInfoEntry label="Agent" value={browserInfo.userAgent}/>
                     <BiosInfoEntry label="Vendor" value={browserInfo.vendor}/>
                     <BiosInfoEntry label="Cores" value={browserInfo.cores} />
-                    <BiosInfoEntry label="RAM" value={browserInfo.minimalRam} />
+                    <BiosInfoEntry label="RAM" value={browserInfo.minimalRam} /> */}
                 </BiosInfoSection>
                 <BiosInfoSection>
                     <BiosInfoEntry label="Current Date Time" value={new Date().toLocaleString()}/>
