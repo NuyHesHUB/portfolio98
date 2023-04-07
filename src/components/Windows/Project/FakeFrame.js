@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TitleBarWrap=styled.div`
-    background: silver;
+export const TitleBarWrap=styled.div`
+    /* background: silver; */
+    background: #c3c7cb;
     box-shadow: 
         inset -1px -1px #0a0a0a, 
         inset 1px 1px #dfdfdf, 
@@ -10,27 +11,29 @@ const TitleBarWrap=styled.div`
         inset 2px 2px #fff;
     padding: 3px;
 `
-const TitleBar=styled.div`
+export const TitleBar=styled.div`
     align-items: center;
     background: linear-gradient(90deg,navy,#1084d0);
     display: flex;
     justify-content: space-between;
     padding: 3px 2px 3px 3px;
 `
-const TitleBarText=styled.div`
+export const TitleBarText=styled.div`
     color: #fff;
     font-weight: 700;
     letter-spacing: 0;
     margin-right: 24px;
+    display: flex;
 `
-const TitleBarControls=styled.div`
+export const TitleBarControls=styled.div`
     display: flex;
     button{
         display: block;
         min-height: 14px;
         min-width: 16px;
         padding: 0;
-        background: silver;
+        /* background: silver; */
+        background: #c3c7cb;
         box-shadow: inset -1px -1px #0a0a0a, 
         inset 1px 1px #fff, 
         inset -2px -2px grey, 
