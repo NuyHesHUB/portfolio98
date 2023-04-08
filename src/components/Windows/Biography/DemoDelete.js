@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import DemoFalling from '../../effect/DeleteEffect/DemoFalling';
 import Burning from '../../effect/DeleteEffect/Burning';
 import deleted from '../../../assets/desktop-icon/Delete.png'
+import bg from '../../../assets/wallpaper/windows_98_clouds.jpg'
 import {TitleBarWrap, TitleBar, TitleBarText, TitleBarControls} from '../Project/FakeFrame';
 
 const StyledDemoDeleteFrame=styled.div`
             .Demo-Deleted{
             /* height: ${props=>props.isMaximized? `calc(100vh - 152px)` : `200px`}; */
             height: 200px;
+            background: #018281;
+            /* background-image: url(${bg});
+            background-size: cover; */
             box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px  inset;
             border-right: 2px solid rgb(240, 240, 240); 
             border-bottom: 2px solid rgb(240, 240, 240); 

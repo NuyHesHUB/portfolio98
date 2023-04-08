@@ -43,7 +43,7 @@ function Biography({ biography, onBiographyBlur, onBiographyFocus, onBiographyMi
                 id="Biography"
                 x="100"
                 y="100"
-                width="700"
+                width="750"
                 /* height="200" */
                 img={biographyImage}
                 title="Front-end - 자기소개서"

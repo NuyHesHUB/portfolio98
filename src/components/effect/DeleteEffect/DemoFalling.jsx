@@ -41,6 +41,7 @@ const FallingText = styled.span`
             margin-top: 7px;
             border: 1px solid transparent;
             font-size: 11px;
+            color: #fff;
         }
     }
     &.fall-1{

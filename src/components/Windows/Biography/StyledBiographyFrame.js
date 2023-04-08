@@ -309,7 +309,120 @@ export const RightContent=styled.div`
         margin-bottom: 30px;
         padding-left: 20px;
     }
-    
+`
+export const MyskillsFrame=styled.div`
+    .content-wrap{
+                    width: 100%;
+                    height: 79.6%;
+                    background: #fff;
+                    margin: 0 auto;
+                    margin-bottom: 1%;
+                    padding: 10px 5px;
+                    box-shadow: 
+                        inset -1px -1px #fff, 
+                        inset 1px 1px grey, 
+                        inset -2px -2px #dfdfdf, 
+                        inset 2px 2px #0a0a0a;
+                    /* -webkit-font-smoothing: none; */
+                    font-family: "Pixelated MS Sans Serif",Arial;
+                    font-size: 12px;
+                    position: relative;
+                        .tree-view{
+                            list-style: none;
+                            position: relative;
+                            margin-left: 5px;
+                            div{
+                                display: flex;
+                                align-items: center;
+                                img{
+                                    width: 14px;
+                                    margin-right: 2px;
+                                }
+                            }
+                            ul{
+                                list-style: none;
+                                border-left: 1px dotted grey;
+                                margin-left: 7px;
+                                padding-left: 16px;
+                                li{
+                                    margin-top: 5px;
+                                    position: relative;
+                                    text-align: -webkit-match-parent;
+                                >ul{
+                                    li{
+                                        display: flex;
+                                        align-items: center;
+                                        img{
+                                            width: 14px;
+                                            margin-right: 2px;
+                                        }
+                                    }
+                                }
+                                &::before{
+                                    border-bottom: 1px dotted grey;
+                                    content: "";
+                                    display: block;
+                                    left: -16px;
+                                    position: absolute;
+                                    top: 6px;
+                                    /* width: 12px; */
+                                    width: 14px;
+                                }
+                                &:last-child::after{
+                                    background: #fff;
+                                    bottom: 0;
+                                    content: "";
+                                    display: block;
+                                    left: -20px;
+                                    position: absolute;
+                                    top: 7px;
+                                    width: 8px;
+                                }
+                            }
+                            }
+                        }
+    }
+`
+export const TableFrame=styled.div`
+    .table-wrap{
+        width: 100%;
+        margin-top: 3px;
+        table, td, th{
+            border : 1px solid #fff;
+            border-image: 
+        url("data:image/svg+xml;charset=utf-8,%3Csvg width='5' height='5' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h5v5H0V2h2v1h1V2H0' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h4v4H0V1h1v2h2V1H0'/%3E%3C/svg%3E") 2;
+        }
+        table{
+            width: 100%;
+            thead{
+                tr{
+                    th{
+                        padding: 5px;
+                        font-weight: 400;
+                        box-shadow: 
+                        rgb(10, 10, 10) -1px -1px inset, 
+                        rgb(223, 223, 223) 1px 1px inset, 
+                        grey -2px -2px inset, 
+                        rgb(255, 255, 255) 2px 2px inset;
+                    }
+                }
+            }
+            tbody{
+                background: #fff;
+                tr{
+                    text-align: center;
+                    td{
+                        padding: 5px;
+                        box-shadow: 
+                            rgb(255, 255, 255) -1px -1px inset, 
+                            grey 1px 1px inset,
+                            rgb(223, 223, 223) -2px -2px inset, 
+                            rgb(10, 10, 10) 2px 2px inset;
+                    }
+                }
+            }
+        }
+    }
 `
 
 export const Fieldset=styled.fieldset`
