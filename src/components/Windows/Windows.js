@@ -23,7 +23,6 @@ import Project from './Project';
 
 /* Audio */
 import startup from '../../assets/sounds/startup.mp3';
-
 const StyledWindows=styled.div`
     position: relative;
     width: 100vw;
@@ -40,9 +39,9 @@ function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisibl
 
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
-      audio.muted = true;
+      /* audio.muted = true;
       audio.play();
-      audio.muted = false;
+      audio.muted = false; */
       return () => {
         window.removeEventListener('contextmenu', contextDisable);
       }

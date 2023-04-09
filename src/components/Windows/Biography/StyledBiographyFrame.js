@@ -305,9 +305,79 @@ export const RightContent=styled.div`
     padding: ${props=>props.isMaximized ? '20px 150px' : '20px'};
     /* background: ${props=>props.isMaximized ? 'red' : 'blue'}; */
     >div{
-        border-left: 1px solid #808080;
+        /* border-left: 1px solid #fff;
         margin-bottom: 30px;
         padding-left: 20px;
+        position: relative; */
+        /* &::after{
+            content: '';
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            background: #808080;
+            top: 0;
+            left: -2px;
+        } */
+        /* padding: 20px;
+        box-shadow: rgb(255, 255, 255) -1px -1px inset, grey 1px 1px inset, rgb(223, 223, 223) -2px -2px inset, rgb(10, 10, 10) 2px 2px inset; */
+    }
+    .divider{
+        margin: 40px auto;
+        width: 100%;
+        height: 3px;
+        background: #808080;
+        border-bottom: 1.2px solid #fff;
+    }
+    .readme-box{
+        .readme-content{
+            background: #fff;
+            padding: 15px;
+            box-shadow: 
+                    rgb(255, 255, 255) -1px -1px inset, 
+                    grey 1px 1px inset, 
+                    rgb(223, 223, 223) -2px -2px inset, 
+                    rgb(10, 10, 10) 2px 2px inset;
+            div{
+                line-height: 1.4;
+                .ani-box{
+                    box-shadow: 
+                    rgb(255, 255, 255) -1px -1px inset, 
+                    grey 1px 1px inset, 
+                    rgb(223, 223, 223) -2px -2px inset, 
+                    rgb(10, 10, 10) 2px 2px inset;
+                    margin: 5px 0px;
+                    justify-content: center;
+                }
+                u{
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                i{
+                    font-style: normal;
+                    font-size: 20px;
+                    /* margin-bottom: 5px; */
+                    margin: 0 10px 5px 10px;
+                }
+                img{
+                    display: inline-block;
+                    font-size: 16px;
+                    color: red;
+                    animation: rotate linear 16000ms infinite;
+                    @keyframes rotate {
+                    0%{
+                        -ms-transform: rotate(0deg);
+                        -webkit-transform: rotate(0deg);
+                        transform: rotate(0deg);
+                    }
+                    100%{
+                        -ms-transform: rotate(360deg);
+                        -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg);
+                    }
+                }
+                }
+            }
+        }
     }
 `
 export const MyskillsFrame=styled.div`
@@ -429,6 +499,9 @@ export const Fieldset=styled.fieldset`
     padding: 10px;
     border-image: 
         url("data:image/svg+xml;charset=utf-8,%3Csvg width='5' height='5' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h5v5H0V2h2v1h1V2H0' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h4v4H0V1h1v2h2V1H0'/%3E%3C/svg%3E") 2;
+    i{
+        font-style: normal;
+    }
 `
 
 export const StatusBar=styled.div`

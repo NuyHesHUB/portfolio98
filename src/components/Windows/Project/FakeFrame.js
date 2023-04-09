@@ -24,6 +24,7 @@ export const TitleBarText=styled.div`
     letter-spacing: 0;
     margin-right: 24px;
     display: flex;
+    align-items: center;
 `
 export const TitleBarControls=styled.div`
     display: flex;
