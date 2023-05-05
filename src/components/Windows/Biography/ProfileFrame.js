@@ -8,7 +8,7 @@ import logo from '../../../assets/menu-img/logo_shadow.png'
 import icon from '../../../assets/desktop-icon/Paint.png'
 import paintIcon from '../../../assets/paint-img/tools.png'
 
-import profile from '../../../assets/biography-img/profile2.jpg'
+import profile from '../../../assets/resume-img/profile_04.jpeg'
 
 const StyledProfileFrame=styled.div`
     display: flex;
@@ -210,7 +210,7 @@ function ProfileFrame({biography}){
                                 </div>
                                 <div style={{padding:'3px'}} className='img-area'>
                                     <div className='img-box'>
-                                        <img style={{width:'35%'}} src={profile} alt="profile02"/>
+                                        <img style={{width:'70%'}} src={profile} alt="profile02"/>
                                     </div>
                                 </div>
                             </div>

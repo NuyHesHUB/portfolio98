@@ -70,6 +70,50 @@ function ProjectFrame({project}){
             logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
             skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
         },
+        {
+            id: 5,
+            tabTitle: 'Project 05',
+            title: '포트폴리오',
+            img: Project02Img,
+            tag01: '리액트',
+            tag02: '반응형',
+            content: 'project 03 콘텐츠 입니다.',
+            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+        },
+        {
+            id: 6,
+            tabTitle: 'Project 06',
+            title: '포트폴리오',
+            img: Project02Img,
+            tag01: '리액트',
+            tag02: '반응형',
+            content: 'project 03 콘텐츠 입니다.',
+            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+        },
+        {
+            id: 7,
+            tabTitle: 'Project 07',
+            title: '포트폴리오',
+            img: Project02Img,
+            tag01: '리액트',
+            tag02: '반응형',
+            content: 'project 03 콘텐츠 입니다.',
+            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+        },
+        {
+            id: 8,
+            tabTitle: 'Project 08',
+            title: '포트폴리오',
+            img: Project02Img,
+            tag01: '리액트',
+            tag02: '반응형',
+            content: 'project 03 콘텐츠 입니다.',
+            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+        },
     ];
     /* console.log('ProjectFrame 맥시',project.maximized); */
 

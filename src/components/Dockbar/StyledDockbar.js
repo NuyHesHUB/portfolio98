@@ -90,7 +90,7 @@ export const ProgramGroup = styled.div`
     background: #777;
     box-shadow: 0px 1px #fff;
   }
-  &:nth-child(8)::after {
+  &:nth-child(11)::after {
     position: absolute;
     bottom: 0;
     content: '';

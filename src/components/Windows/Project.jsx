@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 
-/* Libary */
+/* Redux */
 import {connect} from 'react-redux';
 
 /* Component */
 import WindowsFrame from './WindowsFrame/WindowsFrame'
 import ProjectFrame from './Project/ProjectFrame'
 
-/* Action */
+/* Actions */
 import {focusProject, blurProject, minimizeProject, exitProject, maximizeProject, disabledProject} from '../../store/actions/actions';
 
 /* Image */

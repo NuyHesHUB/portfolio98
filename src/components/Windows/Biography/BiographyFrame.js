@@ -1,79 +1,88 @@
 import React from 'react';
+
+/* Redux */
 import { connect } from 'react-redux'; 
 
+/* Style */
 import { StyledFrame, TextSlide, ContentsFrame, TotalContentWrap, LeftContent, RightContent, Fieldset, MyskillsFrame, TableFrame, StatusBar } from './StyledBiographyFrame';
-import { TitleBarWrap, TitleBar, TitleBarText, TitleBarControls } from '../Project/FakeFrame'
-import DemoDelete from './DemoDelete';
 
+
+import { TitleBarWrap, TitleBar, TitleBarText, TitleBarControls } from '../Project/FakeFrame';
+import DemoDelete from './DemoDelete';
 import ProfileFrame from './ProfileFrame';
 import InstagramFrame from './InstagramFrame';
-import VelogFrame from './VelogFrame'
-import GithubFrame from './GithubFrame'
+import VelogFrame from './VelogFrame';
+/* import GithubFrame from './GithubFrame'; */
 import HobbiesFrame from './HobbiesFrame';
 
-import bg from '../../../assets/wallpaper/background.png'
+import bg from '../../../assets/wallpaper/background.png';
 
-import profile from '../../../assets/resume-img/profile.jpg'
+import profile from '../../../assets/resume-img/profile_01.jpeg';
 
-import info from '../../../assets/biography-img/info.png'
-import logo from '../../../assets/menu-img/logo_shadow.png'
-import pofologo from '../../../assets/about-img/about_logo.png'
+import info from '../../../assets/biography-img/info.png';
+import logo from '../../../assets/menu-img/logo_shadow.png';
+import pofologo from '../../../assets/about-img/about_logo.png';
 
-import circle from '../../../assets/biography-img/circle.svg'
-import semo from '../../../assets/biography-img/semo.svg'
-import gear from '../../../assets/biography-img/gear.svg'
+import circle from '../../../assets/biography-img/circle.svg';
+import semo from '../../../assets/biography-img/semo.svg';
+import gear from '../../../assets/biography-img/gear.svg';
 
 /* Icon */
-import setup from '../../../assets/biography-img/setup.png'
+import setup from '../../../assets/biography-img/setup.png';
 import componentsIcon from '../../../assets/biography-img/componentIcon.png';
 import paintIcon from '../../../assets/desktop-icon/Paint.png';
-import readme from '../../../assets/biography-img/readme.png'
-import myskills from '../../../assets/biography-img/myskills.png'
-import education from '../../../assets/biography-img/education.png'
-import timeline from '../../../assets/biography-img/timeline.png'
-import certificate from '../../../assets/biography-img/license.png'
-import hobbies from '../../../assets/biography-img/hobbies.png'
-import sns from '../../../assets/biography-img/sns.png'
-import insta from '../../../assets/biography-img/insta.png'
-import velog from '../../../assets/desktop-icon/velog.png'
-import github from '../../../assets/desktop-icon/github.png'
-import contact from '../../../assets/biography-img/contact.png'
+import readme from '../../../assets/biography-img/readme.png';
+import myskills from '../../../assets/biography-img/myskills.png';
+import education from '../../../assets/biography-img/education.png';
+import timeline from '../../../assets/biography-img/timeline.png';
+import certificate from '../../../assets/biography-img/license.png';
+import hobbies from '../../../assets/biography-img/hobbies.png';
+import sns from '../../../assets/biography-img/sns.png';
+import insta from '../../../assets/biography-img/insta.png';
+import velog from '../../../assets/desktop-icon/velog.png';
+/* import github from '../../../assets/desktop-icon/github.png'; */
+import contact from '../../../assets/biography-img/contact.png';
 import bioicon from '../../../assets/desktop-icon/biography.png';
 
 import front from '../../../assets/biography-img/front.png';
-import back from '../../../assets/biography-img/back.png'
+import back from '../../../assets/biography-img/back.png';
 
-import html from '../../../assets/biography-img/html.svg'
-import css from '../../../assets/biography-img/css.svg'
-import sass from '../../../assets/biography-img/sass.svg'
-import jquery from '../../../assets/biography-img/jquery.svg'
-import javascript from '../../../assets/biography-img/javascript.svg'
-import react from '../../../assets/biography-img/react.svg'
-import vue from '../../../assets/biography-img/vue.svg'
-import boot from '../../../assets/biography-img/boot.svg'
-import redux from '../../../assets/biography-img/redux.svg'
-import reactquery from '../../../assets/biography-img/reactquery.svg'
-import styledcomponents from '../../../assets/biography-img/styledcomponents.svg'
-import mui from '../../../assets/biography-img/mui.svg'
-import ant from '../../../assets/biography-img/ant.svg'
-import reactrouter from '../../../assets/biography-img/reactrouter.svg'
-import nodejs from '../../../assets/biography-img/node.svg'
-import sqlite from '../../../assets/biography-img/sqlite.svg'
-import postman from '../../../assets/biography-img/postman.svg'
-import vercel from '../../../assets/biography-img/vercel.svg'
-import git from '../../../assets/biography-img/git.svg'
-import gith from '../../../assets/biography-img/github.svg'
-import figma from '../../../assets/biography-img/figma.svg'
-import zeplin from '../../../assets/biography-img/zeplin.jpg'
-
-
-import basic from '../../../assets/biography-img/basic.png'
-import tool from '../../../assets/biography-img/tool.png'
+import html from '../../../assets/biography-img/html.svg';
+import css from '../../../assets/biography-img/css.svg';
+import sass from '../../../assets/biography-img/sass.svg';
+import jquery from '../../../assets/biography-img/jquery.svg';
+import javascript from '../../../assets/biography-img/javascript.svg';
+import react from '../../../assets/biography-img/react.svg';
+import vue from '../../../assets/biography-img/vue.svg';
+import boot from '../../../assets/biography-img/boot.svg';
+import redux from '../../../assets/biography-img/redux.svg';
+import reactquery from '../../../assets/biography-img/reactquery.svg';
+import styledcomponents from '../../../assets/biography-img/styledcomponents.svg';
+import mui from '../../../assets/biography-img/mui.svg';
+import ant from '../../../assets/biography-img/ant.svg';
+import reactrouter from '../../../assets/biography-img/reactrouter.svg';
+import nodejs from '../../../assets/biography-img/node.svg';
+import sqlite from '../../../assets/biography-img/sqlite.svg';
+import postman from '../../../assets/biography-img/postman.svg';
+import vercel from '../../../assets/biography-img/vercel.svg';
+import git from '../../../assets/biography-img/git.svg';
+import gith from '../../../assets/biography-img/github.svg';
+import figma from '../../../assets/biography-img/figma.svg';
+import zeplin from '../../../assets/biography-img/zeplin.jpg';
+import tailwind from '../../../assets/biography-img/tailwind.svg';
+import ts from '../../../assets/biography-img/ts.svg';
+import next from '../../../assets/biography-img/next.svg';
+import firebase from '../../../assets/biography-img/firebase.svg';
+import postgresql from '../../../assets/biography-img/postgres.svg';
+import aws from '../../../assets/biography-img/aws.svg';
+import heroku from '../../../assets/biography-img/heroku.svg';
+import docker from '../../../assets/biography-img/docker.svg';
+import gpt from '../../../assets/biography-img/gpt.svg';
+import basic from '../../../assets/biography-img/basic.png';
+import tool from '../../../assets/biography-img/tool.png';
 
 function BiographyFrame({biography}){
-    
     /* console.log('ProjectFrame 맥시',project.maximized); */
-
     return (
         <StyledFrame>
             <TextSlide>
@@ -83,7 +92,7 @@ function BiographyFrame({biography}){
                         $$<span className='title'><img style={{width:'17px'}} src={logo} alt='logo'/>PortFolio98</span>$$<u>D:\\Biography</u> 주세현의 자기소개 폴더에 오신것을 환영합니다.
                         <span>Profile</span>은<i>저의 소개를 확인하실 수 있고</i>, 
                         <span>Hobbies</span>는<i>저의 취미</i>, 
-                        <span>SNS</span>는<i>저의 Instagram, Velog, GitHub를 소개하는 공간이며</i>, 
+                        <span>SNS</span>는<i>저의 Instagram, Velog를 소개하는 공간이며</i>, 
                         <span>Contact</span>는 저의 메일과 연락처를 확인하실 수 있습니다. 
                         <span>탭</span>을 눌러가며 <span>저의 소개</span>들을 확인해 보세요.
                     </p>
@@ -160,10 +169,10 @@ function BiographyFrame({biography}){
                                                                         <img src={velog} alt="velog"/>
                                                                         <a href="#velog">Velog</a>
                                                                     </li>
-                                                                    <li>
+                                                                    {/* <li>
                                                                         <img src={github} alt="github"/>
                                                                         <a href="#github">Github</a>
-                                                                    </li>
+                                                                    </li> */}
                                                                 </ul>
                                                             </li>
                                                             <li>
@@ -290,6 +299,10 @@ function BiographyFrame({biography}){
                                                                                 <span>JavaScript</span>
                                                                             </li>
                                                                             <li>
+                                                                                <img src={ts} alt="ts"/>
+                                                                                <span>TypeScript</span>
+                                                                            </li>
+                                                                            <li>
                                                                                 <img src={react} alt="react"/>
                                                                                 <span>React</span>
                                                                             </li>
@@ -300,6 +313,10 @@ function BiographyFrame({biography}){
                                                                             <li>
                                                                                 <img src={boot} alt="bootstrap"/>
                                                                                 <span>BootStrap</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <img src={tailwind} alt="tailwind"/>
+                                                                                <span>Tailwind</span>
                                                                             </li>
                                                                         </ul>
                                                                         
@@ -363,6 +380,10 @@ function BiographyFrame({biography}){
                                                                                 <img src={nodejs} alt="nodejs"/>
                                                                                 <span>Node.js</span>
                                                                             </li>
+                                                                            <li>
+                                                                                <img src={next} alt="nextjs"/>
+                                                                                <span>Next.js</span>
+                                                                            </li>
                                                                         </ul>
                                                                     </li>
                                                                     <li>
@@ -372,16 +393,52 @@ function BiographyFrame({biography}){
                                                                         </div>
                                                                         <ul>
                                                                             <li>
+                                                                                <img src={firebase} alt="firebase"/>
+                                                                                <span>FireBase</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <img src={postgresql} alt="postgresql"/>
+                                                                                <span>PostgreSQL</span>
+                                                                            </li>
+                                                                            <li>
                                                                                 <img src={sqlite} alt="sqlite"/>
                                                                                 <span>SQLite</span>
                                                                             </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div>
+                                                                            <img src={basic} alt="db"/>
+                                                                            <span>Cloud</span>
+                                                                        </div>
+                                                                        <ul>
                                                                             <li>
-                                                                                <img src={postman} alt="postman"/>
-                                                                                <span>Postman</span>
+                                                                                <img src={aws} alt="aws"/>
+                                                                                <span>AWS</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <img src={heroku} alt="heroku"/>
+                                                                                <span>Heroku</span>
                                                                             </li>
                                                                             <li>
                                                                                 <img src={vercel} alt="vercel"/>
                                                                                 <span>Vercel</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div>
+                                                                            <img src={basic} alt="db"/>
+                                                                            <span>DevOps</span>
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <img src={docker} alt="docker"/>
+                                                                                <span>Docker</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <img src={postman} alt="postman"/>
+                                                                                <span>Postman</span>
                                                                             </li>
                                                                         </ul>
                                                                     </li>
@@ -401,6 +458,18 @@ function BiographyFrame({biography}){
                                                                     <span>Tool</span>
                                                                 </div>
                                                                 <ul>
+                                                                    <li>
+                                                                        <div>
+                                                                            <img src={basic} alt="basic"/>
+                                                                            <span>AI</span>
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <img src={gpt} alt="gpt"/>
+                                                                                <span>Chat GPT</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
                                                                     <li>
                                                                         <div>
                                                                             <img src={basic} alt="basic"/>
@@ -675,8 +744,8 @@ function BiographyFrame({biography}){
                                                 <VelogFrame/>
                                             </div>
                                         </Fieldset>
-                                        <div className="divider"></div>
-                                        <Fieldset>
+                                        {/* <div className="divider"></div> */}
+                                        {/* <Fieldset>
                                             <legend>
                                                 <div style={{display:'flex',alignItems:'center'}}>
                                                     <img style={{width:'20px',marginRight:'5px'}} src={github} alt='github'/>
@@ -687,12 +756,22 @@ function BiographyFrame({biography}){
                                             <div>
                                                 <GithubFrame/>
                                             </div>
-                                        </Fieldset>
+                                        </Fieldset> */}
                                     </div>
                                     <div className='divider'></div>
                                     <div style={{height:'200px'}}>
-                                        <div style={{display:'flex',alignItems:'center'}}><img style={{width:'25px',marginRight:'5px'}} src={contact} alt='contact'/><h1 id='contact'>CONTACT</h1></div>
+                                        <div style={{display:'flex',alignItems:'center'}}>
+                                            <img style={{width:'25px',marginRight:'5px'}} src={contact} alt='contact'/>
+                                            <h1 id='contact'>CONTACT</h1>
+                                        </div>
+                                        <br/>
                                         <hr/>
+                                        <br/>
+                                        <Fieldset style={{background:'#fff'}}>
+                                                <p style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={contact} alt='phone'/><span>연락처 : 010-9576-8881</span></p>
+                                                <br/>
+                                                <p style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={sns} alt='email'/><span>이메일 : 7upbeat7@naver.com</span></p>
+                                        </Fieldset>
                                     </div>
                                 </RightContent>
                             </TotalContentWrap>
@@ -701,9 +780,9 @@ function BiographyFrame({biography}){
             </ContentsFrame>
                 <div>
                         <StatusBar>
-                            <p>#total</p>
-                            <p>#total</p>
-                            <p>#total</p>
+                            <p>#Front-end</p>
+                            <p>#Developer</p>
+                            <p>#Biography</p>
                         </StatusBar>
                 </div>
         </StyledFrame>

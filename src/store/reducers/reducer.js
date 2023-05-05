@@ -7,13 +7,13 @@ const initialState = {
   /* systemLoading: false, */
 
   showStart: false,
-  showTutorial: false,
+  showTutorial: true,
   about: {
     show: false,
     blurred: false,
   },
   notepad: {
-    show: false,
+    show: true,
     blurred: false,
     minimized: false,
     maximized:false,

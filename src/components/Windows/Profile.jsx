@@ -1,8 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
-import ProfileIMG from '../../assets/resume-img/profile.jpg'
+
+/* Redux */
 import {connect} from 'react-redux'
-import { openTutorial } from '../../store/actions/actions'
+
+/* Action */
+import { openBiography, openProject, openResume, openTutorial } from '../../store/actions/actions'
+
+/* Style */
+import styled from 'styled-components';
+
+/* Image */
+import ProfileIMG from '../../assets/resume-img/profile_03.jpeg'
+
 /* import Tutorial from './Tutorial'; */
 /* import Button from '../Button'; */
 
@@ -58,8 +67,8 @@ const ProfileWrap=styled.div`
             border-radius: 5px;
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: 2px -22px;
-
+            background-position: 0px -11px;
+            outline: 1px solid #fff;
         }
     }
     ul{
@@ -170,7 +179,7 @@ function TutoBtn({ id, children, pressed, clicked, pad}){
     )
 }
 
-function Profile({showTutorial, onTutorialClick}){
+function Profile({showTutorial, onTutorialClick, onBiographyClick, onResumeClick, onProjectClick}){
     
     /* console.log('showTutorial',showTutorial); */
     /* console.log('onTutorialClick',onTutorialClick); */
@@ -197,10 +206,10 @@ function Profile({showTutorial, onTutorialClick}){
                                 >
                             </TutoBtn>
                         </li>
-                        <li>&gt; Biography</li>
-                        <li>&gt; Resume</li>
-                        <li>&gt; Project</li>
-                        <li>&gt; Contact</li>
+                        <li onClick={()=>onBiographyClick()}>&gt; Biography</li>
+                        <li onClick={()=>onResumeClick()}>&gt; Resume</li>
+                        <li onClick={()=>onProjectClick()}>&gt; Project</li>
+                        {/* <li>&gt; Contact</li> */}
                     </ul>
                 </div>
             </ProfileWrap>
@@ -215,7 +224,10 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onTutorialClick: () => dispatch(openTutorial())
+        onTutorialClick: () => dispatch(openTutorial()),
+        onBiographyClick: () => dispatch(openBiography()),
+        onResumeClick: () => dispatch(openResume()),
+        onProjectClick: () => dispatch(openProject()),
     }
 }
 

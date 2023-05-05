@@ -46,23 +46,27 @@ function About({ about, onAboutFocus, onAboutBlur, onAboutExit }) {
           <div className='About' style={{display:'flex', justifyContent:'left'}}>
             <img src={logo} alt='logo' style={{width:'25%', height:'42%',marginLeft:'20px', marginTop:'20px'}}/>
             <span style={{ marginLeft:'30px', marginTop:'40px'}}>
-                Microsoft(R)Windows<br/>
-                Windows98<br/>
-                Copyright(C)1981-1997 Microsoft Corp.<br/>
+                Portfolio(R)Windows<br/>
+                Portfolio98<br/>
+                Copyright(C)2023 Joosehyeon.<br/>
                 <br/>
                 <br/>
                 This product is licensed to:<br/>
-                Jim Midnite<br/>
-                Setec Astronomy<br/>
+                Joo Sehyeon<br/>
                 <br/>
                 <hr/>
                 <br/>
                 {/* <span onClick={()=>window.open('http://www.naver.com')}>http://www.naver.com</span> */}
-                <Link style={{display:'block'}} to='http://www.naver.com' target="_blank">http://www.naver.com</Link>
+                <Link style={{display:'block'}} to='https://github.com/NuyHesHUB' target="_blank">https://github.com/NuyHesHUB</Link>
                 <br/>
                 <hr/>
-                Physical memory available to Windows: 196.052 KB<br/>
-                System resources: 90% Free<br/>
+                <br/>
+                Portfolio98 by Joo Sehyeon<br/>
+                <br/>
+                7upbeat7@naver.com
+                <br/>
+                <br/>
+                <hr/>
             </span>
           </div>
         </ModalFrame> : null;

@@ -37,6 +37,11 @@ function Start({onStartMenuBlur, onShutDown, onOpenAbout, onOpenTutorial}) {
         {text: 'Project 01 : 수원 관공서', img: Suwon, showArrow: false},
         {text: 'Project 02 : 메이필드 호텔', img: May, showArrow: false},
         {text: 'Project 03 : 영화 페이지', img: Zoocinema, showArrow: false},
+        {text: 'Project 04 : 커뮤니티', img: Zoocinema, showArrow: false},
+        {text: 'Project 05 : 채팅', img: Zoocinema, showArrow: false},
+        {text: 'Project 06 : 투두 리스트', img: Zoocinema, showArrow: false},
+        {text: 'Project 07 : PORTFOLIO98', img: Zoocinema, showArrow: false},
+        {text: 'Project 08 : ChatGPT 페이지', img: Zoocinema, showArrow: false},
         {text: 'User Tutorial', img: Help, showArrow: false},
         /* {text: 'Run...', img: Run, showArrow: false}, */
         {text: 'LogOff...', img: LogOff, showArrow: false},
@@ -75,6 +80,16 @@ function Start({onStartMenuBlur, onShutDown, onOpenAbout, onOpenTutorial}) {
         }else if(text === 'Project 02 : 메이필드 호텔'){
             window.open('https://nuyheshub.github.io/project02_mayfield_hotel/')
         }else if(text === 'Project 03 : 영화 페이지'){
+            window.open('https://nuyheshub.github.io/project03_movie_app/')
+        }else if(text === 'Project 04 : 커뮤니티'){
+            window.open('https:www.naver.com')
+        }else if(text === 'Project 05 : 채팅'){
+            window.open('https://nuyheshub.github.io/project03_movie_app/')
+        }else if(text === 'Project 06 : 투두 리스트'){
+            window.open('https://nuyheshub.github.io/project03_movie_app/')
+        }else if(text === 'Project 07 : PORTFOLIO98'){
+            window.open('https://nuyheshub.github.io/project03_movie_app/')
+        }else if(text === 'Project 08 : ChatGPT 페이지'){
             window.open('https://nuyheshub.github.io/project03_movie_app/')
         }else if(text === 'User Tutorial'){
             onOpenTutorial();

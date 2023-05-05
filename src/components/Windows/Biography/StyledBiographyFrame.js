@@ -183,7 +183,7 @@ export const LeftContent=styled.div`
                     /* border-radius: 5px; */
                     background-size: cover;
                     background-repeat: no-repeat;
-                    background-position: 0px -12px;
+                    background-position: -3px 0px;
                 }
                 p{
                 /* margin-top: 5px; */
