@@ -10,8 +10,8 @@ import { StyledFrame, TextSlide, ContentsFrame, TotalContentWrap, LeftContent, R
 import { TitleBarWrap, TitleBar, TitleBarText, TitleBarControls } from '../Project/FakeFrame';
 import DemoDelete from './DemoDelete';
 import ProfileFrame from './ProfileFrame';
-import InstagramFrame from './InstagramFrame';
-import VelogFrame from './VelogFrame';
+/* import InstagramFrame from './InstagramFrame'; */
+/* import VelogFrame from './VelogFrame'; */
 /* import GithubFrame from './GithubFrame'; */
 import HobbiesFrame from './HobbiesFrame';
 
@@ -40,7 +40,7 @@ import hobbies from '../../../assets/biography-img/hobbies.png';
 import sns from '../../../assets/biography-img/sns.png';
 import insta from '../../../assets/biography-img/insta.png';
 import velog from '../../../assets/desktop-icon/velog.png';
-/* import github from '../../../assets/desktop-icon/github.png'; */
+import github from '../../../assets/desktop-icon/github.png';
 import contact from '../../../assets/biography-img/contact.png';
 import bioicon from '../../../assets/desktop-icon/biography.png';
 
@@ -92,7 +92,7 @@ function BiographyFrame({biography}){
                         $$<span className='title'><img style={{width:'17px'}} src={logo} alt='logo'/>PortFolio98</span>$$<u>D:\\Biography</u> 주세현의 자기소개 폴더에 오신것을 환영합니다.
                         <span>Profile</span>은<i>저의 소개를 확인하실 수 있고</i>, 
                         <span>Hobbies</span>는<i>저의 취미</i>, 
-                        <span>SNS</span>는<i>저의 Instagram, Velog를 소개하는 공간이며</i>, 
+                        <span>SNS</span>는<i>저의 Instagram, Velog, GitHub 를 소개하는 공간이며</i>, 
                         <span>Contact</span>는 저의 메일과 연락처를 확인하실 수 있습니다. 
                         <span>탭</span>을 눌러가며 <span>저의 소개</span>들을 확인해 보세요.
                     </p>
@@ -169,10 +169,10 @@ function BiographyFrame({biography}){
                                                                         <img src={velog} alt="velog"/>
                                                                         <a href="#velog">Velog</a>
                                                                     </li>
-                                                                    {/* <li>
+                                                                    <li>
                                                                         <img src={github} alt="github"/>
                                                                         <a href="#github">Github</a>
-                                                                    </li> */}
+                                                                    </li>
                                                                 </ul>
                                                             </li>
                                                             <li>
@@ -719,7 +719,14 @@ function BiographyFrame({biography}){
                                         <br/>
                                         <hr/>
                                         <br/>
-                                        <Fieldset>
+                                        <Fieldset style={{background:'#fff'}}>
+                                                <p id='instagram' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={insta} alt='phone'/><span>Insta : <a target='blank' href='https://www.instagram.com/nuy_hes/'>https://www.instagram.com/nuy_hes/</a></span></p>
+                                                <br/>
+                                                <p id='velog' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={velog} alt='email'/><span>Velog : <a target='blank' href='https://velog.io/@nuyhes'>https://velog.io/@nuyhes</a></span></p>
+                                                <br/>
+                                                <p id='github' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={github} alt='email'/><span>GitHub : <a target='blank' href='https://github.com/NuyHesHUB'>https://github.com/NuyHesHUB</a></span></p>
+                                        </Fieldset>
+                                        {/* <Fieldset>
                                             <legend>
                                                 <div style={{display:'flex',alignItems:'center'}}>
                                                     <img style={{width:'20px',marginRight:'5px'}} src={insta} alt='insta'/>
@@ -730,9 +737,9 @@ function BiographyFrame({biography}){
                                             <div>
                                                 <InstagramFrame/>
                                             </div>
-                                        </Fieldset>
-                                        <div className="divider"></div>
-                                        <Fieldset>
+                                        </Fieldset> */}
+                                        {/* <div className="divider"></div> */}
+                                        {/* <Fieldset>
                                             <legend>
                                                 <div style={{display:'flex',alignItems:'center'}}>
                                                     <img style={{width:'20px',marginRight:'5px'}} src={velog} alt='velog'/>
@@ -743,7 +750,7 @@ function BiographyFrame({biography}){
                                             <div>
                                                 <VelogFrame/>
                                             </div>
-                                        </Fieldset>
+                                        </Fieldset> */}
                                         {/* <div className="divider"></div> */}
                                         {/* <Fieldset>
                                             <legend>

@@ -210,7 +210,7 @@ export const DisplayImg=styled.img`
 
 export const ProjectImgFrame=styled.div`
     position: relative;
-    top: -247px;
+    top: -248px;
     left: 0;
     @media screen and (max-width: 800px){
         top: -190px;

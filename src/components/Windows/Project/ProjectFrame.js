@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'; 
 
-import { StyledFrame, TextSlide, TabList, TabItem, ContentsFrame, TotalContentWrap, LeftContent, RightContent, DisplayFrame, DisplayImg, ProjectImgFrame, ProjectImg, Fieldset, Subtitle, SkillWrap, SkillList, SkillImg, SkillText, StatusBar } from './StyledProjectFrame';
+import { StyledFrame, TextSlide, TabList, TabItem, ContentsFrame, TotalContentWrap, LeftContent, RightContent, DisplayFrame, DisplayImg, ProjectImgFrame, ProjectImg, Fieldset, /* Subtitle, */ SkillWrap, SkillList, SkillImg, SkillText, StatusBar } from './StyledProjectFrame';
 
 
 import display from '../../../assets/project-img/display2.png'
-import Project01Img from '../../../assets/project-img/project01.png'
-import Project02Img from '../../../assets/project-img/project02.png'
+
 import cloud from '../../../assets/wallpaper/windows_98_clouds.jpg';
 
 import htmlIcon from '../../../assets/project-img/html.png'
 
-import TitleImgSuwon from '../../../assets/start-icon/suwon.png'
-import TitleImgMay from '../../../assets/project-img/maylogo2.jpg'
+/* import TitleImgSuwon from '../../../assets/start-icon/suwon.png' */
+/* import TitleImgMay from '../../../assets/project-img/maylogo2.jpg' */
 import Project01 from './Project01';
 
 import helf from '../../../assets/start-icon/help.png'
 import logo from '../../../assets/menu-img/logo_shadow.png'
+
+import Project01Img from '../../../assets/project-img/project01.png'
+import Project02Img from '../../../assets/project-img/project02.png'
+import Project03Img from '../../../assets/project-img/project03.png'
+import Project04Img from '../../../assets/project-img/project04.png'
+import Project05Img from '../../../assets/project-img/project05.png'
+import Project06Img from '../../../assets/project-img/project06.png'
+import Project07Img from '../../../assets/project-img/project07.png'
+import Project08Img from '../../../assets/project-img/project08.png'
+
 
 function ProjectFrame({project}){
     const [currentTab, setCurrentTab] = useState('1');
@@ -24,95 +33,118 @@ function ProjectFrame({project}){
         {
             id: 1,
             tabTitle: 'Project 01',
-            titleImg: TitleImgSuwon,
-            title: '수원시청',
+            title: '수원시청 관공서',
             img: Project01Img,
             tag01: '관공서',
             tag02: '클론코딩',
+            leftContent: 
+            <ul>
+            <li><strong>수원시청</strong>을 클론코딩했습니다.</li>
+            <br/>
+            <li><strong>JQuery</strong>를 활용하여 슬라이드를 제작했습니다.</li>
+            <br/>
+            <li>지도 <strong>API</strong>를 사용하여 수원시청의 위치를 추가하였습니다.</li>
+            </ul>
+            ,
             content: 'project 01 콘텐츠 입니다.',
-            logoImg: ['html5','css3','jquery'],
-            skills: ['HTML','CSS','JQuery'],
+            logoImg1: ['html5','css3','javascript','jquery'],
+            skills: ['HTML','CSS','JavaScript','JQuery'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
             mainFunction: <Project01/>,
 
         },
         {
             id: 2,
             tabTitle: 'Project 02',
-            titleImg: TitleImgMay,
             title: '메이필드 호텔',
             img: Project02Img,
             tag01: '호텔',
             tag02: '반응형',
             content: 'project 02 콘텐츠 입니다.',
-            logoImg: ['html5','css3','jquery','react','vuedotjs'],
-            skills: ['HTML','CSS','JQuery','React','Vue']
+            logoImg1: ['html5','css3','jquery','react','vuedotjs'],
+            skills: ['HTML','CSS','JQuery','React','Vue'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
 
         },
         {
             id: 3,
             tabTitle: 'Project 03',
-            title: '영화웹',
-            img: Project02Img,
-            tag01: '호텔',
-            tag02: '반응형',
+            title: '영화추천 페이지',
+            img: Project03Img,
+            tag01: 'Axios',
+            tag02: '영화 API',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
         {
             id: 4,
             tabTitle: 'Project 04',
-            title: '포트폴리오',
-            img: Project02Img,
+            title: '포트폴리오98 (현재 페이지)',
+            img: Project04Img,
             tag01: '리액트',
-            tag02: '반응형',
+            tag02: 'Redux',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
         {
             id: 5,
             tabTitle: 'Project 05',
-            title: '포트폴리오',
-            img: Project02Img,
-            tag01: '리액트',
-            tag02: '반응형',
+            title: '실시간 채팅',
+            img: Project05Img,
+            tag01: 'Firebase',
+            tag02: '채팅',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
         {
             id: 6,
             tabTitle: 'Project 06',
-            title: '포트폴리오',
-            img: Project02Img,
+            title: '커뮤니티',
+            img: Project06Img,
             tag01: '리액트',
-            tag02: '반응형',
+            tag02: 'AWS',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
         {
             id: 7,
             tabTitle: 'Project 07',
-            title: '포트폴리오',
-            img: Project02Img,
-            tag01: '리액트',
-            tag02: '반응형',
+            title: 'TO-DO 리스트',
+            img: Project07Img,
+            tag01: '뷰',
+            tag02: 'Heroku',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
         {
             id: 8,
             tabTitle: 'Project 08',
-            title: '포트폴리오',
-            img: Project02Img,
-            tag01: '리액트',
-            tag02: '반응형',
+            title: 'ChatGPT 마켓',
+            img: Project08Img,
+            tag01: 'ChatGPT',
+            tag02: 'AI',
             content: 'project 03 콘텐츠 입니다.',
-            logoImg: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
-            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL']
+            logoImg1: ['html5','css3','sass','axios','bootstrap','angular','postman','mysql'],
+            skills: ['HTML','CSS','SASS','AXIOS','BootStrap','Angular','Postman','MySQL'],
+            logoImg2: ['slickpic'],
+            otherSkills: ['slick-slider'],
         },
     ];
     /* console.log('ProjectFrame 맥시',project.maximized); */
@@ -120,6 +152,7 @@ function ProjectFrame({project}){
     const handleTabClick = (e) => {
         setCurrentTab(e.target.id);
     }
+
     return (
         <StyledFrame>
             <TextSlide>
@@ -153,11 +186,12 @@ function ProjectFrame({project}){
                                     <div className='Project-bg' style={{backgroundImage: `url(${cloud})`}}>
                                         <img src={htmlIcon} alt="Icon"/>
                                         <h3>{tab.title}</h3>
-                                        <ul style={{marginTop:'50px'}}>
-                                            <li>수원시청을 클론코딩했습니다.</li>
+                                        <div style={{marginTop:'50px'}}>
+                                            {/* <li>수원시청을 클론코딩했습니다.</li>
                                             <li>JQuery를 활용하여 슬라이드를 제작했습니다.</li>
-                                            <li>CSS를 배웠습니다.</li>
-                                        </ul>
+                                            <li>CSS를 배웠습니다.</li> */}
+                                            {tab.leftContent}
+                                        </div>
                                     </div>
                                     <ul className='line-list'>
                                         <li></li>
@@ -204,7 +238,7 @@ function ProjectFrame({project}){
                                                     <Fieldset><legend>사용기술 목록(<u>S</u>)</legend>
                                                         <SkillWrap>
                                                             <div>
-                                                                {tab.logoImg.map((logo, i)=> 
+                                                                {tab.logoImg1.map((logo, i)=> 
                                                                     <SkillList key={i}>
                                                                         <SkillImg src={`https://simpleicons.org/icons/${logo}.svg`} alt='logo'/>
                                                                         <SkillText>{tab.skills[i]}</SkillText>
@@ -219,10 +253,10 @@ function ProjectFrame({project}){
                                                         <legend>플러그인 or 라이브러리 목록(<u>S</u>)</legend>
                                                         <SkillWrap style={{width:'170px'}}>
                                                             <div>
-                                                                {tab.logoImg.map((logo, i)=> 
+                                                                {tab.logoImg2.map((logo, i)=> 
                                                                     <SkillList key={i}>
                                                                         <SkillImg src={`https://simpleicons.org/icons/${logo}.svg`} alt='logo'/>
-                                                                        <SkillText>{tab.skills[i]}</SkillText>
+                                                                        <SkillText>{tab.otherSkills[i]}</SkillText>
                                                                     </SkillList>
                                                                 )}
                                                             </div>
