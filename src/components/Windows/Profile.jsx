@@ -27,7 +27,7 @@ const ProfileFrame=styled.div`
     position: absolute;
     top: 2%;
     right: 2%;
-    z-index: ${props => props.showTutorial ? '0' : '0'};
+    z-index: ${props => props.showTutorial ? '' : ''};
     animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
     @keyframes tutorial1 {
         0%,

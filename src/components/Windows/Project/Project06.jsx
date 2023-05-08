@@ -4,7 +4,7 @@ import function01 from '../../../assets/project-img/suwon01.png'
 import function02 from '../../../assets/project-img/suwon02.png'
 
 
-function Project02(){
+function Project06(){
     return (
         <div>
             <FakeFrame
@@ -20,4 +20,4 @@ function Project02(){
     );
 };
 
-export default Project02;
+export default Project06;

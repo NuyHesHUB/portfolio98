@@ -17,6 +17,14 @@ export const StyledFrame=styled.div`
                 blue 100% 
             );
     } */
+    hr{
+        margin: 0;
+        border: none;
+        width: 100%;
+        height: 2px;
+        opacity: 0.5;
+        background: linear-gradient( to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100% );
+    }
 `
 export const TextSlide=styled.div`
     width: 100%;
@@ -237,8 +245,8 @@ export const Subtitle=styled.div`
 `
 
 export const SkillWrap=styled.div`
-    width: 130px;
-    height: 100px;
+    width: 100%;
+    height: 130px;
     margin-top: 10px;
     background: #fff;
     overflow-y: scroll;
@@ -252,7 +260,7 @@ export const SkillWrap=styled.div`
 
 export const SkillList=styled.div`
     display: flex;
-    margin: 2px 3px;
+    margin: 3px 3px;
     padding: 1px;
     &:hover span{
         color: rgb(255, 255, 255);

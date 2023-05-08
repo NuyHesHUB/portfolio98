@@ -30,7 +30,7 @@ const PaintFrame=styled.div`
     flex-flow: column;
     flex: 1 1 0;
     overflow: hidden;
-    height: ${props=>props.isMaximized ? '420px' : '260px'};
+    height: ${props=>props.isMaximized ? '420px' : '300px'};
     /* background: ${props=>props.isMaximized ? 'red' : 'blue'}; */
     .component-area{
         flex-direction: column;
