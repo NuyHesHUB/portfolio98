@@ -122,7 +122,7 @@ function PdfViewer({isMaximized}){
                                 /* height={200} */
                                 /* width={100} */
                                 className='page'
-                                width={isMaximized ?  windowSize.width/1.5 : 600}
+                                width={isMaximized ?  windowSize.width/1.5 : 500}
                                 renderTextLayer={false}
                                 pageNumber={pageNumber} 
                                 renderAnnotationLayer={false}

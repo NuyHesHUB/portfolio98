@@ -1,15 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 export const TitleBarWrap=styled.div`
     /* background: silver; */
+    width: ${props=>props.isMaximized? '80%':'100%'};
     background: #c3c7cb;
+    /* background: ${props=>props.isMaximized? 'red':'blue'}; */
     box-shadow: 
         inset -1px -1px #0a0a0a, 
         inset 1px 1px #dfdfdf, 
         inset -2px -2px grey, 
         inset 2px 2px #fff;
     padding: 3px;
+    margin: 0 auto;
 `
 export const TitleBar=styled.div`
     align-items: center;
@@ -60,15 +64,17 @@ export const TitleBarControls=styled.div`
 `
 
 const FakeFrameBody=styled.div`
+    text-align: center;
     img{
-        width: 100%;
+        /* width: 100%; */
+        width: ${props=>props.isMaximized? '100%':'100%'};
     }
 `
 
 
-function FakeFrame({title, contents}){
+function FakeFrame({project, title, contents}){
     return (
-        <TitleBarWrap>
+        <TitleBarWrap isMaximized={project.maximized}>
             <TitleBar>
                 <TitleBarText>{title}</TitleBarText>
                 <TitleBarControls>
@@ -77,9 +83,14 @@ function FakeFrame({title, contents}){
                     <button></button>
                 </TitleBarControls>
             </TitleBar>
-            <FakeFrameBody><img src={contents} alt={title}/></FakeFrameBody>
+            <FakeFrameBody isMaximized={project.maximized}><img src={contents} alt={title}/></FakeFrameBody>
         </TitleBarWrap>
     );
 };
+const mapStateToProps = (state) => {
+    return{
+        project: state.project
+    }
+}
 
-export default FakeFrame;
+export default connect(mapStateToProps)(FakeFrame);

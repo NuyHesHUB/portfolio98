@@ -28,8 +28,10 @@ function Project08(){
     return (
         <ProjectStyledFrame>
             <br/>
+            <br/>
             <h2>전체 코드 구성 숙지 시키기</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 01. 간단한 프레임을 만들고 GPT에게 숙지시키기"
                 contents={function01}
@@ -38,13 +40,16 @@ function Project08(){
             <br/>
             <h2>부트스트랩 'hero' 만들기</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 02. 부트스트랩에 스타일 적용 시키기"
                 contents={function02}
             ></FakeFrame>
             <br/>
+            <br/>
             <h2>부트스트랩 'hero' 밑 날씨 API 삽입</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 02. hero 밑 날씨 API"
                 contents={function02_01}
@@ -54,8 +59,10 @@ function Project08(){
                 contents={function02_02}
             ></FakeFrame>
             <br/>
+            <br/>
             <h2>부트스트랩 'hero' 밑 날씨 API 삽입(결과물)</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 02. hero 밑 날씨 API"
                 contents={function02A}
@@ -64,13 +71,16 @@ function Project08(){
             <br/>
             <h2>Container를 만들어 정렬</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 03. Container 중앙배치"
                 contents={function03}
             ></FakeFrame>
             <br/>
+            <br/>
             <h2>Card 정보를 만들어 배치</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 04. Card"
                 contents={function04}
@@ -81,15 +91,19 @@ function Project08(){
                 contents={function04_01}
             ></FakeFrame>
             <br/>
+            <br/>
             <h2>Card 정보를 만들어 배치 (GPT 답변)</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 04. Card : GPT Answer"
                 contents={function05}
             ></FakeFrame>
             <br/>
+            <br/>
             <h2>Card 정보를 만들어 배치 (결과물)</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 04. Card"
                 contents={function04A}
@@ -98,6 +112,7 @@ function Project08(){
             <br/>
             <h2>최상단 버튼 생성</h2>
             <div className='divider'/>
+            <br/>
             <FakeFrame
                 title="ChatGPT 05. Top Button"
                 contents={function06}
@@ -107,6 +122,7 @@ function Project08(){
                 title="ChatGPT 05. Top Button"
                 contents={function07}
             ></FakeFrame>
+            <br/>
         </ProjectStyledFrame>
     );
 };

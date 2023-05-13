@@ -1,22 +1,6 @@
 import styled from "styled-components";
 
 export const StyledFrame=styled.div`
-    /* hr{
-        border: none;
-        height: 1px;
-        opacity: 0.5;
-        margin-bottom: 10px;
-        background: linear-gradient( to 
-                right, 
-                red 20%, 
-                yellow 20%, 
-                yellow 36%, 
-                green 36%, 
-                green 60%, 
-                blue 60%, 
-                blue 100% 
-            );
-    } */
     hr{
         margin: 0;
         border: none;
@@ -24,6 +8,35 @@ export const StyledFrame=styled.div`
         height: 2px;
         opacity: 0.5;
         background: linear-gradient( to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100% );
+    }
+    .divider{
+        margin: 5px auto;
+        width: 100%;
+        height: 3px;
+        background: #808080;
+        border-bottom: 1.2px solid #fff;
+    }
+    white-space: pre-wrap;
+    .info{
+        color: #000;
+        padding: 10px;
+        /* box-shadow: rgb(255, 255, 255) -1px -1px inset, grey 1px 1px inset, rgb(223, 223, 223) -2px -2px inset, rgb(10, 10, 10) 2px 2px inset; */
+    }
+    .info-input{
+        outline: none;
+        border: none;
+        background-color: #fff;
+        box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+        box-sizing: border-box;
+        padding: 6px 6px;
+    }
+    .right-content{
+        li{
+            margin-bottom: 10px;
+            &:last-child{
+                margin: 0;
+            }
+        }
     }
 `
 export const TextSlide=styled.div`
@@ -143,7 +156,8 @@ export const ContentsFrame=styled.div`
         inset 2px 2px #fff;
     padding: 3px;
     position: relative;
-    height: ${props=>props.isMaximized? `calc(100vh - 230px)` : `500px`};
+    /* height: ${props=>props.isMaximized? `calc(100vh - 230px)` : `500px`}; */
+    height: ${props=>props.isMaximized? `calc(100vh - 260px)` : `500px`};
     padding-left: 2px;
     padding-bottom: 2px;
     box-sizing: border-box;
@@ -151,7 +165,8 @@ export const ContentsFrame=styled.div`
 `
 export const TotalContentWrap=styled.div`
     width:100%;
-    height: ${props => props.isMaximized ? 'calc(100vh - 245px);' : '485px'};
+    /* height: ${props => props.isMaximized ? 'calc(100vh - 245px);' : '485px'}; */
+    height: ${props => props.isMaximized ? 'calc(100vh - 275px);' : '485px'};
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px  inset;
 `
@@ -196,11 +211,13 @@ export const LeftContent=styled.div`
     }
 `
 export const RightContent=styled.div`
-    width:70%;
+    /* width:70%; */
+    width:${props=>props.isMaximized? '90%' : '70%'};
     height: 100%;
     overflow-y: scroll;
     margin-top: 2px;
-    padding: 20px;
+    /* padding: 20px; */
+    padding: ${props=>props.isMaximized? '1rem 7rem' : '16px'};
 `
 
 export const DisplayFrame=styled.div`
@@ -243,6 +260,27 @@ export const Fieldset=styled.fieldset`
 export const Subtitle=styled.div`
 
 `
+export const ButtonGroup = styled.div`
+    /* width: 20px; */
+    width: 30%;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    background: rgb(195, 199, 203);
+    box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+    rgb(134, 138, 142) 0px 0px 0px 1px inset, rgb(0, 0, 0) 1px 1px 0px 0px;
+    &:focus {
+            box-shadow: rgb(255, 255, 255) 1px 1px 0px 1px inset, 
+            rgba(0, 0, 0, 0.4) 0px 0px 0 1.5px inset,
+            rgb(0, 0, 0) 1px 1px 0px 1px;
+        }
+    &:active {
+        box-shadow: rgb(255, 255, 255) 1px 1px 0 1px,
+        rgb(0, 0, 0) 1px 1px 0px 1px inset !important;
+    }
+`;
 
 export const SkillWrap=styled.div`
     width: 100%;
@@ -255,7 +293,7 @@ export const SkillWrap=styled.div`
         inset 1px 1px grey, 
         inset -2px -2px #dfdfdf, 
         inset 2px 2px #0a0a0a;
-        box-sizing: border-box;
+    box-sizing: border-box;
 `
 
 export const SkillList=styled.div`

@@ -10,7 +10,7 @@ import { openBiography, openProject, openResume, openTutorial } from '../../stor
 import styled from 'styled-components';
 
 /* Image */
-import ProfileIMG from '../../assets/resume-img/profile_03.jpeg'
+import ProfileIMG from '../../assets/resume-img/profile_01.png'
 
 /* import Tutorial from './Tutorial'; */
 /* import Button from '../Button'; */
@@ -67,7 +67,8 @@ const ProfileWrap=styled.div`
             border-radius: 5px;
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: 0px -11px;
+            /* background-position: 0px -11px; */
+            background-position: 0px -6px;
             outline: 1px solid #fff;
         }
     }

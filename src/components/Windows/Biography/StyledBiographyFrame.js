@@ -112,7 +112,8 @@ export const ContentsFrame=styled.div`
         inset 2px 2px #fff;
     padding: 3px;
     position: relative;
-    height: ${props=>props.isMaximized? `calc(100vh - 230px)` : `500px`};
+    height: ${props=>props.isMaximized? `calc(100vh - 235px)` : `500px`};
+    /* height: ${props=>props.isMaximized? `calc(100vh - 260px)` : `500px`}; */
     padding-left: 2px;
     padding-bottom: 2px;
     box-sizing: border-box;
@@ -120,7 +121,8 @@ export const ContentsFrame=styled.div`
 `
 export const TotalContentWrap=styled.div`
     width:100%;
-    height: ${props => props.isMaximized ? 'calc(100vh - 245px);' : '485px'};
+    height: ${props => props.isMaximized ? 'calc(100vh - 252px);' : '485px'};
+    /* height: ${props => props.isMaximized ? 'calc(100vh - 276px);' : '485px'}; */
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.8) 1.5px 1.5px  inset;
 `
@@ -161,7 +163,8 @@ export const LeftContent=styled.div`
                 rgb(255, 255, 255) 2px 2px inset;
             .profile-wrap{
                 width: 100%;
-                height: ${props=>props.isMaximized? '15%' : '20%'};
+                /* height: ${props=>props.isMaximized? '15%' : '20%'}; */
+                height: ${props=>props.isMaximized? '23%' : '26%'};
                 padding-top: ${props=>props.isMaximized? '10px' : '5px'};
                 /* background: #fff; */
                 /* background: #c3c7cb; */
@@ -176,10 +179,11 @@ export const LeftContent=styled.div`
                     inset 2px 2px #0a0a0a; */
                 /* outline: 5px double #fff; */
                 .profile{
-                    width: 50px;
-                    height: 50px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 10px;
                     margin: 0px auto;
-                    border: 2px double #000;
+                    border: 1px solid #fff;
                     /* border-radius: 5px; */
                     background-size: cover;
                     background-repeat: no-repeat;
@@ -194,7 +198,8 @@ export const LeftContent=styled.div`
             }
             .content-wrap{
                 width: 100%;
-                height: 79.6%;
+                /* height: 79.6%; */
+                height: 73.6%;
                 background: #fff;
                 margin: 0 auto;
                 margin-bottom: 1%;

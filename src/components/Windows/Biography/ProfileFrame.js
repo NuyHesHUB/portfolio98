@@ -8,7 +8,7 @@ import logo from '../../../assets/menu-img/logo_shadow.png'
 import icon from '../../../assets/desktop-icon/Paint.png'
 import paintIcon from '../../../assets/paint-img/tools.png'
 
-import profile from '../../../assets/resume-img/profile_04.jpeg'
+import profile from '../../../assets/resume-img/profile_03.jpeg'
 
 const StyledProfileFrame=styled.div`
     display: flex;

@@ -17,7 +17,7 @@ import HobbiesFrame from './HobbiesFrame';
 
 import bg from '../../../assets/wallpaper/background.png';
 
-import profile from '../../../assets/resume-img/profile_01.jpeg';
+import profile from '../../../assets/resume-img/profile_02.png';
 
 import info from '../../../assets/biography-img/info.png';
 import logo from '../../../assets/menu-img/logo_shadow.png';
@@ -107,11 +107,11 @@ function BiographyFrame({biography}){
                                 {/* ---------------------------------------- */}
                                 <LeftContent isMaximized={biography.maximized} className='bg'>       
                                         <div className='Biography-bg' style={{backgroundImage: `url(${bg})`}}>
-                                            <div style={{color:'#fff', textAlign:'center', display:'flex',justifyContent:'center'}}><img style={{width:'20px'}} src={setup} alt='setup'/><p style={{fontWeight:'bold', textDecoration:'underline'}}>Biography <i style={{fontStyle:'normal',color:'yellow'}}>설치마법사</i></p></div>
+                                            <div style={{color:'#fff', textAlign:'center', display:'flex',justifyContent:'center'}}><img style={{width:'20px',height:'20px'}} src={setup} alt='setup'/><p style={{fontWeight:'bold', textDecoration:'underline'}}>Biography <i style={{fontStyle:'normal',color:'yellow'}}>설치마법사</i></p></div>
                                             <div className='bg-wrap'>
                                                 <div className='profile-wrap'>
                                                     <div className='profile' style={{backgroundImage: `url(${profile})`}}></div>
-                                                    <div style={{display:'flex', alignItems:'center', justifyContent:'center', marginTop:'5px'}}><img style={{width:'14px', marginRight:'3px'}} src={bioicon} alt='icon'/><p style={{color:'#551a8b',textDecoration:'underline'}}>Welcome to Biography</p></div>
+                                                    <div style={{display:'flex', alignItems:'center', justifyContent:'center', marginTop:'11px'}}><img style={{width:'14px',height:'14px', marginRight:'3px'}} src={bioicon} alt='icon'/><p style={{color:'#551a8b',textDecoration:'underline'}}>Welcome to Biography</p></div>
                                                 </div>
                                                 <div className='content-wrap'>
                                                     <ul className="tree-view">
