@@ -46,7 +46,7 @@ function Biography({ biography, onBiographyBlur, onBiographyFocus, onBiographyMi
                 width="750"
                 /* height="200" */
                 img={biographyImage}
-                title="Front-end - 자기소개서"
+                title="Front-end - 나의 소개"
                 blurred={biography.blurred}
                 showMenu={true}
                 showMoreMenu={true}

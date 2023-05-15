@@ -3,10 +3,10 @@
     background: #1e293b;
     color: #f8fafc;
   }
-   */
+  
   .app {
-    /* min-width: 100vw;
-    min-height: 100vh; */
+    min-width: 100vw;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +53,7 @@
   }
   .fade {
     pointer-events: none;
-    /* background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b); */
+    background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
     position: absolute;
     inset: 0;
   }
@@ -64,4 +64,4 @@
     100% {
       transform: translateX(-50%);
     }
-  }
+  } */

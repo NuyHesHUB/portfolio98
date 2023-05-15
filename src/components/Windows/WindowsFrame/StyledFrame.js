@@ -13,7 +13,7 @@ export const StyledFrame = styled.div.attrs(({top, left})=>({
     width: ${props=>props.width+'px'};
     position: absolute;
     box-shadow: rgb(0,0,0) -1.5px -1.5px 0.5px inset, rgba(255,255,255,0.8) 2px 2px 1px inset;
-    z-index: ${props=>props.blurred? `0` : `8`};
+    z-index: ${props=>props.blurred? `1` : `8`};
     /* z-index: ${props=>props.blurred? `` : `8`}; */
     z-index: ${props=>props.showTutorial ? '9999' : ''};
     padding: 3px 4px 4px 2px;

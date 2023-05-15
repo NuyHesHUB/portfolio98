@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const BiosInfoSectionStyled = styled.table`
+    width: 100%;
+    tbody{
+      height: 100px;
+    }
     /* animation: 1000ms linear 1ms normal forwards 1 running on;
     animation-iteration-count : 1;
     @keyframes on {

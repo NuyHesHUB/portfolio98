@@ -1,10 +1,7 @@
-import React from "react";
-
-/* Styles */
+/* import React from "react";
 import './ResumeSkill.css'
 
-/* const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2']; */
-/* const TAGS = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Tailwind', 'React', 'Next.js', 'Gatsby', 'UI/UX', 'SVG', 'animation', 'webdev']; */
+const COLORS = ['#bbf7d0', '#99f6e4', '#bfdbfe', '#ddd6fe', '#f5d0fe', '#fed7aa', '#fee2e2'];
 const TAGS = ['HTML', 'CSS', 'JavaScript', 'Typescript', 'Tailwind', 'React', 'Next.js', 'Gatsby', 'UI/UX', 'SVG', 'animation', 'webdev'];
 const DURATION = 50000;
 const ROWS = 2;
@@ -46,4 +43,4 @@ const ResumeSkill = () => (
   </div>
 );
 
-export default ResumeSkill;
+export default ResumeSkill; */

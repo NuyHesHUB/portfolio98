@@ -51,7 +51,7 @@ const StyledIcons = styled.div`
 function Icons({onOpenNotepad, onOpenBiography, onOpenDeleted, showTutorial, onOpenProject, onOpenResume}) {
     const [icons, setIcons] = useState([
         {label: '이력서', img: Resume, clicked: false},
-        {label: '자기소개서', img: Biography, clicked: false},
+        {label: '나의 소개', img: Biography, clicked: false},
         /* {label: '내문서', img: Mydocument, clicked: false}, */
         {label: '휴지통', img: Delete, clicked: false},
         /* {label: '내포트폴리오', img: Myportfolio, clicked: false}, */
@@ -98,7 +98,7 @@ function Icons({onOpenNotepad, onOpenBiography, onOpenDeleted, showTutorial, onO
         else if (label === '휴지통') {
             onOpenDeleted();
         }
-        else if (label === '자기소개서') {
+        else if (label === '나의 소개') {
             onOpenBiography();
         }
         else if (label === '이력서') {
@@ -114,7 +114,7 @@ function Icons({onOpenNotepad, onOpenBiography, onOpenDeleted, showTutorial, onO
             onOpenProject();
         }
         else{
-            console.log('haha');
+            console.log('test');
         }
         console.log(label);   
     }

@@ -27,7 +27,7 @@ const ProfileFrame=styled.div`
     position: absolute;
     top: 2%;
     right: 2%;
-    z-index: ${props => props.showTutorial ? '' : ''};
+    z-index: ${props => props.showTutorial ? '999' : ''};
     animation: ${props => props.showTutorial ? 'tutorial1 1s infinite;' : null};
     @keyframes tutorial1 {
         0%,
@@ -52,7 +52,6 @@ const ProfileWrap=styled.div`
     .title{
         text-align: center;
         padding: 5px 0;
-        /* border-top: 1px dotted #ededed; */
         border-bottom: 1px dotted #ededed;
         color: #fff;
         font-weight: 600;
@@ -67,7 +66,6 @@ const ProfileWrap=styled.div`
             border-radius: 5px;
             background-size: cover;
             background-repeat: no-repeat;
-            /* background-position: 0px -11px; */
             background-position: 0px -6px;
             outline: 1px solid #fff;
         }
@@ -90,17 +88,13 @@ const ProfileWrap=styled.div`
             &:hover:not(:first-child){
                 background: #ededed;
                 color: blue;
+                span{
+                    color: red;
+                }
             }
-            /* &:hover{
-                background: #ededed;
-                color: blue;
-            } */
         }
     }
 `
-/* function Button ({pressed}){
-    return <Button pressed={pressed}/>
-} */
 const StyledButtonInside = styled.div`
   border: 1px dotted transparent;
   height: 100%;
@@ -180,12 +174,54 @@ function TutoBtn({ id, children, pressed, clicked, pad}){
     )
 }
 
+
 function Profile({showTutorial, onTutorialClick, onBiographyClick, onResumeClick, onProjectClick}){
     
     /* console.log('showTutorial',showTutorial); */
     /* console.log('onTutorialClick',onTutorialClick); */
     /* const tutorialButton = showTutorial ?
         <Tutorial/> : null; */
+
+    /* const [lists, setLists] = useState([
+        {label: '나의 소개',clicked: false},
+        {label: '이력서',clicked: false},
+        {label: '프로젝트',clicked: false},
+    ]) */
+    /* useEffect(()=>{
+        window.addEventListener('click',resetIcons);
+        return ()=>{
+            window.removeEventListener('click', resetIcons);
+        }
+    },[]) */
+    /* function resetIcons(e){
+        if(!document.querySelector('#Icons').contains(e.target)){
+            reset();
+        }
+    }
+
+    function reset(){
+        const updatedIcon = [...lists];
+        updatedIcon.map(list => list.clicked =false);
+        setLists(updatedIcon);
+    } */
+
+    /* function doubleClicked(label){
+        reset();
+        if(label === '나의 소개'){
+            onBiographyClick();
+            
+        }
+        else if (label === '이력서') {
+            onResumeClick();
+        }
+        else if (label === '프로젝트') {
+            onProjectClick();
+        }
+        else{
+            console.log('test');
+        }
+        console.log(label);   
+    } */
     return (
         <ProfileFrame
             showTutorial={showTutorial}
@@ -207,9 +243,21 @@ function Profile({showTutorial, onTutorialClick, onBiographyClick, onResumeClick
                                 >
                             </TutoBtn>
                         </li>
-                        <li onClick={()=>onBiographyClick()}>&gt; Biography</li>
-                        <li onClick={()=>onResumeClick()}>&gt; Resume</li>
-                        <li onClick={()=>onProjectClick()}>&gt; Project</li>
+                        {/* <li onClick={()=>onBiographyClick()}>&gt; Biography</li> */}
+                        {/* <li onClick={()=>onResumeClick()}>&gt; Resume</li> */}
+                        {/* <li onClick={()=>onProjectClick()}>&gt; Project</li> */}
+                        {/* <div id='Icons'>
+                            {lists.map(({label,clicked}, index)=>
+                                <li key={index}
+                                    label={label}
+                                    clicked={clicked}
+                                    onClick={()=>doubleClicked(label)}
+                                >{label}</li>
+                            )}
+                        </div> */}
+                        <li style={{display:'flex',alignItems:'center',justifyContent:'space-between'}} onClick={()=>onBiographyClick()}>&gt; 나의 소개 <span style={{fontSize:'12px'}}>바로가기</span></li>
+                        <li style={{display:'flex',alignItems:'center',justifyContent:'space-between'}} onClick={()=>onResumeClick()}>&gt; 이력서 <span style={{fontSize:'12px'}}>바로가기</span></li>
+                        <li style={{display:'flex',alignItems:'center',justifyContent:'space-between'}} onClick={()=>onProjectClick()}>&gt; 프로젝트 <span style={{fontSize:'12px'}}>바로가기</span></li>
                         {/* <li>&gt; Contact</li> */}
                     </ul>
                 </div>

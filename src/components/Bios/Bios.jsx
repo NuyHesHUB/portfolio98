@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+/* import { Link } from 'react-router-dom'; */
 
 /* Library */
 import styled from 'styled-components';
@@ -25,8 +25,7 @@ import BiosTyping from './BiosTyping'
 const StyledBios=styled.div`
     width: 100vw;
     height: 100vh;
-    padding: 0 300px;
-    display: flex;
+    padding: 0 100px;
     background-color: #000;
     animation: 700ms linear 100ms normal forwards 1 running on;
     animation-iteration-count : 1;
@@ -66,38 +65,36 @@ const BiosInfoSections=styled.div`
     flex-direction: column;
     justify-content: space-between;
     color: darkgray;
-    >${BiosInfoSectionStyled}{
+    /* >${BiosInfoSectionStyled}{
         margin-bottom: 20px;
-    }
+    } */
     >div:last-child{
         margin-top: auto;
         strong{
             color: white;
             text-transform: uppercase;
             animation: box1 2s ease-in-out 0.4s infinite;
-            animation-delay: 6s;
+            animation-delay: 10s;
         }
     }
     @keyframes box1 {
                 0%,
                 100% {
-                    color: red;
-                }
-                50% {
+                    /* color: red; */
                     color: white;
                 }
+                50% {
+                    /* color: white; */
+                    color: red;
+                }
             }
-`;
-/* const BiosLink=styled.a`
-    color: inherit;
-`; */
+`
 
 const Energylogo =styled.img`
     margin-left: auto;
 `
 
 /* const FALLBACK_LABEL = 'Unknown'; */
-
 /* const getStorageUsage = ({ usage, quota }) => {
     if (usage && quota) {
         const percentUsage = ((usage / quota) * 100).toFixed(4);
@@ -110,7 +107,6 @@ const Energylogo =styled.img`
         return FALLBACK_LABEL;
     }
 }; */
-
 
 /* const LOAD_WITH_SOUND_KEY = 'Enter' */
 /* const LOAD_WITH_SOUND_KEY = 'F11'
@@ -157,55 +153,60 @@ const Bios = () => {
         <StyledBios /* ref={element} onKeyDown={onKeyPressed} tabIndex={0} */>
             <BiosInfoSections>
                 <BiosInfoSection>
-                    <tr>
+                    <tr style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%'}}>
                         <td>
-                            <img style={{width:'40px'}} src={blurlogo} alt="blurlogo" />
+                            <div>
+                                <img style={{width:'40px'}} src={blurlogo} alt="blurlogo" />
+                            </div>
                         </td>
                         <td>
-                        <BiosLogo/>
+                            <BiosLogo/>
+                        </td>
+                        <td>
+                            <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'10px'}}/>
                         </td>
                     </tr>
                 </BiosInfoSection>
-                <BiosInfoSection>
-                    {/* safari 오류.. */}
-                    {/* <BiosInfoEntry label="Platform" value={browserInfo.platform}/>
+                {/* safari 오류.. */}
+                {/* {<BiosInfoSection>
+                    <BiosInfoEntry label="Platform" value={browserInfo.platform}/>
                     <BiosInfoEntry label="Agent" value={browserInfo.userAgent}/>
                     <BiosInfoEntry label="Vendor" value={browserInfo.vendor}/>
                     <BiosInfoEntry label="Cores" value={browserInfo.cores} />
-                    <BiosInfoEntry label="RAM" value={browserInfo.minimalRam} /> */}
-                </BiosInfoSection>
-                <BiosInfoSection>
-                    <BiosInfoEntry label="Current Date Time" value={new Date().toLocaleString()}/>
-                    <BiosInfoEntry label="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone}/>
-                    <BiosInfoEntry label="Front-End Developer" value="'HELLO WORLD' 주세현 포트폴리오 입니다."/>
-                </BiosInfoSection>
-                <BiosInfoSection>
-                    <BiosInfoEntry label="나의 역량" value="로딩 완료..."/>
-                    <BiosInfoEntry label="의사소통능력" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="문제 해결 능력" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="학습능력" value="■■■■■■■■■■■■■■ 100%"/>
-                    <BiosInfoEntry label="자기주도 능력, 탐구력" value="■■■■■■■■■■■■■■ 100%"/>
-                </BiosInfoSection>
-                <BiosInfoSection height={300}>
-                    <tr>
-                        <td>
-                            <BiosTyping />
-                        </td>
-                    </tr>
-                </BiosInfoSection>
-                <div style={{marginBottom:'30px'}}>
-                <Link style={{color:'#fff'}} to={`/windows`}>윈도우링크</Link>
-                    <p>
-                        Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.
-                    </p>
-                    <p>
-                        Press <strong>{LOAD_WITHOUT_FULLSCREEN_KEY}</strong> to Normal-Screen Startup PortFolio 98.
-                    </p>
+                    <BiosInfoEntry label="RAM" value={browserInfo.minimalRam} />
+                </BiosInfoSection>} */}
+                <div>
+                    <BiosInfoSection>
+                        <BiosInfoEntry label="Current-Date-Time" value={new Date().toLocaleString()}/>
+                        <BiosInfoEntry label="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone}/>
+                        <BiosInfoEntry label="Project-Title" value="HELLO WORLD 주세현의 'PORTFOLIO 98' 입니다."/>
+                    </BiosInfoSection>
+                    {/* <BiosInfoSection>
+                        <BiosInfoEntry label="나의 역량" value="로딩 완료..."/>
+                        <BiosInfoEntry label="의사소통능력" value="■■■■■■■■■■■■■■ 100%"/>
+                        <BiosInfoEntry label="문제 해결 능력" value="■■■■■■■■■■■■■■ 100%"/>
+                        <BiosInfoEntry label="학습능력" value="■■■■■■■■■■■■■■ 100%"/>
+                        <BiosInfoEntry label="자기주도 능력, 탐구력" value="■■■■■■■■■■■■■■ 100%"/>
+                    </BiosInfoSection> */}
+                    <div style={{padding:'0 20px'}}>
+                        <br/>
+                        <BiosInfoSection>
+                            <tr>
+                                <td style={{height:'500px'}}>
+                                    <BiosTyping />
+                                </td>
+                            </tr>
+                        </BiosInfoSection>
+                    </div>
                 </div>
+                    <div style={{marginBottom:'30px'}}>
+                        {/* <Link style={{color:'#fff'}} to={`/windows`}>윈도우링크</Link> */}
+                        <p>Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.</p>
+                        <p>Press <strong>{LOAD_WITHOUT_FULLSCREEN_KEY}</strong> to Normal-Screen Startup PortFolio 98.</p>
+                    </div>
             </BiosInfoSections>
             {/* <BiosLogo/> */}
-            
-            <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'20px'}}/>
+            {/* <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'20px'}}/> */}
             <Container/>
         </StyledBios>
     )

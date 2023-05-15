@@ -5,12 +5,11 @@ const initialState = {
   /* isBiosLoaded : getEnvConfig().isDevelopment,
   isWindowsLoaded : getEnvConfig().isDevelopment, */
   /* systemLoading: false, */
-
   showStart: false,
   showTutorial: true,
   about: {
     show: false,
-    blurred: false,
+    blurred: true,
   },
   notepad: {
     show: true,
@@ -20,25 +19,25 @@ const initialState = {
   },
   deleted: {
     show: false,
-    blurred: false,
+    blurred: true,
     minimized: false,
     maximized: false,
   },
   biography: {
     show: false,
-    blurred: false,
+    blurred: true,
     minimized: false,
     maximized: false,
   },
   resume: {
     show: false,
-    blurred: false,
+    blurred: true,
     minimized: false,
     maximized: false,
   },
   project: {
     show: false,
-    blurred: false,
+    blurred: true,
     minimized: false,
     maximized: false,
   },
@@ -1005,7 +1004,7 @@ const reducer = (state = initialState, action) => {
           show: false,
           minimized: false,
           maximized: false,
-          blurred: false
+          blurred: true
         },
         deleted: {
           ...state.deleted
@@ -1029,9 +1028,7 @@ const reducer = (state = initialState, action) => {
         },
         about: {
           show: false,
-          blurred: false,
-          /* minimized: false,
-          maximized: false, */
+          blurred: true,
         },
         deleted: {
           ...state.deleted
@@ -1058,7 +1055,7 @@ const reducer = (state = initialState, action) => {
       },
       deleted: {
         show: false,
-        blurred: false,
+        blurred: true,
         minimized: false,
         maximized: false,
       },
@@ -1089,7 +1086,7 @@ const reducer = (state = initialState, action) => {
         show: false,
         minimized: false,
         maximized: false,
-        blurred: false
+        blurred: true
       },
       resume: {
         ...state.resume
@@ -1118,7 +1115,7 @@ const reducer = (state = initialState, action) => {
         show: false,
         minimized: false,
         maximized: false,
-        blurred: false
+        blurred: true
       },
       project: {
         ...state.project
@@ -1147,7 +1144,7 @@ const reducer = (state = initialState, action) => {
         show: false,
         minimized: false,
         maximized: false,
-        blurred: false
+        blurred: true
       }
     }
 

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledStart = styled.div`
-  z-index: 1000;
+  /* z-index: 1000; */
   left: 0px;
   bottom: 28px;
   height: auto;
   position: absolute;
   background-color: rgb(195, 199, 203);
+  background: red;
   border-top: 2px solid rgba(255, 255, 255, 1);
   border-left: 2px solid rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.7) -2px -2px 1px inset;
@@ -63,12 +64,12 @@ export const ProgramGroup = styled.div`
   /*----------------------------------------*\
                   PROGRAMS ALIGN
   \*----------------------------------------*/
-  &:nth-child(4){
+  /* &:nth-child(1){
     padding-left: 10px;
-  }
-  &:nth-child(4) img{
+  } */
+  /* &:nth-child(4) img{
     margin-right: 12px;
-  }
+  } */
   /*----------------------------------------*\
             PROGRAMS UNDERLINE :: AFTER
   \*----------------------------------------*/
@@ -90,7 +91,7 @@ export const ProgramGroup = styled.div`
     background: #777;
     box-shadow: 0px 1px #fff;
   }
-  &:nth-child(11)::after {
+  &:nth-child(5)::after {
     position: absolute;
     bottom: 0;
     content: '';
@@ -99,12 +100,32 @@ export const ProgramGroup = styled.div`
     background: #777;
     box-shadow: 0px 1px #fff;
   }
-  &:hover {
+  &:nth-child(8)::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 95%;
+    height: 1px;
+    background: #777;
+    box-shadow: 0px 1px #fff;
+  }
+  /*----------------------------------------*\
+              not working disable
+  \*----------------------------------------*/
+  &:nth-last-child(-n+4){
+    color: #777;
+  }
+  &:not(:nth-last-child(-n+4)):hover{
     background: rgb(0, 0, 127);
     color: rgba(255, 255, 255);
   }
+
   img {
     margin-right: 10px;
+  }
+  &:nth-child(4) img{
+    width: 24px;
+    height: 24px;
   }
   span {
     flex: 2;

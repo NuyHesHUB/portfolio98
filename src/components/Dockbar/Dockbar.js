@@ -17,14 +17,14 @@ const StyledDockbar = styled.div`
     padding: 3px;
     background-color: rgb(195, 199, 203);
     box-shadow: 0 0 0 2px rgba(255, 255, 255);
-    z-index: ${props=>props.showTutorial ? '999' : ''};
+    z-index: ${props=>props.showTutorial ? '999' : '999'};
 `;
 
 function Dockbar({showStart, showTutorial}) {
     return (
         <StyledDockbar showTutorial={showTutorial}>
             <DockbarGroup/>
-                {showStart ? <Start /> : null}
+                {showStart ? <Start/> : null}
             <Docktime/>
         </StyledDockbar>
     );

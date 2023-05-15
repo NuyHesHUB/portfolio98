@@ -83,7 +83,9 @@ function Tutorial({onTutorialExit}){
                     <p>User Tutorial</p>
                 </div>
                 <div className='close'
-                    onClick={()=>{onTutorialExit()}}
+                    onClick={()=>{
+                        onTutorialExit()
+                    }}
                 >
                     <span className='close-1'></span>
                     <span className='close-2'></span>

@@ -9,7 +9,7 @@ const BiosInfoEntryStyled = styled.tr`
 export const BiosInfoEntry = ({label, value}) => {
     return (
         <BiosInfoEntryStyled>
-            <td>{label}</td>
+            <td style={{fontSize:'20px',fontWeight:'bold'}}>{label}</td>
             <td>:</td>
             <td>{value}</td>
         </BiosInfoEntryStyled>

@@ -17,7 +17,6 @@ import disabled from '../../../assets/titlebar-icons/disabled3.png';
 import close from '../../../assets/titlebar-icons/close.png';
 import down from '../../../assets/titlebar-icons/down.png'
 import newtab from '../../../assets/titlebar-icons/newtab.png'
-
 import back from "../../../assets/menu-img/back.png";
 import forward from "../../../assets/menu-img/forward.png";
 import stop from "../../../assets/menu-img/stop.png";
@@ -226,7 +225,7 @@ export function Frame({children, id, img, title, blurred, showMenu, showMoreMenu
 
     const onFullsizeCancel = () => {
         if(resize===false){
-            /* console.log('false 다'); */
+            /* console.log('false'); */
             setResize(!resize);
         }
     }
