@@ -35,13 +35,13 @@ const StyledWindows=styled.div`
 
 function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisible, deletedVisible, resumeVisible, projectVisible}){
     
-    const [audio] = useState(new Audio(startup));
+    /* const [audio] = useState(new Audio(startup)); */
 
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
-      audio.muted = true;
+      /* audio.muted = true;
       audio.play();
-      audio.muted = false;
+      audio.muted = false; */
       return () => {
         window.removeEventListener('contextmenu', contextDisable);
       }

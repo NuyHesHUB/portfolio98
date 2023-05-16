@@ -97,7 +97,7 @@ function PdfViewer({isMaximized}){
     }
   }
   function nextPagefn(){
-    if(pageNumber < 4){
+    if(pageNumber < 3){
         setPageNumber(next => next + 1)
     }
   }
