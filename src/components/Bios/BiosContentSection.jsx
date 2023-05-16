@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const BiosInfoSectionStyled = styled.table`
+export const BiosContentSectionStyled = styled.table`
     width: 100%;
-    /* text-align: center; */
-    
     tbody{
       height: 100px;
     }
@@ -41,12 +39,12 @@ export const BiosInfoSectionStyled = styled.table`
   } */
 `
 
-export const BiosInfoSection = ({children}) => {
+export const BiosContentSection = ({children}) => {
     return (
-        <BiosInfoSectionStyled>
+        <BiosContentSectionStyled>
             <tbody>{children}</tbody>
-        </BiosInfoSectionStyled>
+        </BiosContentSectionStyled>
     );
 };
 
-export default BiosInfoSection;
+export default BiosContentSection;

@@ -7,10 +7,12 @@ import styled from 'styled-components';
 /* Styles */
 import { Container } from '../../styles/Container';
 import { BiosInfoEntry } from './BiosInfoEntry';
-import { BiosInfoSection, BiosInfoSectionStyled} from './BiosInfoSection';
+import { BiosInfoSection/* , BiosInfoSectionStyled */} from './BiosInfoSection';
 
 /* Component */
 import BiosLogo from './BiosLogo';
+import BiosContentSection from './BiosContentSection';
+import BiosTyping from './BiosTyping'
 /* import { useBiosLoading } from '../../hooks/useBiosLoading'; */
 /* import { useBrowserInfo } from '../../hooks/useBrowserInfo'; */ /* safari 오류.. */
 import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
@@ -20,12 +22,15 @@ import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
 /* Image */
 import energylogo from '../../assets/bios-img/epa-logo.png'
 import blurlogo from '../../assets/bios-img/a-logo.png'
-import BiosTyping from './BiosTyping'
 
 const StyledBios=styled.div`
+    font-family: 'retro';
+    font-size: 20px;
     width: 100vw;
     height: 100vh;
-    padding: 0 100px;
+    padding: 0 0 0 50px;
+    /* padding: 0 400px; */
+    position: relative;
     background-color: #000;
     animation: 700ms linear 100ms normal forwards 1 running on;
     animation-iteration-count : 1;
@@ -65,9 +70,6 @@ const BiosInfoSections=styled.div`
     flex-direction: column;
     justify-content: space-between;
     color: darkgray;
-    /* >${BiosInfoSectionStyled}{
-        margin-bottom: 20px;
-    } */
     >div:last-child{
         margin-top: auto;
         strong{
@@ -77,21 +79,33 @@ const BiosInfoSections=styled.div`
             animation-delay: 10s;
         }
     }
-    @keyframes box1 {
-                0%,
-                100% {
-                    /* color: red; */
-                    color: white;
-                }
-                50% {
-                    /* color: white; */
-                    color: red;
-                }
-            }
+    .title-wrap{
+        width:65%;
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+    }
+    @media screen and (max-width:1200px){
+        .none{display: none;}
+    }
+    @media screen and (max-width:1080px){
+        font-size: 14px;
+        .title-wrap{width: 50%}
+    }
+    @media screen and (max-width:660px){
+        .title-wrap{display: none;}
+        .none2{display: none;}
+    }
+
+    @keyframes box1 {0%,100% {color: white} 50% {color: red}}
 `
 
 const Energylogo =styled.img`
     margin-left: auto;
+`
+const LinkFrame=styled.div`
+    position: fixed;
+    bottom: 2rem;
 `
 
 /* const FALLBACK_LABEL = 'Unknown'; */
@@ -152,21 +166,24 @@ const Bios = () => {
     return(
         <StyledBios /* ref={element} onKeyDown={onKeyPressed} tabIndex={0} */>
             <BiosInfoSections>
+                <div>
                 <BiosInfoSection>
-                    <tr style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%'}}>
-                        <td>
+                    <tr className='title-wrap'>
+                        <td style={{marginTop:'10px'}}>
                             <div>
-                                <img style={{width:'40px'}} src={blurlogo} alt="blurlogo" />
+                                <img style={{width:'50px'}} src={blurlogo} alt="blurlogo" />
                             </div>
                         </td>
-                        <td>
+                        <td className='title'>
                             <BiosLogo/>
                         </td>
-                        <td>
-                            <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'10px'}}/>
+                        <td className='none' style={{position:'absolute', right:'100px'}}>
+                            {/* <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'10px'}}/> */}
+                            <Energylogo src={energylogo} alt="energy_logo" width={300} height={189} style={{marginTop:'0px'}}/>
                         </td>
                     </tr>
                 </BiosInfoSection>
+                </div>
                 {/* safari 오류.. */}
                 {/* {<BiosInfoSection>
                     <BiosInfoEntry label="Platform" value={browserInfo.platform}/>
@@ -177,9 +194,10 @@ const Bios = () => {
                 </BiosInfoSection>} */}
                 <div>
                     <BiosInfoSection>
-                        <BiosInfoEntry label="Current-Date-Time" value={new Date().toLocaleString()}/>
+                        <BiosInfoEntry label="Current Date Time" value={new Date().toLocaleString()}/>
                         <BiosInfoEntry label="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone}/>
-                        <BiosInfoEntry label="Project-Title" value="HELLO WORLD 주세현의 'PORTFOLIO 98' 입니다."/>
+                        <BiosInfoEntry label="Project Title" value="PORTFOLIO 98"/>
+                        <BiosInfoEntry label="Project Content" value="안녕하세요 PORTFOLIO 98 에 오신것을 환영합니다."/>
                     </BiosInfoSection>
                     {/* <BiosInfoSection>
                         <BiosInfoEntry label="나의 역량" value="로딩 완료..."/>
@@ -188,22 +206,24 @@ const Bios = () => {
                         <BiosInfoEntry label="학습능력" value="■■■■■■■■■■■■■■ 100%"/>
                         <BiosInfoEntry label="자기주도 능력, 탐구력" value="■■■■■■■■■■■■■■ 100%"/>
                     </BiosInfoSection> */}
-                    <div style={{padding:'0 20px'}}>
-                        <br/>
-                        <BiosInfoSection>
+                    <div>
+                        {/* <br/> */}
+                        <BiosContentSection>
                             <tr>
-                                <td style={{height:'500px'}}>
+                                <td style={{height:'460px'}}>
                                     <BiosTyping />
                                 </td>
                             </tr>
-                        </BiosInfoSection>
+                        </BiosContentSection>
                     </div>
                 </div>
-                    <div style={{marginBottom:'30px'}}>
+                    <br/>
+                    <br/>
+                    <LinkFrame>
                         {/* <Link style={{color:'#fff'}} to={`/windows`}>윈도우링크</Link> */}
                         <p>Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.</p>
                         <p>Press <strong>{LOAD_WITHOUT_FULLSCREEN_KEY}</strong> to Normal-Screen Startup PortFolio 98.</p>
-                    </div>
+                    </LinkFrame>
             </BiosInfoSections>
             {/* <BiosLogo/> */}
             {/* <Energylogo src={energylogo} alt="energy_logo" width={266} height={168} style={{marginTop:'20px'}}/> */}

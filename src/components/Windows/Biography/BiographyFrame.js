@@ -90,9 +90,9 @@ function BiographyFrame({biography}){
                 <div className='text-wrap'>
                     <p className="microsoft marquee">
                         $$<span className='title'><img style={{width:'17px'}} src={logo} alt='logo'/>PortFolio98</span>$$<u>D:\\Biography</u> 주세현의 '나의 소개' 폴더에 오신것을 환영합니다.
-                        <span>Profile</span>은<i>저의 소개를 확인하실 수 있고</i>, 
-                        <span>Hobbies</span>는<i>저의 취미</i>, 
-                        <span>SNS</span>는<i>저의 Instagram, Velog, GitHub 를 소개하는 공간이며</i>, 
+                        <span>Profile</span>에서는 <i>저의 보유기술과 이력을 확인하실 수 있고</i>, 
+                        <span>Hobbies</span>에서는 <i>저의 취미</i>, 
+                        <span>SNS</span>에서는 <i>저의 Instagram, Velog, GitHub 을 소개하는 공간이며</i>, 
                         <span>Contact</span>는 저의 메일과 연락처를 확인하실 수 있습니다. 
                         <span>탭</span>을 눌러가며 <span>저의 소개</span>들을 확인해 보세요.
                     </p>

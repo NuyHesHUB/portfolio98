@@ -51,6 +51,17 @@ function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, on
                 <div className='Deleted-bg' style={{backgroundImage: `url(${cloud})`}}>
                     <img src={deletedLimgage} alt="Icon"/>
                     <h3>Recycle Bin</h3>
+                    <div style={{marginTop:'40px'}}>
+                    <p style={{fontSize:'13px', textAlign:'center',fontWeight:'bold'}}>휴지통 비우기</p>
+                    <br/>
+                        <p style={{fontSize:'13px', textAlign:'center',fontWeight:'bold'}}>내 성격의 단점</p>
+                        <ul style={{fontSize:'13px',textAlign:'center',marginTop:'10px'}}>
+                            <li>완벽주의</li>
+                            <li>많은생각</li>
+                            <li>실천부족</li>
+                            <li>낯가림</li>
+                        </ul>
+                    </div>
                 </div>
                     <ul className='line-list'>
                         <li></li>

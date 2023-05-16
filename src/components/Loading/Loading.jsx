@@ -53,7 +53,7 @@ const Loading = () => {
             navigate('/windows')
             /* window.location.href='/windows' */
             console.log('Initial timeout!')
-        }, 5000);
+        }, 3500);
         return () => clearTimeout(fakeLoadingtimer);
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);

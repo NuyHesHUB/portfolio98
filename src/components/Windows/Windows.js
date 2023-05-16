@@ -39,9 +39,9 @@ function Windows({notepadVisible, biographyVisible, aboutVisible, tutorialVisibl
 
     useEffect(() => {
       window.addEventListener('contextmenu', contextDisable);
-      /* audio.muted = true;
+      audio.muted = true;
       audio.play();
-      audio.muted = false; */
+      audio.muted = false;
       return () => {
         window.removeEventListener('contextmenu', contextDisable);
       }

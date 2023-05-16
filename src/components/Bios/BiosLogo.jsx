@@ -3,11 +3,13 @@ import styled from 'styled-components';
 
 const BiosLogoStyled=styled.div`
     display: flex;
-    height: 120px;
-    justify-content: flex-end;
+    /* height: 120px; */
+    /* justify-content: flex-end; */
+    justify-content: center;
+    margin-left: 100px;
     white-space: pre-line;
     font-family: monospace;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     animation: 1000ms linear 100ms normal forwards 1 running on;
     animation-iteration-count : 1;
     @keyframes on {

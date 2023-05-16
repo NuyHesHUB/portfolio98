@@ -5,6 +5,7 @@ import bios from '../../../assets/project-img/project04-img/bios.png';
 import loading from '../../../assets/project-img/project04-img/loading.png';
 import home from '../../../assets/project-img/project04-img/home.png';
 import biography from '../../../assets/project-img/project04-img/biography.png';
+import start from '../../../assets/project-img/project04-img/start.png';
 import resume from '../../../assets/project-img/project04-img/resume.png';
 import project from '../../../assets/project-img/project04-img/project.png';
 import mini from '../../../assets/project-img/project04-img/mini.gif';
@@ -62,7 +63,16 @@ function Project04(){
             ></FakeFrame>
             <br/>
             <br/>
-            <h2>이력서</h2>
+            <h2>DockBar & 바탕화면</h2>
+            <div className='divider'/>
+            <br/>
+            <FakeFrame
+                title="시작화면 바탕화면"
+                contents={start}
+            ></FakeFrame>
+            <br/>
+            <br/>
+            <h2>이력서 보기 & 다운로드</h2>
             <div className='divider'/>
             <br/>
             <FakeFrame
@@ -71,7 +81,7 @@ function Project04(){
             ></FakeFrame>
             <br/>
             <br/>
-            <h2>프로젝트</h2>
+            <h2>프로젝트를 볼 수 있는 곳</h2>
             <div className='divider'/>
             <br/>
             <FakeFrame

@@ -226,7 +226,7 @@ function ProjectFrame({project}){
                 <li><strong>Windows98</strong>을 아이디어로 <strong>포트폴리오</strong>를 만들었습니다.</li>
                 <li><strong>Styled-Components</strong>를 사용하여 <strong>스타일</strong>적용 했습니다.</li>
                 <li><strong>React-Router-Dom</strong>을 사용하여 페이지 이동을 구현했습니다.</li>
-                <li><strong>Redux</strong>를 사용하여 각 <storng>아이콘</storng>의 상호작용과 이벤트를 구현했습니다.</li>
+                <li><strong>Redux</strong>를 사용하여 각 <strong>아이콘</strong>의 상호작용과 이벤트를 구현했습니다.</li>
                 <li>반응형 기능을 추가하였습니다.</li>
             </ul>,
             rightContent2: 
@@ -240,7 +240,7 @@ function ProjectFrame({project}){
             skills: ['React','Redux','JavaScript','SASS','PhotoShop'],
             logoImg2: ['github','reactrouter','slickpic','slickpic','styledcomponents'],
             otherSkills: ['gh-pages','React-Router-Dom','React-PDF','React-Player','Styled-Components'],
-            videoUrl: "https://www.youtube.com/watch?v=Feh43XJuUIA",
+            videoUrl: "https://www.youtube.com/watch?v=sRMSiOL2yT8",
             githubUrl: "",
             webpageUrl: "",
             mainFunction: <Project04/>
@@ -257,7 +257,7 @@ function ProjectFrame({project}){
             tag02: '채팅',
             leftContent: 
                         <ul>
-                            <li>유저 간 실시간 채팅을 할 수 있는 페이지입니다.</li> 
+                            <li>유저 간 실시간 <strong>채팅</strong>을 할 수 있는 페이지입니다.</li> 
                             <br/>
                             <li><strong>Firebase</strong>를 DB로 사용하고 빌드하여 배포했습니다.</li> 
                             <br/>
@@ -306,20 +306,36 @@ function ProjectFrame({project}){
             tag02: 'AWS',
             leftContent: 
                         <ul>
-                            <li><strong>yts 영화 API</strong>를 사용하였습니다.</li> 
+                            <li>유저 간 다양한 커뮤니티 생성과 포스트를 작성하는 <strong>커뮤니티</strong>페이지 입니다.</li> 
                             <br/>
-                            <li><strong>React</strong>를 사용했으며 <strong>반응형</strong>으로 만들었습니다.</li>
+                            <li><strong>React</strong>, <strong>Next.js</strong>, <strong>TypeScript</strong>로 만들었습니다.</li>
                             <br/>
-                            <li>전역상태관리를 공부하기위해 <strong>Redux</strong>와 <strong>Context</strong>를 사용해봤습니다.</li>
+                            <li>백엔드까지 공부하기위해 <strong>Docker</strong>와 <strong>PostgreSQL</strong>을 사용하여 <strong>AWS</strong>로 배포했습니다.</li>
                             <br/>
-                            <li>스타일은 <strong>styled-components</strong>를 사용했습니다.</li>
+                            <li>스타일은 <strong>TailWind</strong>를 사용했습니다.</li>
                         </ul>
             ,
-            content: 'project 03 콘텐츠 입니다.',
-            logoImg1: ['react','typescript','nextdotjs','docker','postgresql','tailwindcss','css3','axios'],
-            skills: ['React','TypeScript','Next.js','Docker','PostgreSQL','TailWind','CSS','AXIOS'],
-            logoImg2: ['amazonaws','pm2','slickpic','slickpic','slickpic','slickpic','slickpic'],
-            otherSkills: ['AWS','PM2','ClassNames','Day.js','React-Dom','React-Icons','Sharp'],
+            rightContent1: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li>유저 간 다양한 커뮤니티 생성과 포스트를 작성하는 <strong>커뮤니티</strong>페이지 입니다.</li>
+                <li><strong>React-Context</strong>를 이용하여 회원가입을 만들었습니다.</li>
+                <li>타입스크립트를 공부하기위해 프론트엔드는<strong>React</strong> , <strong>Next.js</strong> , <strong>TypeScript</strong>로 만들었습니다.</li>
+                <li>백엔드는 <strong>Express.js</strong> , <strong>TypeScript</strong>로 만들었습니다.</li>
+                <li><strong>PostgreSQL</strong>를 데이터베이스로 사용하고 <strong>AWS EC2</strong>로 배포했습니다.</li>
+                <li><strong>TailWind</strong>를 사용하여 <strong>스타일</strong>적용 했습니다.</li>
+            </ul>,
+            rightContent2: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li><strong>React-Context</strong>를 이용한 회원가입 기능</li>
+                <li><strong>커뮤니티</strong> 생성, 배너와 커뮤니티 대표이미지 업로드 기능</li>
+                <li><strong>포스트</strong>작성과 좋아요 , 싫어요 기능</li>
+                <li><strong>유저</strong>정보를 볼 수 있고, 유저가 작성한 글 , 작성 댓글 보기 기능</li>
+                <li>상위 <strong>커뮤니티</strong> 나열 기능</li>
+            </ul>,
+            logoImg1: ['react','typescript','nextdotjs','express','docker','postgresql','tailwindcss','css3','axios'],
+            skills: ['React','TypeScript','Next.js','Express.js','Docker','PostgreSQL','TailWind','CSS','AXIOS'],
+            logoImg2: ['amazonaws','pm2','slickpic','slickpic','slickpic','slickpic','slickpic','slickpic'],
+            otherSkills: ['AWS','PM2','TypeORM','ClassNames','Day.js','React-Dom','React-Icons','Sharp'],
             videoUrl: "https://www.youtube.com/watch?v=8E1KGiLDe_Y",
             githubUrl: "https://github.com/NuyHesHUB/project04_commuity",
             webpageUrl: "http://ec2-3-24-85-149.ap-southeast-2.compute.amazonaws.com/",
@@ -337,16 +353,28 @@ function ProjectFrame({project}){
             tag02: 'Heroku',
             leftContent: 
                         <ul>
-                            <li><strong>yts 영화 API</strong>를 사용하였습니다.</li> 
+                            <li><strong>투 두 리스트</strong> 페이지입니다.</li> 
                             <br/>
-                            <li><strong>React</strong>를 사용했으며 <strong>반응형</strong>으로 만들었습니다.</li>
+                            <li><strong>Vue.js</strong>를 사용했습니다.</li>
                             <br/>
-                            <li>전역상태관리를 공부하기위해 <strong>Redux</strong>와 <strong>Context</strong>를 사용해봤습니다.</li>
+                            <li><strong>투 두 리스트</strong>를 저장하기 위해 <strong>Json-server</strong>를 사용했습니다.</li>
                             <br/>
-                            <li>스타일은 <strong>styled-components</strong>를 사용했습니다.</li>
+                            <li><strong>Heroku</strong>로 배포하였습니다.</li>
                         </ul>
             ,
-            content: 'project 03 콘텐츠 입니다.',
+            rightContent1: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li>할 일을 관리하는 <strong>투 두 리스트</strong> 페이지입니다.</li>
+                <li>Vue.js를 공부하기 위해 <strong>Vue.js</strong>로 만들었습니다.</li>
+                <li>Json-server를 사용하여 REST API를 만들었습니다.</li>
+                <li><strong>Heroku</strong>로 배포했습니다.</li>
+            </ul>,
+            rightContent2: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li>할 일을 추가 기능</li>
+                <li>할 일을 수정 , 삭제 기능</li>
+                <li>할 일을 검색할 수 있는 검색</li>
+            </ul>,
             logoImg1: ['vuedotjs','css3','axios'],
             skills: ['Vue.js','CSS','AXIOS'],
             logoImg2: ['json','heroku'],
@@ -399,14 +427,14 @@ function ProjectFrame({project}){
                 <div className='text-wrap'>
                     <p className="microsoft marquee">$$
                         <span className='title'><img style={{width:'17px'}} src={logo} alt='logo'/>PortFolio98</span>$$<u>D:\\Project</u> 폴더에 오신 것을 환영합니다.
-                        <span>Project01</span>은<i>수원시청</i>, 
-                        <span>Project02</span>는<i>메이필드호텔</i>, 
-                        <span>Project03</span>은<i>주씨네마</i>, 
+                        <span>Project01</span>은<i>관공서 클론코딩</i>, 
+                        <span>Project02</span>는<i>반응형 페이지</i>, 
+                        <span>Project03</span>은<i>영화 추천 페이지</i>, 
                         <span>Project04</span>는<i>PortFolio98</i> 그리고 
-                        <span>Project05</span>는<i>쇼핑몰</i>
-                        <span>Project06</span>은<i>쇼핑몰</i>
-                        <span>Project07</span>은<i>쇼핑몰</i>
-                        <span>Project08</span>은<i>쇼핑몰</i>, <span>탭</span>을 눌러가며 <span>프로젝트</span>들을 확인해 보세요.
+                        <span>Project05</span>는<i>실시간 채팅 페이지</i>
+                        <span>Project06</span>은<i>커뮤니티 페이지</i>
+                        <span>Project07</span>은<i>투두 리스트</i>
+                        <span>Project08</span>은<i>ChatGPT로 만든 간단 페이지</i>입니다. <span>탭</span>을 눌러가며 <span>프로젝트</span>들을 확인해 보세요.
                     </p>
                 </div>
             </TextSlide>
