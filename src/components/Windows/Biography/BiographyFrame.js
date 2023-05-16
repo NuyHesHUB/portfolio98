@@ -80,7 +80,8 @@ import docker from '../../../assets/biography-img/docker.svg';
 import gpt from '../../../assets/biography-img/gpt.svg';
 import basic from '../../../assets/biography-img/basic.png';
 import tool from '../../../assets/biography-img/tool.png';
-
+import express from '../../../assets/biography-img/express.svg';
+import deleted from '../../../assets/desktop-icon/Delete.png';
 function BiographyFrame({biography}){
     /* console.log('ProjectFrame 맥시',project.maximized); */
     return (
@@ -246,7 +247,12 @@ function BiographyFrame({biography}){
                                                 </Fieldset>
                                                 <br/>
                                                 <Fieldset>
-                                                    <legend></legend>
+                                                <legend>
+                                                    <div style={{display:'flex',alignItems:'center'}}>
+                                                        <img style={{width:'20px',marginRight:'5px'}} src={deleted} alt='deleted'/>
+                                                        <h2>단점을 비우는 중입니다...</h2>
+                                                    </div>
+                                                </legend>
                                                     <DemoDelete/>
                                                 </Fieldset>
                                             </Fieldset>
@@ -383,6 +389,10 @@ function BiographyFrame({biography}){
                                                                             <li>
                                                                                 <img src={next} alt="nextjs"/>
                                                                                 <span>Next.js</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <img src={express} alt="expressjs"/>
+                                                                                <span>Express.js</span>
                                                                             </li>
                                                                         </ul>
                                                                     </li>

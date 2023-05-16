@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import DemoFalling from '../../effect/DeleteEffect/DemoFalling';
 import Burning from '../../effect/DeleteEffect/Burning';
-import deleted from '../../../assets/desktop-icon/Delete.png'
-import bg from '../../../assets/wallpaper/windows_98_clouds.jpg'
+import deleted from '../../../assets/desktop-icon/Delete.png';
+import bg from '../../../assets/wallpaper/windows_98_clouds.jpg';
 import {TitleBarWrap, TitleBar, TitleBarText, TitleBarControls} from '../Project/FakeFrame';
 
 const StyledDemoDeleteFrame=styled.div`

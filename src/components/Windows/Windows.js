@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { /* useState, */ useEffect } from 'react';
 
 /* Library */
 import {connect} from 'react-redux';
@@ -22,7 +22,7 @@ import Resume from './Resume';
 import Project from './Project';
 
 /* Audio */
-import startup from '../../assets/sounds/startup.mp3';
+/* import startup from '../../assets/sounds/startup.mp3'; */
 const StyledWindows=styled.div`
     position: relative;
     width: 100vw;

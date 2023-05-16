@@ -35,7 +35,7 @@ import Project08Img from '../../../assets/project-img/project08.png';
 
 import infoTitleIcon from '../../../assets/biography-img/basic.png';
 import displayIcon from '../../../assets/biography-img/front.png';
-import infomationIcon from '../../../assets/biography-img/readme.png';
+/* import infomationIcon from '../../../assets/biography-img/readme.png'; */
 import useSkilIcon from '../../../assets/biography-img/setup.png';
 import libraryIcon from '../../../assets/biography-img/componentIcon.png';
 import cameraIcon from '../../../assets/project-img/camera.png';
@@ -241,8 +241,8 @@ function ProjectFrame({project}){
             logoImg2: ['github','reactrouter','slickpic','slickpic','styledcomponents'],
             otherSkills: ['gh-pages','React-Router-Dom','React-PDF','React-Player','Styled-Components'],
             videoUrl: "https://www.youtube.com/watch?v=sRMSiOL2yT8",
-            githubUrl: "",
-            webpageUrl: "",
+            githubUrl: "https://github.com/NuyHesHUB/project04_Portfolio98",
+            webpageUrl: "https://nuyheshub.github.io/project04_Portfolio98/",
             mainFunction: <Project04/>
         },
         {
@@ -403,14 +403,26 @@ function ProjectFrame({project}){
                             <li>이 프로젝트를 통해 <strong>ChatGPT</strong>에게 어떻게 질문을 해야하고, 어떻게 알려달라고 해야 할지 배우게 되었습니다.</li>
                         </ul>
             ,
-            content: 'project 03 콘텐츠 입니다.',
+            rightContent1: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li><strong>ChatGPT</strong>는 앞으로 개발업무에 멋진 툴이 되지 않을까 라는 생각에 <strong>ChatGPT</strong>의 사용방법을 알기위해 만들게 되었습니다.</li> 
+                <li><strong>ChatGPT</strong>에게 프롬프트(질문) 입력을 공부하기 위해 구글이나 유튜브를 통해 공부하게 된 계기가 되었습니다.</li>
+                <li><strong>ChatGPT</strong>에게 받을 답변 길이가 제한적이므로 효과적으로 코드를 구성하기 위해 <strong>BootStrap</strong>을 사용하여 코드를 얻었습니다.</li>
+            </ul>,
+            rightContent2: 
+            <ul className='right-content' style={{marginLeft:'20px'}}>
+                <li>오로지 <strong>ChatGPT</strong>와의 대화로 코드를 얻어 구성하게 된 페이지입니다.</li>
+                <li>날씨 API</li>
+                <li>TOP 버튼</li>
+                <li>배너 이미지 슬라이드</li>
+            </ul>,
             logoImg1: ['html5','css3'],
             skills: ['HTML','CSS'],
             logoImg2: ['openai','bootstrap'],
             otherSkills: ['Chat GPT','BootStrap'],
             videoUrl: "https://www.youtube.com/watch?v=7afTi5hJwfA",
-            githubUrl: "",
-            webpageUrl: "",
+            githubUrl: "https://github.com/NuyHesHUB/project08_GPT",
+            webpageUrl: "https://nuyheshub.github.io/project08_GPT",
             mainFunction: <Project08/>
         },
     ];

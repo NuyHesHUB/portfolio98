@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
-
+import styled from 'styled-components';
 import WindowsFrame from './WindowsFrame/WindowsFrame';
 import {focusDeleted, blurDeleted, minimizeDeleted, maximizeDeleted, disabledDeleted,exitDeleted} from '../../store/actions/actions';
 import deletedImage from '../../assets/dockbar-icon/Delete.png';
@@ -9,6 +9,17 @@ import cloud from '../../assets/wallpaper/windows_98_clouds.jpg';
 
 import Burning from '../effect/DeleteEffect/Burning';
 import Falling from '../effect/DeleteEffect/Falling';
+
+const StyledBtn=styled.div`
+    background-color: rgb(195, 199, 203);
+    border: none;
+    box-shadow: rgb(0, 0, 0) -1px -1px 1px inset, rgba(255, 255, 255, 0.8) 2px 2px 0px inset;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 2px;
+`
 
 function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, onDeletedMaximize, onDeletedDisabled, onDeletedExit }) {
 
@@ -52,15 +63,16 @@ function Deleted({ deleted, onDeletedFocus, onDeletedBlur, onDeletedMinimize, on
                     <img src={deletedLimgage} alt="Icon"/>
                     <h3>Recycle Bin</h3>
                     <div style={{marginTop:'40px'}}>
-                    <p style={{fontSize:'13px', textAlign:'center',fontWeight:'bold'}}>휴지통 비우기</p>
                     <br/>
-                        <p style={{fontSize:'13px', textAlign:'center',fontWeight:'bold'}}>내 성격의 단점</p>
-                        <ul style={{fontSize:'13px',textAlign:'center',marginTop:'10px'}}>
+                    <p style={{color:'#666', fontSize:'13px', textAlign:'center'}}>나의 단점<br/>비우는 중....</p>
+                    <br/>
+                    <StyledBtn>확인</StyledBtn>
+                        {/* <ul style={{fontSize:'13px',textAlign:'center',marginTop:'10px'}}>
                             <li>완벽주의</li>
                             <li>많은생각</li>
                             <li>실천부족</li>
                             <li>낯가림</li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                     <ul className='line-list'>

@@ -216,7 +216,7 @@ function ProfileFrame({biography}){
                             </div>
                             <div className='component-area'>
                                 <div className='bottom-component'>
-                                    <div><p>tag : <span>#주세현(Joo SeHyeon)</span> , <span>#INTJ</span> , <span>#Hwasung-si</span></p></div>
+                                    <div><p>tag : <span>#주세현(Joo SeHyeon)</span> , <span>#INTJ</span> , <span>#Front-end</span>{/* , <span>#Hwasung-si</span> */}</p></div>
                                 </div>
                             </div>
                         </PaintFrame>
