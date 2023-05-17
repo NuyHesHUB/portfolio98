@@ -200,14 +200,20 @@ function BiographyFrame({biography}){
                                     <h1 id='profile' style={{fontSize:'3rem'}}><img style={{width:'45px'}} src={paintIcon} alt='profile'/>PROFILE</h1>
                                     <hr/>
                                     <br/>
-                                    <Fieldset>
-                                        <legend>Hello</legend>
-                                        <p>
-                                            안녕하세요 👨🏻‍💻 <i style={{fontStyle:'normal', color:'#000eee', textDecoration:'underline'}}>프론트엔드 개발자</i>를 꿈꾸는 주세현입니다.<br/>저의 포트폴리오 공간에 오신 것을 환영합니다.👏🏻
-                                        </p>
-                                    </Fieldset>
+                                    <br/>
+                                    <h2 style={{textAlign:'center'}}><i style={{fontSize:'25px',fontStyle:'normal'}}>🐣</i>안녕하세요 웹 개발자를 꿈꾸는 <i style={{fontSize:'22px',fontStyle:'normal',color:'navy'}}>주세현</i>입니다.</h2>
                                     <ProfileFrame isMaximized={biography.maximized}/>
-                                    <div className='divider'></div>
+                                    <div className='divider'/>
+                                        <Fieldset>
+                                            <legend>
+                                                <div style={{display:'flex',alignItems:'center'}}>
+                                                    <img style={{width:'30px',marginRight:'5px'}} src={deleted} alt='deleted'/>
+                                                    <h2>저의 단점을 비우는 중입니다...</h2>
+                                                </div>
+                                            </legend>
+                                            <DemoDelete/>
+                                        </Fieldset>
+                                        <div className='divider'/>
                                         <div className='readme-box'>
                                             <Fieldset>
                                                 <legend>
@@ -224,8 +230,8 @@ function BiographyFrame({biography}){
                                                             저는 적극적이고 밝은 성격이어서 <u>동그라미</u>처럼 성격이 둥글다는 소리를 자주 들었습니다.<br/>
                                                             그런 저의 성격을 장점으로 타 부서와의 <u>원만한 소통</u> 능력을 갖추고 있으며,<br/>
                                                             낯선 환경에서 새로운 사람들과 빠르게 적응할 수 있는 성격은 업무에 많은 도움이 되었습니다.<br/>
-                                                            개발 업무 특성상 직원들과 소통하는 데 적극적으로 관심을 기울이고, <u>문제해결</u>과 적절한 해결책을 제시하며,<br/>
-                                                            저의 둥근 성격으로 <u>개발 업무성과</u>를 이루어 내는 대에 <u>강점</u>이라 생각합니다.<br/>
+                                                            개발 업무 특성상 직원들과 소통하는 데 적극적으로 관심을 기울이고, <u>문제 해결</u>과 적절한 해결책을 제시하며,<br/>
+                                                            저의 둥근 성격으로 <u>업무 성과</u>를 이루어 내는 대에 <u>강점</u>이라 생각합니다.<br/>
                                                             또한, <br/><br/>
                                                             <img style={{width:'12px',height:'12px', marginRight:'5px'}} src={semo} alt='semo'/>저는 세모처럼 <u>섬세</u>하고 강박적인 <u>완벽주의</u> 성격을 가졌습니다.<br/>
                                                             이러한 성격은 업무를 수행하는 데 있어 크나큰 장점으로 작용할 것입니다.<br/>
@@ -246,7 +252,7 @@ function BiographyFrame({biography}){
                                                     </div>
                                                 </Fieldset>
                                                 <br/>
-                                                <Fieldset>
+                                                {/* <Fieldset>
                                                 <legend>
                                                     <div style={{display:'flex',alignItems:'center'}}>
                                                         <img style={{width:'20px',marginRight:'5px'}} src={deleted} alt='deleted'/>
@@ -254,7 +260,7 @@ function BiographyFrame({biography}){
                                                     </div>
                                                 </legend>
                                                     <DemoDelete/>
-                                                </Fieldset>
+                                                </Fieldset> */}
                                             </Fieldset>
                                         </div>
                                     <div className='divider'></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {TitleBarWrap, TitleBar, TitleBarText, TitleBarControls} from '../Project/FakeFrame';
 import {StyledMenu} from '../WindowsFrame/StyledFrame'
+import { Fieldset } from './StyledBiographyFrame';
 import styled from 'styled-components';
 
 import logo from '../../../assets/menu-img/logo_shadow.png'
@@ -220,6 +221,21 @@ function ProfileFrame({biography}){
                                 </div>
                             </div>
                         </PaintFrame>
+                        <br/>
+                        <div style={{padding:'0 15px 20px 15px'}}>
+                            <Fieldset style={{padding:'10px 10px'}}>
+                            <legend><i style={{fontSize:'20px'}}>🙋🏻‍♂️</i><h3 style={{display:'inline-block'}}>Hello</h3></legend>
+                                <div style={{lineHeight:'1.3'}}>
+                                    사용자의 입장에서 더 나은 경험을 제공하고, 열정적이고 창의적인 웹 인터페이스를 구현하는 것에 큰 관심을 가지고 있습니다.<br/><br/>
+                                    사용자가 웹사이트를 방문했을 때, 직관적이고 매력적인 디자인과 원활한 상호작용을 통해 편안하고 흥미로운 경험을 제공하는 것이 목표입니다.<br/>
+                                    디자인, 콘텐츠, 기능을 유기적으로 조화시켜 사용자가 웹사이트를 더욱 즐거워하고 유용하게 이용할 수 있도록 하기 위해 저를 소개하는 포트폴리오 페이지를 만들게 되었습니다.<br/>
+                                    사용자 중심적인 접근과 프로젝트를 진행하면서 마주한 다양한 문제들이 생기면 블로그에 작성하고 있습니다.<br/><br/>
+                                    이를 통해 문제 해결 과정을 공유하고, 웹사이트의 가치를 높이는 것에 열정을 가지고 있습니다.<br/>
+                                    꾸준한 자기 개발과 열정을 통해 웹 개발 분야에서 성공적인 경력을 쌓고자 합니다.<br/><br/>
+                                    <div><strong>나의 소개</strong> 폴더에 오신 것을 환영합니다.👏🏻</div>
+                                </div>
+                            </Fieldset>
+                        </div>
                 </TitleBarWrap>
             </Vertical>
        </StyledProfileFrame>
