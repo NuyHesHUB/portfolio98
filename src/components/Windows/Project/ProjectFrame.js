@@ -77,6 +77,8 @@ function ProjectFrame({project}){
             tag02: '클론코딩',
             leftContent: 
                         <ul>
+                            <li><strong>웹페이지</strong>의 기본 <strong>구성요소</strong>를 공부하기 위해 만들게 되었습니다.</li>
+                            <br/>
                             <li><strong>수원시청</strong>을 클론코딩했습니다.</li>
                             <br/>
                             <li><strong>JavaScript</strong>와 <strong>JQuery</strong>를 활용하여 슬라이드를 제작했습니다.</li>
@@ -120,6 +122,8 @@ function ProjectFrame({project}){
             tag02: '반응형',
             leftContent: 
                         <ul>
+                            <li><strong>웹페이지</strong>의 기본 <strong>구성요소</strong>와 <strong>반응형</strong> 구현을 공부하기 위해 만들게 되었습니다.</li>
+                            <br/>
                             <li><strong>메이필드호텔</strong>을 클론코딩하였으며, 반응형을 추가하였습니다.</li>
                             <br/>
                             <li><strong>JavaScript</strong>와 <strong>JQuery</strong>를 사용하였습니다.</li>
@@ -164,6 +168,8 @@ function ProjectFrame({project}){
             tag02: '영화 API',
             leftContent: 
                         <ul>
+                            <li><strong>Axios</strong>를 이용하여 <strong>API</strong>호출을 배우기 위해 만들었습니다.</li>
+                            <br/>
                             <li><strong>yts 영화 API</strong>를 사용한 영화 추천 페이지입니다.</li> 
                             <br/>
                             <li><strong>React</strong>를 사용했으며 <strong>반응형</strong>으로 만들었습니다.</li>
@@ -210,12 +216,14 @@ function ProjectFrame({project}){
             tag02: 'Redux',
             leftContent: 
                         <ul>
-                            <li><strong>Windows98</strong>을 아이디어로 만든 포트폴리오 프로젝트 입니다.</li> 
+                            <li>저를 <strong>소개</strong>하는 페이지는 지겹지 않으면서도 누구에게나 <strong>익숙한</strong> 사용자 경험으로 페이지를 경험하셨으면 하는 마음에 시작된 <strong>Windows98</strong>을 컨셉으로 만든 페이지 입니다.</li>
                             <br/>
-                            <li><strong>React</strong>를 사용했습니다.</li>
+                            <li><strong>전역 상태 관리</strong>를 공부하며 서로 상호작용되는 기능에 흥미가 생겼고 <strong>Redux</strong>를 사용하여 <strong>전역 상태 관리</strong>를 배워보고 싶어서 공부하면서 만들게 된 프로젝트입니다.</li>
                             <br/>
-                            <li>전역 상태 관리를 위해 <strong>Redux</strong>를 사용했습니다.</li>
-                            <br/>
+                            {/* <li><strong>React</strong>를 사용했습니다.</li>
+                            <br/> */}
+                            {/* <li>전역 상태 관리를 위해 <strong>Redux</strong>를 사용했습니다.</li>
+                            <br/> */}
                             <li><strong>action</strong>과 <strong>reducer</strong>를 관리하여 이벤트와 state를 관리했습니다.</li>
                             <br/>
                             <li>스타일은 <strong>styled-components</strong>를 사용했습니다.</li>
@@ -257,6 +265,8 @@ function ProjectFrame({project}){
             tag02: '채팅',
             leftContent: 
                         <ul>
+                            <li>평소에 <strong>채팅</strong>이나 <strong>메신저</strong>가 어떤 식으로 작동이 되는지 궁금했었고, 실시간으로 동기화되는 <strong>FireBase</strong>를 <strong>데이터베이스</strong>로 사용하여 <strong>채팅</strong>을 만들면 <strong>백엔드</strong>에 대해 이해도를 높일 수 있을 거 같아 시작된 프로젝트입니다.</li> 
+                            <br/>
                             <li>유저 간 실시간 <strong>채팅</strong>을 할 수 있는 페이지입니다.</li> 
                             <br/>
                             <li><strong>Firebase</strong>를 DB로 사용하고 빌드하여 배포했습니다.</li> 
@@ -306,11 +316,11 @@ function ProjectFrame({project}){
             tag02: 'AWS',
             leftContent: 
                         <ul>
-                            <li>유저 간 다양한 커뮤니티 생성과 포스트를 작성하는 <strong>커뮤니티</strong>페이지 입니다.</li> 
+                            <li><strong>Next.js</strong>의 빠른로딩과 페이지라우터를 쉽게 구현하는 방식을 사용해 보고싶었고, 실제 운영되는 커뮤니티처럼  <strong>PostgreSQL</strong>로 <strong>데이터베이스</strong>로 사용, <strong>AWS</strong>로 배포하여 어디서든 커뮤니티 생성, 댓글, 포스트를 작성할 수 있는 페이지를 만들었습니다.</li> 
                             <br/>
                             <li><strong>React</strong>, <strong>Next.js</strong>, <strong>TypeScript</strong>로 만들었습니다.</li>
                             <br/>
-                            <li>백엔드까지 공부하기위해 <strong>Docker</strong>와 <strong>PostgreSQL</strong>을 사용하여 <strong>AWS</strong>로 배포했습니다.</li>
+                            <li>백엔드를 공부하기위해 <strong>PostgreSQL</strong>을 DB로 사용하여 <strong>AWS</strong>로 배포했습니다.</li>
                             <br/>
                             <li>스타일은 <strong>TailWind</strong>를 사용했습니다.</li>
                         </ul>
@@ -353,6 +363,8 @@ function ProjectFrame({project}){
             tag02: 'Heroku',
             leftContent: 
                         <ul>
+                            <li><strong>Vue.js</strong>의 기본 개념을 익히기 위해 <strong>투 두 리스트</strong>를 만들어 공부를 하게 된 프로젝트입니다.</li> 
+                            <br/>
                             <li><strong>투 두 리스트</strong> 페이지입니다.</li> 
                             <br/>
                             <li><strong>Vue.js</strong>를 사용했습니다.</li>

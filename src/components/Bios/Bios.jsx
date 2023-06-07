@@ -21,6 +21,7 @@ import { useOnKeyDownOnce } from '../../hooks/useOnkeyDownOnce';
 /* Image */
 import energylogo from '../../assets/bios-img/epa-logo.png'
 import blurlogo from '../../assets/bios-img/a-logo.png'
+import { Link } from 'react-router-dom';
 
 const StyledBios=styled.div`
     font-family: 'retro';
@@ -197,6 +198,7 @@ const Bios = () => {
                         <BiosInfoEntry label="Timezone" value={Intl.DateTimeFormat().resolvedOptions().timeZone}/>
                         <BiosInfoEntry label="Project Title" value="PORTFOLIO 98"/>
                         <BiosInfoEntry label="Project Content" value="안녕하세요 PORTFOLIO 98 에 오신것을 환영합니다."/>
+                        
                     </BiosInfoSection>
                     {/* <BiosInfoSection>
                         <BiosInfoEntry label="나의 역량" value="로딩 완료..."/>
@@ -222,6 +224,8 @@ const Bios = () => {
                         {/* <Link style={{color:'#fff'}} to={`/windows`}>윈도우링크</Link> */}
                         <p>Press <strong>{LOAD_WITH_FULLSCREEN_KEY}</strong> to Full-Screen startup PortFolio 98.</p>
                         <p>Press <strong>{LOAD_WITHOUT_FULLSCREEN_KEY}</strong> to Normal-Screen Startup PortFolio 98.</p>
+                        {/* <Link style={{color:'red',textDecoration:'none'}} to={`/windows`}>Mobile <strong>Click</strong> to Full-Screen startup PortFolio 98.</Link> */}
+                        <Link style={{color:'red',textDecoration:'none'}} to={`/Loading`}>Mobile <strong>Click</strong> to Full-Screen startup PortFolio 98.</Link>
                     </LinkFrame>
             </BiosInfoSections>
             {/* <BiosLogo/> */}
