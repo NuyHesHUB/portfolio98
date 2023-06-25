@@ -260,7 +260,7 @@ function ProjectFrame({project}){
             img: Project05Img,
             information1: '실시간 채팅 페이지',
             information2: 'Firebase',
-            information3: '3주',
+            information3: '5주',
             tag01: 'Firebase',
             tag02: '채팅',
             leftContent: 
@@ -311,7 +311,7 @@ function ProjectFrame({project}){
             img: Project06Img,
             information1: '커뮤니티 페이지',
             information2: 'AWS EC2',
-            information3: '4주',
+            information3: '8주',
             tag01: '리액트',
             tag02: 'AWS',
             leftContent: 

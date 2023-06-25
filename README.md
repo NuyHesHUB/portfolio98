@@ -15,7 +15,7 @@
 
 > ## **프로젝트 링크**
  
-- 배포링크 : <https://nuyheshub.github.io/project04_Portfolio98/>
+- 배포링크 : <https://nuyheshub.github.io/portfolio98/>
 - 시연영상 : <https://www.youtube.com/watch?v=sRMSiOL2yT8>
 
 <br/>
