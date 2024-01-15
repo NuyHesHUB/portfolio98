@@ -10,6 +10,8 @@ import { createStore } from 'redux';
 import reducer from './store/reducers/reducer'
 import { initGA, logPageView } from './analytics';
 
+/* 24.01 update */
+
 function App() {
   const store = createStore(reducer);
   
