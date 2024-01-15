@@ -162,10 +162,10 @@ function BiographyFrame({biography}){
                                                                     <a href="#sns">SNS</a>
                                                                 </div>
                                                                 <ul>
-                                                                    <li>
+                                                                    {/* <li>
                                                                         <img src={insta} alt="insta"/>
                                                                         <a href="#instagram">Instagram</a>
-                                                                    </li>
+                                                                    </li> */}
                                                                     <li>
                                                                         <img src={velog} alt="velog"/>
                                                                         <a href="#velog">Velog</a>
@@ -554,16 +554,10 @@ function BiographyFrame({biography}){
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>2006.03 ~ 2009.02</td>
-                                                                    <td>졸업</td>
-                                                                    <td>구미전자공업고등학교</td>
-                                                                    <td>특성화/마이스터(전자과)</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2009.03 ~ 2010.05</td>
-                                                                    <td>중퇴</td>
-                                                                    <td>영진전문대학교</td>
-                                                                    <td>시각디자인과</td>
+                                                                    <td>2022.10 ~ 2023.03</td>
+                                                                    <td>수료</td>
+                                                                    <td>더휴먼컴퓨터아카데미</td>
+                                                                    <td>프론트엔드 개발자 과정</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>2022.01 ~ </td>
@@ -572,10 +566,16 @@ function BiographyFrame({biography}){
                                                                     <td>컴퓨터공학과</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>2022.10 ~ 2023.03</td>
-                                                                    <td>수료</td>
-                                                                    <td>더휴먼컴퓨터아카데미</td>
-                                                                    <td>프론트엔드 개발자 과정</td>
+                                                                    <td>2009.03 ~ 2010.05</td>
+                                                                    <td>중퇴</td>
+                                                                    <td>영진전문대학교</td>
+                                                                    <td>시각디자인과</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2006.03 ~ 2009.02</td>
+                                                                    <td>졸업</td>
+                                                                    <td>구미전자공업고등학교</td>
+                                                                    <td>특성화/마이스터(전자과)</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -612,15 +612,21 @@ function BiographyFrame({biography}){
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>2008.07 ~ 2009.02</td>
+                                                                    <td>2023.07 ~ 2023.12</td>
                                                                     <td>경기</td>
-                                                                    <td>에피플러스</td>
-                                                                    <td>생산/인턴</td>
+                                                                    <td>화진로보틱스</td>
+                                                                    <td>프론트엔드/사원</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>2012.03 ~ 2013.08</td>
+                                                                    <td>2020.07 ~ 2022.09</td>
                                                                     <td>경기</td>
-                                                                    <td>멜파스</td>
+                                                                    <td>알파머티리얼즈</td>
+                                                                    <td>생산관리/주임</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2018.03 ~ 2019.10</td>
+                                                                    <td>경북</td>
+                                                                    <td>포레시아</td>
                                                                     <td>생산/사원</td>
                                                                 </tr>
                                                                 <tr>
@@ -630,16 +636,16 @@ function BiographyFrame({biography}){
                                                                     <td>생산/사원</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>2018.03 ~ 2019.10</td>
-                                                                    <td>경북</td>
-                                                                    <td>포레시아</td>
+                                                                    <td>2012.03 ~ 2013.08</td>
+                                                                    <td>경기</td>
+                                                                    <td>멜파스</td>
                                                                     <td>생산/사원</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>2020.07 ~ 2022.09</td>
+                                                                    <td>2008.07 ~ 2009.02</td>
                                                                     <td>경기</td>
-                                                                    <td>알파머티리얼즈</td>
-                                                                    <td>생산관리/주임</td>
+                                                                    <td>에피플러스</td>
+                                                                    <td>생산/인턴</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -676,9 +682,21 @@ function BiographyFrame({biography}){
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>2006.12</td>
+                                                                    <td>2022.05</td>
                                                                     <td>자격증</td>
-                                                                    <td>정보기기운용기능사</td>
+                                                                    <td>ERP 생산정보관리사 1급</td>
+                                                                    <td>한국생산성본부</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2020.04</td>
+                                                                    <td>면허증</td>
+                                                                    <td>2종보통운전면허</td>
+                                                                    <td>경찰청</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2008.07</td>
+                                                                    <td>자격증</td>
+                                                                    <td>전자기기기능사</td>
                                                                     <td>한국산업인력공단</td>
                                                                 </tr>
                                                                 <tr>
@@ -688,22 +706,10 @@ function BiographyFrame({biography}){
                                                                     <td>한국산업인력공단</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>2008.07</td>
+                                                                    <td>2006.12</td>
                                                                     <td>자격증</td>
-                                                                    <td>전자기기기능사</td>
+                                                                    <td>정보기기운용기능사</td>
                                                                     <td>한국산업인력공단</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2020.04</td>
-                                                                    <td>면허증</td>
-                                                                    <td>2종보통운전면허</td>
-                                                                    <td>경찰청</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2022.05</td>
-                                                                    <td>자격증</td>
-                                                                    <td>ERP 생산정보관리사 1급</td>
-                                                                    <td>한국생산성본부</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -736,8 +742,8 @@ function BiographyFrame({biography}){
                                         <hr/>
                                         <br/>
                                         <Fieldset style={{background:'#fff'}}>
-                                                <p id='instagram' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={insta} alt='phone'/><span>Insta : <a target='blank' href='https://www.instagram.com/nuy_hes/'>https://www.instagram.com/nuy_hes/</a></span></p>
-                                                <br/>
+                                                {/* <p id='instagram' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={insta} alt='phone'/><span>Insta : <a target='blank' href='https://www.instagram.com/nuy_hes/'>https://www.instagram.com/nuy_hes/</a></span></p> */}
+                                                {/* <br/> */}
                                                 <p id='velog' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={velog} alt='email'/><span>Velog : <a target='blank' href='https://velog.io/@nuyhes'>https://velog.io/@nuyhes</a></span></p>
                                                 <br/>
                                                 <p id='github' style={{display:'flex',alignItems:'center'}}><img style={{width:'15px',marginRight:'5px'}} src={github} alt='email'/><span>GitHub : <a target='blank' href='https://github.com/NuyHesHUB'>https://github.com/NuyHesHUB</a></span></p>
